@@ -114,7 +114,7 @@ If you'd rather use TypeScript syntax, you can do so by adding a `lang="ts"` att
 
 ```html
 <script context="module" lang="ts" sheetworker>
-    on("click:hello_world" () => {
+    on("click:hello_world", () => {
         let message: string = "Hello World"
         console.log(message)
     })

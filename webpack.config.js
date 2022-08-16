@@ -13,6 +13,6 @@ export default {
 		extensions: ['.js', '.ts']
 	},
 	optimization: {
-		minimize: false,
+		minimize: true,
 	},
 };

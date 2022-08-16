@@ -3,6 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
 import prettier from 'prettier';
+import purifycss from "purify-css"
+import uncss from "uncss"
 
 const adapterName = 'sveltekit-adapter-roll20-sheet';
 
@@ -85,8 +87,29 @@ export default (options) => ({
 			console.log(e);
 		}
 
-		css = prettier.format(css, { filepath: cssPath });
+		//css = prettier.format(css, { filepath: cssPath });
 		fs.writeFileSync(path.join(outDir, sheetJson.css), css);
+
+		const purifyOptions = {
+			output: path.join(outDir, sheetJson.css),
+			whitelist: ["*.charactersheet*"],
+			minify: true
+		}
+
+		const unCssOptions = {
+			stylesheets: [css]
+		}
+
+		uncss(indexHtml, unCssOptions, (error, output) => {
+			console.log(error)
+			console.log(output)
+		})
+
+		// indexSplit = indexHtml.split("</script>")
+		// if (indexSplit.length > 1)
+		// 	indexSplit[0] = ""
+
+		// purifycss(indexSplit.join(""), css, purifyOptions)
 
 		// const css = glob.sync(path.join(__dirname, "build/_app/immutable/assets/*.css"))
 		// for (const file of css) {
