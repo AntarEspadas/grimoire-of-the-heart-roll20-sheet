@@ -89,9 +89,8 @@ export default () => [
 			for (const context in codeContexts) {
 				if (Object.hasOwnProperty.call(codeContexts, context)) {
 					const code = codeContexts[context];
-					newCode =
-						`{#if true}<script type="text/worker">${code}</script>{/if}
-                ` + newCode;
+					newCode += `
+						{#if true}<script type="text/worker">${code}</script>{/if}`;
 				}
 			}
 

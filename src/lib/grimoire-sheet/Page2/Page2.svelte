@@ -49,7 +49,7 @@
 	<Row>
 		<Col class="col-12 sm-7">
 			<Row dense class="mb-4">
-				<ChippedDiv chipSize={40} w="100%" h="400px" {bgColor}>
+				<ChippedDiv chipSize={40} w="100%" style="min-height: 400px;" {bgColor}>
 					<Items />
 				</ChippedDiv>
 			</Row>

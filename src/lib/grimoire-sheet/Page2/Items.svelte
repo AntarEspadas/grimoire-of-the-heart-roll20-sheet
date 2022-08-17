@@ -19,16 +19,16 @@
 			<p>Qty</p>
 		</Col>
 	</Row>
-	<Row dense>
-		{#each items as i}
+	<fieldset class="repeating_item">
+		<Row dense>
 			<Col class="col-10 pb-0">
-				<ChippedTextField name="attr_item_{i}" chipSize={7} />
+				<ChippedTextField name="attr__item" chipSize={7} />
 			</Col>
 			<Col class="pb-0">
-				<ChippedTextField name="attr_item_{i}_amount" chipSize={7} type="number" />
+				<ChippedTextField name="attr__item_amount" chipSize={7} type="number" />
 			</Col>
-		{/each}
-	</Row>
+		</Row>
+	</fieldset>
 </Container>
 
 <style lang="sass">

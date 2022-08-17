@@ -87,34 +87,22 @@ export default (options) => ({
 			console.log(e);
 		}
 
-		//css = prettier.format(css, { filepath: cssPath });
-		fs.writeFileSync(path.join(outDir, sheetJson.css), css);
-
-		const purifyOptions = {
-			output: path.join(outDir, sheetJson.css),
-			whitelist: ["*.charactersheet*"],
-			minify: true
-		}
+		css = css.replace('@charset "UTF-8";', "")
+		cssPath = path.join(outDir, sheetJson.css)
+		fs.writeFileSync(cssPath, css);
 
 		const unCssOptions = {
-			stylesheets: [css]
+			stylesheets: [cssPath],
+			banner: false,
+			ignore: [/\.charactersheet.*/]
 		}
 
-		uncss(indexHtml, unCssOptions, (error, output) => {
-			console.log(error)
-			console.log(output)
+		css = await new Promise((resolve) => {
+			uncss(indexHtml, unCssOptions, (error, output) => {
+				resolve(output)
+			})
 		})
 
-		// indexSplit = indexHtml.split("</script>")
-		// if (indexSplit.length > 1)
-		// 	indexSplit[0] = ""
-
-		// purifycss(indexSplit.join(""), css, purifyOptions)
-
-		// const css = glob.sync(path.join(__dirname, "build/_app/immutable/assets/*.css"))
-		// for (const file of css) {
-		//     fs.copyFileSync(file, path.join(outDir, sheetJson.css))
-		//     break
-		// }
+		fs.writeFileSync(cssPath, css)
 	}
 });

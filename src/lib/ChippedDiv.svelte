@@ -11,7 +11,7 @@
 <script lang="ts">
 	export let chipSize: number;
 	export let corner: Corner = Corner.topRight;
-	export let style: string | undefined = undefined;
+	export let style = '';
 
 	export let w: string | undefined = undefined;
 	export let h: string | undefined = undefined;

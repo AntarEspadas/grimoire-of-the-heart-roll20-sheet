@@ -22,9 +22,8 @@
 			<p>Lv</p>
 		</Col>
 	</Row>
-	<!-- <fieldset class="repeating_personae"> -->
-	<!-- <input type="text" name="attr_test" /> -->
-	<!-- <Row dense>
+	<fieldset class="repeating_personae">
+		<Row dense>
 			<Col class="col-4 pt-0">
 				<ChippedTextField name="attr__arcana" chipSize={7} />
 			</Col>
@@ -34,8 +33,8 @@
 			<Col class="pt-0">
 				<ChippedTextField name="attr__level" chipSize={7} type="number" />
 			</Col>
-		</Row> -->
-	<!-- </fieldset> -->
+		</Row>
+	</fieldset>
 </Container>
 
 <style lang="sass">

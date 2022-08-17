@@ -1,5 +1,5 @@
 <script context="module" lang="ts" sheetworker>
-	import '../lib/Tabs/TabsWorker';
+	import '../../lib/Tabs/TabsWorker';
 </script>
 
 <script>
@@ -15,7 +15,7 @@
 			<TabButton>Page 1</TabButton>
 			<TabButton>Page 2</TabButton>
 			<TabButton>Page 3</TabButton>
-			<TabButton>Page 3</TabButton>
+			<TabButton>Page 4</TabButton>
 
 			<Tab>
 				<Page1 />
@@ -29,14 +29,14 @@
 
 <style lang="sass">
 
-	// div
-	// 	min-width: 340px
+	div
+		min-width: 340px
 
-	// @media (min-width: 600px)
-	// 	div
-	// 		width: 850px
+	@media (min-width: 600px)
+		div
+			width: 850px
 
-	// :global(.charactersheet div.repitem .itemcontrol)
-	// 	z-index: 10
+	:global(.charactersheet div.repitem .itemcontrol)
+		z-index: 10
 
 </style>
