@@ -41,7 +41,7 @@
 			</Row>
 		</Col>
 		<Col>
-			<ChippedDiv chipSize={40} w="100%" h="500px" {bgColor}>
+			<ChippedDiv chipSize={40} w="100%" style="min-height: 500px;" {bgColor}>
 				<Feats />
 			</ChippedDiv>
 		</Col>

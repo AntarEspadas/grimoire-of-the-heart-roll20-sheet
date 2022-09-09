@@ -10,7 +10,7 @@
 	const index = context.getTabButtonIndex();
 	const currentIndex = context.currentIndex;
 
-	const type = 'action' as unknown;
+	const type = 'action' as any;
 </script>
 
 <Button

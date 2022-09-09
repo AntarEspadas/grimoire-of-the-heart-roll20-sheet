@@ -11,10 +11,16 @@
 	export let rows: number | undefined = undefined;
 
 	export let name: string;
+	export let placeholder: string | undefined = undefined;
+
+	export let resizable = false;
+
+	let className: string | undefined = undefined;
+	export { className as class };
 </script>
 
-<ChippedDiv {chipSize} {h} {w} {bgColor}>
-	<Textarea {name} noResize {rows} style="--height: calc({h} - 1px);" />
+<ChippedDiv class={className} {chipSize} {w} {h} {bgColor}>
+	<Textarea {placeholder} {name} noResize={!resizable} {rows} style="--height: calc({h} - 1px);" />
 </ChippedDiv>
 
 <style lang="sass">
@@ -22,4 +28,7 @@
 		height: var(--height)
 		margin: 0
 		line-height: 20px
+
+	:global(div.s-input__slot)
+		margin: 0
 </style>

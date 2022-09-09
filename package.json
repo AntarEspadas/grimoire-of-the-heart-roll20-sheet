@@ -1,5 +1,5 @@
 {
-	"name": "Svelte20",
+	"name": "girmoire-of-the-heart-sheet-roll20",
 	"author": "Naratna",
 	"version": "1.0.0",
 	"scripts": {
@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-static": "1.0.0-next.38",
+		"@sveltejs/adapter-static": "1.0.0-next.42",
 		"@sveltejs/kit": "next",
 		"@types/es6-promisify": "^6.0.1",
 		"@types/prettier": "^2.6.4",
@@ -39,7 +39,7 @@
 		"tslib": "^2.3.1",
 		"typescript": "^4.7.4",
 		"uncss": "^0.17.3",
-		"vite": "^3.0.0",
+		"vite": "^3.1.0",
 		"webpack": "^5.74.0"
 	},
 	"type": "module",

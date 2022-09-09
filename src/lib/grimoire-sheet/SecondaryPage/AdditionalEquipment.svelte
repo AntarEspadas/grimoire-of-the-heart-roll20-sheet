@@ -1,21 +1,22 @@
 <script lang="ts">
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
+	import Label from '$lib/Label.svelte';
 	import { Container, Row, Col } from 'svelte-materialify';
 </script>
 
 <Container class="pt-0">
 	<Row dense>
 		<Col class="col-5">
-			<p>Sidearm</p>
+			<Label>Sidearm</Label>
 		</Col>
 		<Col class="col-2">
-			<p>Damage</p>
+			<Label>Damage</Label>
 		</Col>
 		<Col class="col-2">
-			<p>Reach</p>
+			<Label>Reach</Label>
 		</Col>
 		<Col class="col-3">
-			<p>Effect</p>
+			<Label>Effect</Label>
 		</Col>
 	</Row>
 	<Row dense>
@@ -34,7 +35,7 @@
 	</Row>
 	<Row dense>
 		<Col>
-			<p>Misc Gear</p>
+			<Label>Misc Gear</Label>
 		</Col>
 	</Row>
 	<Row dense>
@@ -43,10 +44,3 @@
 		</Col>
 	</Row>
 </Container>
-
-<style lang="sass">
-    p
-        color: white
-        font-weight: 900
-        margin: 0
-</style>

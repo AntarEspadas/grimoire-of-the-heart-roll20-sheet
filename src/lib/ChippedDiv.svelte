@@ -4,12 +4,12 @@
 		topRight = 'top-right',
 		topLeft = 'top-left',
 		bottomRight = 'bottom-right',
-		bottomLeft = 'botton-left'
+		bottomLeft = 'bottom-left'
 	}
 </script>
 
 <script lang="ts">
-	export let chipSize: number;
+	export let chipSize: number | undefined = undefined;
 	export let corner: Corner = Corner.topRight;
 	export let style = '';
 
@@ -18,38 +18,41 @@
 	export let smH: string | undefined = undefined;
 	export let bgColor: string | undefined = undefined;
 
+	let className: string = '';
+	export { className as class };
+
 	$: smH ??= h;
 
-	function getCornerStyle(corner: Corner) {
-		switch (corner) {
-			case Corner.topRight:
-				return `clip-path: polygon(calc(100% - ${chipSize}px) 0, 100% ${chipSize}px, 100% 100%, 0 100%, 0 0);`;
-			case Corner.topLeft:
-				return `clip-path: polygon(${chipSize}px 0, 0 ${chipSize}px, 0 100%, 100% 100%, 100% 0);`;
-			case Corner.bottomRight:
-				return `clip-path: polygon(0 0, 0 100%, calc(100% - ${chipSize}px) 100%, 100% calc(100% - ${chipSize}px), 100% 0);`;
-			case Corner.bottomLeft:
-				return `clip-path: polygon(0 0, 100% 0, 100% 100%, ${chipSize}px 100%, 0 calc(100% - ${chipSize}px));`;
-			default:
-				break;
-		}
-	}
-
-	$: cornerStyle = getCornerStyle(corner);
+	$: widthStyle = w ? `width: ${w};` : '';
+	$: bgColorStyle = bgColor ? `background-color: ${bgColor};` : '';
+	$: chipSizeStyle = chipSize !== undefined && chipSize != 7 ? `--chip-size: ${chipSize}px;` : '';
 </script>
 
 <div
-	style="width: {w}; --height: {h}; background-color: {bgColor}; {style}; {cornerStyle}; --smHeight: {smH};"
+	style="{widthStyle} --height: {h}; --smHeight: {smH}; {chipSizeStyle} {bgColorStyle} {style}"
+	class="chipped-div {corner} {className}"
 	{...$$restProps}
 >
 	<slot />
 </div>
 
 <style lang="sass">
-	div
-		height: var(--height)
 
-	@media (min-width: 600px)
-		div
-			height: var(--smHeight)
+    .top-right
+        clip-path: polygon(calc(100% - var(--chip-size)) 0, 100% var(--chip-size), 100% 100%, 0 100%, 0 0)
+    .top-left
+        clip-path: polygon(var(--chip-size) 0, 0 var(--chip-size), 0 100%, 100% 100%, 100% 0)
+    .bottom-right
+        clip-path: polygon(0 0, 0 100%, calc(100% - var(--chip-size)) 100%, 100% calc(100% - var(--chip-size)), 100% 0)
+    .bottom-left
+        clip-path: polygon(0 0, 100% 0, 100% 100%, var(--chip-size) 100%, 0 calc(100% - var(--chip-size)))
+
+    div
+        height: var(--height)
+        background-color: white
+        --chip-size: 7px
+
+    @media (min-width: 600px)
+        div
+            height: var(--smHeight)
 </style>

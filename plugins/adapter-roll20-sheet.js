@@ -68,16 +68,16 @@ export default (options) => ({
 
 		fs.writeFileSync(path.join(outDir, 'sheet.json'), JSON.stringify(sheetJson, undefined, 4));
 
-		let indexHtml = fs.readFileSync(path.join(outDir, index)).toString();
-		let cssPath = /<\s*link.*href="(.*\.css)".*>/g.exec(indexHtml)?.at(1);
-		let indexSplit = indexHtml.split('<script type="module"');
-		indexSplit[indexSplit.length - 1] = '';
-		indexHtml = indexSplit.join('');
-		indexSplit = indexHtml.split('<!-- svelte head end -->');
+		let html = fs.readFileSync(path.join(outDir, index)).toString();
+		let cssPath = /<\s*link.*href="(.*\.css)".*>/g.exec(html)?.at(1);
+		// let indexSplit = indexHtml.split('<script type="module"');
+		// indexSplit[indexSplit.length - 1] = '';
+		// indexHtml = indexSplit.join('');
+		let indexSplit = html.split('<!-- svelte head end -->');
 		indexSplit[0] = '';
-		indexHtml = indexSplit.join('');
-		indexHtml = prettier.format(indexHtml, { filepath: index });
-		fs.writeFileSync(path.join(outDir, index), indexHtml);
+		html = indexSplit.join('');
+		html = prettier.format(html, { filepath: index });
+		fs.writeFileSync(path.join(outDir, index), html);
 		fs.renameSync(path.join(outDir, index), path.join(outDir, sheetJson.html));
 
 		let css = '';
@@ -88,21 +88,21 @@ export default (options) => ({
 		}
 
 		css = css.replace('@charset "UTF-8";', "")
-		cssPath = path.join(outDir, sheetJson.css)
-		fs.writeFileSync(cssPath, css);
 
 		const unCssOptions = {
-			stylesheets: [cssPath],
 			banner: false,
-			ignore: [/\.charactersheet.*/]
+			ignore: [/\.charactersheet.*/, /\.sheet-rolltemplate.*/, /.*inlinerollresult.*/],
+			raw: css
 		}
 
 		css = await new Promise((resolve) => {
-			uncss(indexHtml, unCssOptions, (error, output) => {
+			uncss(html, unCssOptions, (error, output) => {
 				resolve(output)
 			})
 		})
 
+
+		cssPath = path.join(outDir, sheetJson.css)
 		fs.writeFileSync(cssPath, css)
 	}
 });

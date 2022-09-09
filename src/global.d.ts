@@ -16,9 +16,11 @@ declare type EventInfo = {
 
 declare type AttributeContent = string | number | boolean;
 
-declare function getAttrs(
-	attributes: string[],
-	callback?: (values: { [key: string]: string }) => void
+declare type Event = "clicked" | "change" | "remove" | "sheet"
+
+declare function getAttrs<T>(
+	attributes: (keyof T)[],
+	callback?: (values: { [key in keyof T]: string }) => void
 ): void;
 
 declare function setAttrs(

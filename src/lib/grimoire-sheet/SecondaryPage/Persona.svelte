@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
+	import Label from '$lib/Label.svelte';
 	import { Container, Row, Col } from 'svelte-materialify';
 
 	const arr = new Array(7).fill(0).map((_, i) => i);
@@ -13,13 +14,13 @@
 	</Row>
 	<Row dense>
 		<Col class="col-4">
-			<p>Arcana</p>
+			<Label>Arcana</Label>
 		</Col>
 		<Col class="col-6">
-			<p>Name</p>
+			<Label>Name</Label>
 		</Col>
 		<Col>
-			<p>Lv</p>
+			<Label>Lv</Label>
 		</Col>
 	</Row>
 	{#each arr as i}
@@ -38,7 +39,7 @@
 </Container>
 
 <style lang="sass">
-    p, h5
+    h5
         color: white
         font-weight: 900
         margin: 0

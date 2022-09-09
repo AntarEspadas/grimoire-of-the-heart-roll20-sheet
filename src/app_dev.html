@@ -2,14 +2,24 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		%sveltekit.head%
-	</head>
 
-	<body>
-		<div class="charactersheet">%sveltekit.body%</div>
-	</body>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+	<meta name="viewport" content="width=device-width" />
+	%sveltekit.head%
+</head>
+
+<style type="text/css">
+	@font-face {
+		font-family: "Pictos";
+		src: url("%sveltekit.assets%/pictos.woff");
+	}
+</style>
+
+<body>
+	<div class="charactersheet">%sveltekit.body%</div>
+</body>
+
 </html>

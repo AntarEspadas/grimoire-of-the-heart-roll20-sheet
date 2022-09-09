@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { Container, Row, Col } from 'svelte-materialify';
 	import ChippedDiv from '$lib/ChippedDiv.svelte';
+	import Label from '$lib/Label.svelte';
 </script>
 
 <Container class="pt-0 pr-2 pl-2">
 	<Row dense>
 		<Col class="pb-0">
-			<p>Portrait</p>
-			<p /></Col
-		>
+			<Label>Portrait</Label>
+		</Col>
 	</Row>
 	<Row dense>
 		<Col class="pt-0">
@@ -18,17 +18,9 @@
 		</Col>
 	</Row>
 </Container>
+>
 
-<!-- <div style="height: calc(98% - {fontHeight});">
-	<ChippedDiv chipSize={30} w="95%" h="100%" bgColor="white">
-	</ChippedDiv>
-</div> -->
 <style lang="sass">
-    p 
-        color: white
-        font-weight: 900
-        margin: 0
-
     img
         width: 100%
         height: 100%

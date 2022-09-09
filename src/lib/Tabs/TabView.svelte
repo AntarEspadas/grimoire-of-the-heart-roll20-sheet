@@ -35,7 +35,11 @@
 		width: 100%;
 	}
 	:global(.charactersheet div.tabs_tab_panel) {
-		display: none;
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		transition-duration: 0.2s;
+		transition-timing-function: linear;
 	}
 
 	// if, for whatever reason, you need more than 10 tabs in your sheet,
@@ -44,7 +48,9 @@
 		:global(.charactersheet
 				input.tab-selector[name='attr_tabs_selected_index'][value='#{$i}']
 				~ div.tabs_tab_panel.tab_index_#{$i}) {
-			display: block;
+			opacity: 1;
+			visibility: visible;
+			transition: visibility 0s, opacity 0.2s linear;
 		}
 	}
 </style>

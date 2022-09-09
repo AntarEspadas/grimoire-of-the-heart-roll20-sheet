@@ -9,18 +9,12 @@ const production = process.env.NODE_ENV == 'production';
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: seqPreprocess([preprocess(), ...worker()]),
+	preprocess: seqPreprocess([...worker(), preprocess({ worker: ({ content }) => ({ code: content }) })]),
 
 	kit: {
 		adapter: adapter({ pages: 'pages' }),
-		prerender: {
-			default: true
-		},
-		browser: {
-			hydrate: !production
-		},
 		files: {
-			template: production ? 'src/app_prod.html' : 'src/app_dev.html',
+			appTemplate: production ? 'src/app_prod.html' : 'src/app_dev.html',
 			routes: 'src/sheet'
 		},
 		// routes: (path) => ['sheet.svelte', 'sheet.ts', 'sheet.js'].indexOf(path) !== -1

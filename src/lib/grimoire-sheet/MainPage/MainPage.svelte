@@ -10,6 +10,7 @@
 	import Persona from './Persona.svelte';
 	import Equipment from './Equipment.svelte';
 	import Resistances from './Resistances.svelte';
+	import AttackAndDodge from './AttackAndDodge.svelte';
 
 	const debug = false;
 
@@ -25,6 +26,13 @@
 			<Col class="col-12 sm-10">
 				<ChippedDiv w="100%" smH="125px" h="175px" {bgColor} chipSize={20}>
 					<Header />
+				</ChippedDiv>
+			</Col>
+		</Row>
+		<Row>
+			<Col>
+				<ChippedDiv w="100%" {bgColor} chipSize={20}>
+					<AttackAndDodge />
 				</ChippedDiv>
 			</Col>
 		</Row>

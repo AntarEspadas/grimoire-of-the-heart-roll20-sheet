@@ -1,7 +1,7 @@
 import type { Handle } from '@sveltejs/kit/types';
 
 export const handle: Handle = async ({ event, resolve }) => {
-    if (event.url.pathname != '/sheet')
+    if (event.url.pathname == '/')
         return new Response('', {
             status: 301,
             headers: {

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
+	import Label from '$lib/Label.svelte';
 	import { Container, Row, Col } from 'svelte-materialify';
 
 	const confidants = [
@@ -36,21 +37,19 @@
 	</Row>
 	<Row dense>
 		<Col class="col-5 pt-0">
-			<p>Arcana</p>
+			<Label>Arcana</Label>
 		</Col>
 		<Col class="col-5 pt-0">
-			<p>Name</p>
+			<Label>Name</Label>
 		</Col>
 		<Col class="col-2 pt-0">
-			<p>Rank</p>
+			<Label>Rank</Label>
 		</Col>
 	</Row>
 	{#each confidants as { label, name }, i}
 		<Row dense>
 			<Col class="col-5 pb-0 pt-0">
-				<div>
-					<p>{label}</p>
-				</div>
+				<Label justify="end">{label}</Label>
 			</Col>
 			<Col class="col-5 pb-0 pt-0">
 				<ChippedTextField name="attr_{name}_confidant" h="30px" chipSize={i ? 0 : 25} />
@@ -68,14 +67,8 @@
 </Container>
 
 <style lang="sass">
-    p, h5
+    h5
         color: white
         font-weight: 900
         margin: 0
-
-    div
-        height: 100%
-        display: flex
-        justify-content: flex-end
-        align-items: center
 </style>

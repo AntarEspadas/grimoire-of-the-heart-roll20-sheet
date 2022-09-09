@@ -5,7 +5,7 @@ function setActiveCharacterId(charId: string | boolean) {
 	const oldAcid = getActiveCharacterId();
 	const ev = new CustomEvent('message');
 	(ev as any).data = { id: '0', type: 'setActiveCharacter', data: charId };
-	self.dispatchEvent(ev);
+	self.dispatchEvent(ev as unknown as Event);
 	return oldAcid;
 }
 
@@ -25,10 +25,10 @@ export const SetTimeout = function (callback: () => void, timeout?: number) {
 		setActiveCharacterId(prevAcid);
 	}, timeout);
 };
-export function getAttrsAsync(attrs: string[]) {
+export function getAttrsAsync<T>(attrs: (keyof T)[]) {
 	const acid = getActiveCharacterId(); //save the current activeCharacterID in case it has changed when the promise runs
 	let prevAcid: string | boolean = false; //local variable defined here, because it needs to be shared across the promise callbacks defined below
-	return new Promise<{ [attr: string]: string }>((resolve) => {
+	return new Promise<{ [key in keyof T]: string }>((resolve) => {
 		prevAcid = setActiveCharacterId(acid); //in case the activeCharacterId has changed, restore it to what we were expecting and save the current value to restore later
 		getAttrs(attrs, (values) => {
 			resolve(values);

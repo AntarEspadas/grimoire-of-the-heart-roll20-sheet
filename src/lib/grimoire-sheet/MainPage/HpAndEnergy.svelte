@@ -5,22 +5,23 @@
 	import CustomCheckbox from '$lib/CustomCheckbox.svelte';
 	import ChippedDiv from '$lib/ChippedDiv.svelte';
 	import ChippedTextArea from '$lib/ChippedTextArea.svelte';
+	import Label from '$lib/Label.svelte';
 </script>
 
 <Container class="pa-1 pl-4">
 	<Row>
 		<Col class="pt-0">
 			<Row dense>
-				<Col class="col-7 left-col">
-					<p>Hit Points</p>
+				<Col class="col-7">
+					<Label justify="end">Hit Points</Label>
 				</Col>
 				<Col>
-					<ChippedTextField disabled name="attr_hit_points_max" chipSize={7} />
+					<ChippedTextField name="attr_hp_max" chipSize={7} />
 				</Col>
 			</Row>
 			<Row dense>
 				<Col>
-					<ChippedTextField name="attr_hit_points" chipSize={10} h="100px" fontSize="50px" />
+					<ChippedTextField name="attr_hp" chipSize={10} h="100px" fontSize="50px" />
 				</Col>
 			</Row>
 			<Row dense>
@@ -38,8 +39,8 @@
 				{/each}
 			</Row>
 			<Row dense>
-				<Col class="col-7 left-col">
-					<p>Damage Red</p>
+				<Col class="col-7">
+					<Label justify="end">Damage Red</Label>
 				</Col>
 				<Col>
 					<ChippedTextField name="attr_damage_reduction" chipSize={7} />
@@ -49,7 +50,7 @@
 		<Col class="pt-0">
 			<Row dense>
 				<Col>
-					<p>Energy/Max</p>
+					<Label>Energy/Max</Label>
 				</Col>
 			</Row>
 			<Row dense>
@@ -57,12 +58,12 @@
 					<ChippedTextField name="attr_energy" chipSize={7} />
 				</Col>
 				<Col class="col-4">
-					<ChippedTextField name="attr_energy_max" disabled chipSize={7} />
+					<ChippedTextField name="attr_energy_max" chipSize={7} />
 				</Col>
 			</Row>
 			<Row dense>
 				<Col>
-					<p>Buffs/Conditions</p>
+					<Label>Buffs/Conditions</Label>
 				</Col>
 			</Row>
 			<Row dense>
@@ -77,14 +78,4 @@
 <style lang="sass">
 	img
 		height: 100%
-
-	p
-		margin: 0
-		color: white
-		font-weight: 900
-	
-	:global(.left-col)
-		display: flex
-		align-items: center
-		justify-content: flex-end
 </style>

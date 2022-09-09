@@ -2,6 +2,7 @@
 	import { Container, Col, Row } from 'svelte-materialify';
 	import ChippedTextArea from '$lib/ChippedTextArea.svelte';
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
+	import Label from '$lib/Label.svelte';
 </script>
 
 <Container class="pt-1">
@@ -12,9 +13,7 @@
 			</div>
 		</Col>
 		<Col class="col-4">
-			<div class="label">
-				<p>Aspect Points</p>
-			</div>
+			<Label justify="end">Aspect Points</Label>
 		</Col>
 		<Col class="col-3">
 			<ChippedTextField chipSize={7} name="attr_aspect_points" type="number" />
@@ -28,16 +27,8 @@
 </Container>
 
 <style lang="sass">
-    h5, p
+    h5
         font-weight: 900
         color: white
         margin: 0
-
-    div
-        display: flex
-        align-items: center
-        height: 100%
-
-    .label
-        justify-content: flex-end
 </style>
