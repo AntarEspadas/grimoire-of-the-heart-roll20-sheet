@@ -6,13 +6,20 @@
 
 	export let offset = '';
 
+	export let style = '';
+
+	export let element = 'p';
+
 	$: transform = offset ? `transform: translateX(${offset});` : '';
 </script>
 
 <div
-	style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: {justify};"
+	style="{style} width: 100%; height: 100%; display: flex; align-items: center; justify-content: {justify};"
 >
-	<p style="color: {color}; font-weight: {fontWeight}; margin: {margin}; {transform}">
+	<svelte:element
+		this={element}
+		style="color: {color}; font-weight: {fontWeight}; margin: {margin}; {transform}"
+	>
 		<slot />
-	</p>
+	</svelte:element>
 </div>

@@ -1,12 +1,13 @@
 <script lang="ts">
 	import ChippedTextArea from '$lib/ChippedTextArea.svelte';
+	import Label from '$lib/Label.svelte';
 	import { Container, Row, Col } from 'svelte-materialify';
 </script>
 
 <Container class="pt-0">
 	<Row dense>
 		<Col>
-			<h5>Notes</h5>
+			<Label element="h5">Notes</Label>
 		</Col>
 	</Row>
 	<Row dense>
@@ -15,10 +16,3 @@
 		</Col>
 	</Row>
 </Container>
-
-<style lang="sass">
-    h5
-        color: white
-        font-weight: 900
-        margin: 0
-</style>

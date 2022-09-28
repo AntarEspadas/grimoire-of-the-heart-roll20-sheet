@@ -19,7 +19,7 @@
 <Container class="pt-1">
 	<Row dense>
 		<Col>
-			<h5>Social Skills</h5>
+			<Label element="h5">Social Skills</Label>
 		</Col>
 	</Row>
 	<Row dense>
@@ -78,9 +78,4 @@
         color: black
         font-weight: 600
         pointer-events: none
-
-    h5 
-        font-weight: 900
-        color: white
-        margin: 0
 </style>

@@ -63,7 +63,7 @@
 <Container class="pt-0">
 	<Row dense>
 		<Col class="pt-0 pb-0">
-			<h5>Bonuses</h5>
+			<Label element="h5">Bonuses</Label>
 		</Col>
 	</Row>
 	{#each skills as skillRow}
@@ -79,10 +79,3 @@
 		</Row>
 	{/each}
 </Container>
-
-<style lang="sass">
-    h5
-        color: white
-        font-weight: 900
-        margin: 0
-</style>

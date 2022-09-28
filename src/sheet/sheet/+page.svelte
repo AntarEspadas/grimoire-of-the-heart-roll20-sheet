@@ -59,6 +59,8 @@
 	import SecondaryPage from '$lib/grimoire-sheet/SecondaryPage/SecondaryPage.svelte';
 	import PersonaPage from '$lib/grimoire-sheet/PersonaPage/PersonaPage.svelte';
 	import GeneralTemplate from '$lib/grimoire-sheet/roll-templates/GeneralTemplate.svelte';
+	import ConfigPage from '$lib/grimoire-sheet/ConfigPage/ConfigPage.svelte';
+	import BioPage from '$lib/grimoire-sheet/BioPage/BioPage.svelte';
 
 	const production = process.env.NODE_ENV == 'production';
 	// const production = true;
@@ -71,8 +73,9 @@
 				<TabButton>Main</TabButton>
 				<TabButton>Secondary</TabButton>
 				<TabButton>Persona</TabButton>
-				<TabButton>Persona 2</TabButton>
+				<TabButton toggleAttribute="attr_enable_persona_2">Persona 2</TabButton>
 				<TabButton>Bio</TabButton>
+				<TabButton>Config</TabButton>
 			</div>
 			<div class="spacer" />
 			<Tab>
@@ -87,7 +90,12 @@
 			<Tab>
 				<PersonaPage suffix="2" />
 			</Tab>
-			<Tab />
+			<Tab>
+				<BioPage />
+			</Tab>
+			<Tab>
+				<ConfigPage />
+			</Tab>
 		</TabView>
 	</MaterialApp>
 </div>

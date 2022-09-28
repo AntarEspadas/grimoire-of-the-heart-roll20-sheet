@@ -11,7 +11,7 @@
 	<!--  -->
 	<Row dense>
 		<Col class="pb-0">
-			<h5>Persona</h5>
+			<Label element="h5">Persona</Label>
 		</Col>
 	</Row>
 	<Row dense>
@@ -53,11 +53,3 @@
 		</Col>
 	</Row>
 </Container>
-
-<style lang="sass">
-    h5
-        margin: 0
-        color: white
-        font-weight: 900
-
-</style>

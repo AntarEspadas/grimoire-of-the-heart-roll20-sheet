@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
+	import Label from '$lib/Label.svelte';
 	import { Container, Row, Col } from 'svelte-materialify';
 	import CombatSkill from './CombatSkill.svelte';
 
@@ -9,9 +10,7 @@
 <Container>
 	<Row noGutters>
 		<Col>
-			<div>
-				<h5>Combat Skills</h5>
-			</div>
+			<Label element="h5">Combat Skills</Label>
 		</Col>
 	</Row>
 	<Row>
@@ -37,11 +36,3 @@
 		</Col>
 	</Row>
 </Container>
-
-<style lang="sass">
-	h5
-		margin: 0
-		padding: 0
-		color: white
-		font-weight: 900
-</style>

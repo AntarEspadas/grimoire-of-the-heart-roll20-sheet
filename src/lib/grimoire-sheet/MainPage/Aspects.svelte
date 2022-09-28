@@ -8,9 +8,7 @@
 <Container class="pt-1">
 	<Row dense>
 		<Col class="col-4">
-			<div>
-				<h5>Aspects</h5>
-			</div>
+			<Label element="h5">Aspects</Label>
 		</Col>
 		<Col class="col-4">
 			<Label justify="end">Aspect Points</Label>
@@ -25,10 +23,3 @@
 		</Col>
 	</Row>
 </Container>
-
-<style lang="sass">
-    h5
-        font-weight: 900
-        color: white
-        margin: 0
-</style>

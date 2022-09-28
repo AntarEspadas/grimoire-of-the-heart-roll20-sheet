@@ -12,7 +12,7 @@
 <Container class="pt-0">
 	<Row dense>
 		<Col class="pb-0">
-			<h5>Items</h5>
+			<Label element="h5">Items</Label>
 		</Col>
 	</Row>
 	<Row dense>
@@ -51,10 +51,3 @@
 		</EditableField>
 	</fieldset>
 </Container>
-
-<style lang="sass">
-    h5
-        color: white
-        font-weight: 900
-        margin: 0
-</style>

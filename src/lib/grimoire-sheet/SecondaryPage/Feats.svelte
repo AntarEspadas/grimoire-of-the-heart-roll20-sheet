@@ -37,7 +37,7 @@
 <Container class="pt-0">
 	<Row dense>
 		<Col>
-			<h5>Feats</h5>
+			<Label element="h5">Feats</Label>
 		</Col>
 	</Row>
 	<fieldset class="repeating_feats">
@@ -76,10 +76,3 @@
 		</Row>
 	</fieldset>
 </Container>
-
-<style lang="sass">
-    h5, span
-        color: white
-        font-weight: 900
-        margin: 0
-</style>

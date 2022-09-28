@@ -39,7 +39,14 @@
 		{chatTemplate}
 		class="mb-3"
 	>
-		<ChippedDiv chipSize={30} h="fit-content" w="100%" {bgColor} class="d-flex" slot="edit">
+		<ChippedDiv
+			chipSize={30}
+			h="fit-content"
+			w="100%"
+			{bgColor}
+			class="d-flex flex-column flex-sm-row"
+			slot="edit"
+		>
 			<Container>
 				<Row dense>
 					<Col>
@@ -149,37 +156,37 @@
 		<ChippedDiv chipSize={30} h="fit-content" w="100%" {bgColor} class="d-flex" slot="normal">
 			<Container class="pt-0">
 				<Row dense>
-					<Col class="col-5">
+					<Col class="col-8 sm-5">
 						<div>
 							<Label>Spell</Label>
 							<ChippedTextField chipSize={7} name={attr('_spell_name')} disabled />
 						</div>
 					</Col>
-					<Col class="col-2">
+					<Col class="col-4 sm-2">
 						<div>
 							<Label>Roll</Label>
 							<ChippedTextField chipSize={7} name={attr('_spell_roll', '_display')} disabled />
 						</div>
 					</Col>
-					<Col class="col-1 ">
+					<Col class="sm-1 ">
 						<div>
 							<Label>Tier</Label>
 							<ChippedTextField chipSize={7} name={attr('_spell_tier')} disabled />
 						</div>
 					</Col>
-					<Col class="col-1 ">
+					<Col class="sm-1 ">
 						<div>
 							<Label>Repress</Label>
 							<ChippedCheckbox name={attr('_spell_repress')} value="1" />
 						</div>
 					</Col>
-					<Col class="col-1 offset-1">
+					<Col class="sm-1 offset-sm-1">
 						<div>
 							<Label>Uses /</Label>
 							<ChippedTextField chipSize={7} name={attr('_spell_uses')} />
 						</div>
 					</Col>
-					<Col class="col-1">
+					<Col class="col-sm-1">
 						<div>
 							<Label>Max</Label>
 							<ChippedTextField chipSize={7} name={attr('_spell_uses', '_max')} disabled />

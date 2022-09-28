@@ -18,6 +18,8 @@
 
 	export let corner: Corner = Corner.topRight;
 
+	export let style = '';
+
 	let className: string | undefined = undefined;
 	export { className as class };
 
@@ -26,7 +28,7 @@
 	$: cssClass = disabled ? '' : 'chipped-input ';
 </script>
 
-<ChippedDiv {w} h={h ?? '33.2px'} {chipSize} {corner} class="{cssClass}{className}">
+<ChippedDiv {w} h={h ?? '33.2px'} {chipSize} {corner} class="{cssClass}{className}" {style}>
 	{#if disabled}
 		<div style={fontSizeStyle}>
 			<span {name} data-i18n={i18n}>
