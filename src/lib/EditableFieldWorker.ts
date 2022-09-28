@@ -1,5 +1,6 @@
 export function attachRepeatingListeners(...sections: string[]) {
     sections = sections.map(section => `clicked:repeating_${section}:editbutton`)
+    console.log(sections.join(" "))
     on(sections.join(" "), (e) => {
         console.log(e)
         const sectionId = e.sourceAttribute?.replace("editbutton", "") as string

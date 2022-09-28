@@ -26,6 +26,7 @@
 		"glob": "^8.0.3",
 		"memfs": "^3.4.7",
 		"nodemon": "^2.0.19",
+		"postcss": "^8.4.16",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
 		"pug": "^3.0.2",
@@ -33,6 +34,7 @@
 		"sass": "^1.54.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
+		"svelte-materialify": "^0.3.11",
 		"svelte-preprocess": "^4.10.6",
 		"svelte-sequential-preprocessor": "^0.0.7",
 		"ts-loader": "^9.3.1",
@@ -42,8 +44,5 @@
 		"vite": "^3.1.0",
 		"webpack": "^5.74.0"
 	},
-	"type": "module",
-	"dependencies": {
-		"svelte-materialify": "^0.3.11"
-	}
+	"type": "module"
 }

@@ -4,7 +4,7 @@
 	import { num } from '../../lib/util';
 	import { socialSkills } from '../../lib/values';
 
-	attachRepeatingListeners('personae', 'items', 'feats');
+	attachRepeatingListeners('personae', 'items', 'feats', 'skills', 'skills2');
 	attachListeners('main_weapon');
 
 	on('change:character_level change:vitality', () => {
@@ -31,10 +31,17 @@
 		setAttrs({ [tierAttr]: tier, [titleAttr]: tier });
 	});
 
-	on('change:weapon_damage', (e) => {
-		const value = e.newValue?.replaceAll('{', '').replaceAll('}', '').replace('@', '') as string;
-		setAttrs({ weapon_damage_display: value });
-	});
+	on(
+		'change:weapon_damage change:repeating_skills:_spell_roll change:repeating_skills2:_spell_roll2',
+		(e) => {
+			const attr = e.sourceAttribute + '_display';
+			const value = e.newValue
+				?.replaceAll('{', '')
+				.replaceAll('}', '')
+				.replaceAll('@', '') as string;
+			setAttrs({ [attr]: value });
+		}
+	);
 
 	on('change:hdc_mod change:ddc_mod', (e) => {
 		const attr = e.sourceAttribute?.substring(0, 3) as string;
@@ -78,7 +85,7 @@
 				<PersonaPage suffix="" />
 			</Tab>
 			<Tab>
-				<PersonaPage suffix="_2" />
+				<PersonaPage suffix="2" />
 			</Tab>
 			<Tab />
 		</TabView>

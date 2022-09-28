@@ -6,6 +6,8 @@
 
 	import { Container, Row, Col } from 'svelte-materialify';
 
+	export let initiative = false;
+
 	const mods = new Array(7).fill(0).map((_, i) => i - 3);
 
 	const template = (dice: string, type: string, skill: string) =>
@@ -17,7 +19,7 @@
 
 <Container>
 	<Row>
-		<Col class="d-flex justify-center">
+		<Col class="d-flex justify-center col-6">
 			<button class="roll-button" type="roll" value={template('hdc', 'Attack', 'tec')}
 				>Roll Attack</button
 			>
@@ -34,10 +36,10 @@
 		</Col>
 	</Row>
 	<Row>
-		<Col class="d-flex justify-center">
-			<button class="roll-button" type="roll" value={template('ddc', 'Dodge', 'agi')}
-				>Roll Dodge</button
-			>
+		<Col class="d-flex justify-center col-6">
+			<button class="roll-button" type="roll" value={template('ddc', 'Dodge', 'agi')}>
+				Roll Dodge
+			</button>
 		</Col>
 		<Col>
 			<Label justify="right">Dodge Dice Category</Label>
@@ -50,6 +52,13 @@
 			</ChippedSelect>
 		</Col>
 	</Row>
+	{#if initiative}
+		<Row>
+			<Col class="d-flex justify-center col-6">
+				<button class="roll-button" type="roll">Initiative</button>
+			</Col>
+		</Row>
+	{/if}
 </Container>
 
 <style lang="sass">

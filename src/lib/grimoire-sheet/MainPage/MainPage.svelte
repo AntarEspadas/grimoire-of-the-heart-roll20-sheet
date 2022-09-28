@@ -10,7 +10,7 @@
 	import Persona from './Persona.svelte';
 	import Equipment from './Equipment.svelte';
 	import Resistances from './Resistances.svelte';
-	import AttackAndDodge from './AttackAndDodge.svelte';
+	import CombatRolls from './CombatRolls.svelte';
 
 	const debug = false;
 
@@ -32,7 +32,7 @@
 		<Row>
 			<Col>
 				<ChippedDiv w="100%" {bgColor} chipSize={20}>
-					<AttackAndDodge />
+					<CombatRolls initiative />
 				</ChippedDiv>
 			</Col>
 		</Row>

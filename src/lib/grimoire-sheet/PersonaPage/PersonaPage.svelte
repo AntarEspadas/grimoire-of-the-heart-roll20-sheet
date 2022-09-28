@@ -2,8 +2,8 @@
 	import { getContext as gc } from 'svelte';
 
 	interface PersonaContext {
-		getName(baseName: string, max?: boolean): string;
-		attr(baseName: string, max?: boolean): string;
+		getName(baseName: string, suffix?: string): string;
+		attr(baseName: string, suffix?: string): string;
 	}
 
 	const key = Symbol();
@@ -25,13 +25,15 @@
 	import Resistances from '../MainPage/Resistances.svelte';
 	import Bonuses from './Bonuses.svelte';
 	import { setContext } from 'svelte';
-	import Spells from './SpellList.svelte';
-
-	const getName = (baseName: string, max: boolean = false) =>
-		baseName + suffix + (max ? '_max' : '');
-	const attr = (baseName: string, max: boolean = false) => 'attr_' + getName(baseName, max);
+	import SpellsList from './SpellList.svelte';
+	import CombatRolls from '../MainPage/CombatRolls.svelte';
+	import ChippedDiv from '$lib/ChippedDiv.svelte';
 
 	export let suffix: string;
+
+	const getName = (baseName: string, suffix_2: string = '') => baseName + suffix + suffix_2;
+	const attr = (baseName: string, suffix: string = '') => 'attr_' + getName(baseName, suffix);
+
 	setContext<PersonaContext>(key, {
 		getName,
 		attr
@@ -66,9 +68,16 @@
 			</div>
 		</Col>
 	</Row>
+	<Row>
+		<Col>
+			<ChippedDiv {bgColor} chipSize={20}>
+				<CombatRolls />
+			</ChippedDiv>
+		</Col>
+	</Row>
 	<Row dense>
 		<Col class="col-12">
-			<Spells />
+			<SpellsList />
 		</Col>
 	</Row>
 </Container>

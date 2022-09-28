@@ -2,22 +2,26 @@
 	let value = 'true';
 
 	export let chatTemplate: string | undefined = undefined;
-	export let attackTemplate: string | undefined = undefined;
+	export let rollTemplate: string | undefined = undefined;
 
 	export let fieldName = '';
 
-	export let attackAttribute: string | undefined = undefined;
+	export let rollAttribute: string | undefined = undefined;
 
-	export let hassAttack = false;
+	export let hasRoll = false;
 
 	export let hideBubble = false;
+
+	let className = '';
+
+	export { className as class };
 
 	const production = process.env.NODE_ENV !== 'development';
 
 	const positionRelative = production && !fieldName.length ? undefined : 'position: relative;';
 </script>
 
-<div class="editable-field" style={positionRelative}>
+<div class="editable-field {className}" style={positionRelative}>
 	<input class="edit-mode" type="hidden" name="attr_{fieldName}editmode" {value} />
 	<button
 		class="editbutton"
@@ -28,9 +32,9 @@
 	{#if !hideBubble}
 		<button class="showbutton" type="roll" value={chatTemplate}>w</button>
 	{/if}
-	{#if attackAttribute}
-		<input class="attack-enabled" type="hidden" name={attackAttribute} value={Number(hassAttack)} />
-		<button class="attackbutton" type="roll" value={attackTemplate}>[</button>
+	{#if rollAttribute}
+		<input class="attack-enabled" type="hidden" name={rollAttribute} value={Number(hasRoll)} />
+		<button class="attackbutton" type="roll" value={rollTemplate}>T</button>
 	{/if}
 
 	<slot />
@@ -69,7 +73,7 @@
     .editable-field .attackbutton
         top: 20px
         right: -4px 
-        font-family: "Pictos Custom"
+        font-family: "dicefontd20"
 
     .editable-field button
         transition-property: opacity, transform

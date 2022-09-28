@@ -7,16 +7,16 @@
 	import ChippedDiv from '$lib/ChippedDiv.svelte';
 	import ChippedSelect from '$lib/ChippedSelect.svelte';
 
-	const attackTemplate = `&{template:general} {{title=@{weapon_name}}} {{subtitle=@{weapon_damage_type} damage}} {{color=blue}} {{roll=[[@{weapon_damage}]]}}`;
+	const rollTemplate = `&{template:general} {{title=@{weapon_name}}} {{subtitle=@{weapon_damage_type} damage}} {{color=blue}} {{roll=[[@{weapon_damage}]]}}`;
 	const chatTemplate = `&{template:general} {{weapon=@{weapon_name}}} {{damage=@{weapon_damage_display}}} {{reach=@{weapon_reach}}} {{type=@{weapon_damage_type}}} {{effect=@{weapon_effect}}}`;
 </script>
 
 <Container>
 	<EditableField
 		fieldName="main_weapon"
-		hassAttack
-		attackAttribute="attr_weapon_attack"
-		{attackTemplate}
+		hasRoll
+		rollAttribute="attr_weapon_attack"
+		{rollTemplate}
 		{chatTemplate}
 	>
 		<Row dense>

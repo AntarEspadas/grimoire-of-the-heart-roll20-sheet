@@ -17,6 +17,9 @@
         width: 100%
         height: 100%
 
+    label:hover, input:hover
+        cursor: pointer
+
     input
         width: 50%
 

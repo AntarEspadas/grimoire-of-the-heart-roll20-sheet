@@ -8,7 +8,6 @@
 	import Items from './Items.svelte';
 	import Notes from './Notes.svelte';
 	import Persona from './Persona.svelte';
-	import PersonaRepeating from './PersonaRepeating.svelte';
 	import Portrait from './Portrait.svelte';
 
 	let bgColor = '#8182AB';
@@ -36,7 +35,7 @@
 			</Row>
 			<Row dense>
 				<ChippedDiv chipSize={40} w="100%" style="min-height: 335px;" {bgColor}>
-					<PersonaRepeating />
+					<Persona />
 				</ChippedDiv>
 			</Row>
 		</Col>
