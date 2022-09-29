@@ -32,7 +32,10 @@
 								name="attr_deaths_door_{i}"
 								style="height: 35px; display: flex; justify-content: center; align-items: center;"
 							>
-								<img src="http://kurisu.pls-step-on.me/media/noun-skull-26391.svg" alt="skull" />
+								<img
+									src="https://raw.githubusercontent.com/Naratna/grimoire-of-the-heart-roll20-sheet/e6d6e462a93e31fa715c6ddc4063a62f03f4ef99/static/assets/skull.svg"
+									alt="skull"
+								/>
 							</CustomCheckbox>
 						</ChippedDiv>
 					</Col>
