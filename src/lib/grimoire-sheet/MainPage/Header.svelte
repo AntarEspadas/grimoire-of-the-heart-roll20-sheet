@@ -12,7 +12,7 @@
 <Container class="pt-0" style="transform: translateX(-1%)">
 	<Row>
 		<Col class="col-3 sm-2">
-			<Label {offset} {justify}>Character</Label>
+			<Label {offset} {justify} i18n="character">Character</Label>
 		</Col>
 		<Col class="col-9 sm-6">
 			<ChippedTextField name="attr_character_name" chipSize={7} {bgColor} />

@@ -41,12 +41,15 @@
 
 	let bgColor = '#FB6674';
 
-	const types = [
-		['physical', 'fire'],
-		['ice', 'thunder', 'wind'],
-		['psychokinetic', 'nuclear', 'light'],
-		['dark', 'status', 'intel']
-	];
+	const areas = `
+		". title title title"
+		". physical-img fire-img ice-img"
+		". physical fire ice"
+		"thunder-img wind-img psychokinetic-img nuclear-img"
+		"thunder wind psychokinetic nuclear"
+		"dark-img light-img status-img intel-img"
+		"dark light status intel"
+	`;
 </script>
 
 <Container fluid>
@@ -63,7 +66,7 @@
 					<Bonuses />
 				</div>
 				<div class="resistances">
-					<Resistances {types} justify="end" titleOffset={4} inputHeight="25px" imgHeight="25px" />
+					<Resistances rows="auto repeat(6, 25px)" {areas} cols={4} />
 				</div>
 			</div>
 		</Col>

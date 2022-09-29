@@ -1,58 +1,49 @@
 <script lang="ts">
-	import { Container, Row, Col } from 'svelte-materialify';
-	import ChippedTextField from '$lib/ChippedTextField.svelte';
 	import Label from '$lib/Label.svelte';
-	import { getContext } from '../PersonaPage/PersonaPage.svelte';
+	import Resistance from './Resistance.svelte';
 
-	export let inputHeight: string | undefined = undefined;
-	export let imgHeight = '40px';
-
-	export let types: string[][] = [
-		['physical', 'fire', 'ice'],
-		['thunder', 'wind', 'psychokinetic'],
-		['nuclear', 'light', 'dark'],
-		['status', 'intel']
-	];
-
-	export let justify = 'center';
-
-	export let titleOffset: number = 0;
-
-	const url = 'http://kurisu.pls-step-on.me/media/types/';
-
-	const { attr } = getContext();
+	export let cols = 3;
+	export let rows = 'auto repeat(4, 30px 32px)';
+	export let areas = `
+            'title title title'
+            'physical-img fire-img ice-img'
+			'physical fire ice'
+			'thunder-img wind-img psychokinetic-img'
+			'thunder wind psychokinetic'
+			'nuclear-img dark-img light-img'
+			'nuclear dark light'
+			'status-img intel-img .'
+			'status intel .'
+    `;
 </script>
 
-<Container class="pt-0">
-	<Row dense>
-		<Col class="offset-{titleOffset}">
-			<Label>Resistances</Label>
-		</Col>
-	</Row>
-	{#each types as typeRow}
-		<Row dense class="d-flex justify-{justify}">
-			{#each typeRow as resistance}
-				<Col class="pt-0 pb-0 col-4">
-					<img
-						src="{url}{resistance}.png"
-						alt="{resistance}_resistance"
-						style="height: {imgHeight}"
-					/>
-				</Col>
-			{/each}
-		</Row>
-		<Row dense class="d-flex justify-{justify}">
-			{#each typeRow as type}
-				<Col class="pt-1 pb-1 col-4">
-					<ChippedTextField h={inputHeight} name={attr(type + '_resistance')} chipSize={7} />
-				</Col>
-			{/each}
-		</Row>
-	{/each}
-</Container>
+<div class="resistances">
+	<div class="grid" style="--areas: {areas}; --rows: {rows}; --cols: {cols}">
+		<Label element="h6" style="grid-area: title;">Resistances</Label>
+		<Resistance type="physical" />
+		<Resistance type="fire" />
+		<Resistance type="ice" />
+		<Resistance type="thunder" />
+		<Resistance type="wind" />
+		<Resistance type="psychokinetic" />
+		<Resistance type="nuclear" />
+		<Resistance type="dark" />
+		<Resistance type="light" />
+		<Resistance type="status" />
+		<Resistance type="intel" />
+	</div>
+</div>
 
-<style lang="sass">
-    img
-        width: 100%
-        object-fit: cover
+<style lang="scss">
+	.resistances {
+		padding: 10px;
+	}
+
+	.grid {
+		display: grid;
+		gap: 5px;
+		grid-template-columns: repeat(var(--cols), 1fr);
+		grid-template-rows: var(--rows);
+		grid-template-areas: var(--areas);
+	}
 </style>
