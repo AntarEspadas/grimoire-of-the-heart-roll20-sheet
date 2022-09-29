@@ -10,6 +10,9 @@
 
 	const mods = new Array(7).fill(0).map((_, i) => i - 3);
 
+	const initiativeRoll =
+		'&{template:general} {{title=Initiative}} {{roll=[[1d12 + @{agility}[AGI] &{tracker}]]}} {{color=blue}}';
+
 	const template = (dice: string, type: string, skill: string) =>
 		`&{template:general} {{title=${type}}} {{roll=[[@{${skill}}d@{${dice}}[${skill.toUpperCase()}d@{${dice}}]]]}}`;
 </script>
@@ -55,7 +58,7 @@
 	{#if initiative}
 		<Row>
 			<Col class="d-flex justify-center col-6">
-				<button class="roll-button" type="roll">Initiative</button>
+				<button class="roll-button" type="roll" value={initiativeRoll}>Initiative</button>
 			</Col>
 		</Row>
 	{/if}
