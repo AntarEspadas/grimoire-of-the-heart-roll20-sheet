@@ -20,10 +20,13 @@
 <div class="guide" style={debug ? undefined : 'background-image: unset;'}>
 	<Container fluid>
 		<Row>
-			<Col>
-				<slot name="image" />
+			<Col class="d-none d-sm-flex">
+				<img
+					src="https://raw.githubusercontent.com/Naratna/grimoire-of-the-heart-roll20-sheet/master/static/assets/grimoire-logo.png"
+					alt="logo"
+				/>
 			</Col>
-			<Col class="col-12 sm-10">
+			<Col class="col-12 sm-9 pl-sm-0">
 				<ChippedDiv w="100%" smH="125px" h="175px" {bgColor} chipSize={20}>
 					<Header />
 				</ChippedDiv>
@@ -82,6 +85,11 @@
 </div>
 
 <style lang="sass">
+
+	img
+		width: 100%
+		object-fit: contain
+
 	.guide
 		background: url("https://raw.githubusercontent.com/grimoireofheart/grimoireofheart.github.io/main/Resources/Sheets/PNG/Character%20Sheet/Character%20Sheet-1.png")
 		height: 100%
