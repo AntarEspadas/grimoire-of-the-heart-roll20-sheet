@@ -10,6 +10,8 @@
 
 	export let component: 'text-area' | 'text-field' = 'text-field';
 
+	export let i18n: string;
+
 	const components = {
 		'text-area': ChippedTextArea,
 		'text-field': ChippedTextField
@@ -24,7 +26,7 @@
 	$: extraProps = component == 'text-area' ? { h: '100%' } : {};
 </script>
 
-<Label style="grid-area: {internalName}-label;">{name}</Label>
+<Label {i18n} style="grid-area: {internalName}-label;">{name}</Label>
 <svelte:component
 	this={selectedComponent}
 	style="grid-area: {internalName}"

@@ -32,24 +32,24 @@
 <Container class="pt-0">
 	<Row dense>
 		<Col class="pb-0">
-			<Label element="h5">Confidants</Label>
+			<Label i18n="confidants" element="h5">Confidants</Label>
 		</Col>
 	</Row>
 	<Row dense>
 		<Col class="col-5 pt-0">
-			<Label>Arcana</Label>
+			<Label i18n="arcana">Arcana</Label>
 		</Col>
 		<Col class="col-5 pt-0">
-			<Label>Name</Label>
+			<Label i18n="name">Name</Label>
 		</Col>
 		<Col class="col-2 pt-0">
-			<Label>Rank</Label>
+			<Label i18n="rank">Rank</Label>
 		</Col>
 	</Row>
 	{#each confidants as { label, name }, i}
 		<Row dense>
 			<Col class="col-5 pb-0 pt-0">
-				<Label justify="end">{label}</Label>
+				<Label i18n="tarot-{name}" justify="end">{label}</Label>
 			</Col>
 			<Col class="col-5 pb-0 pt-0">
 				<ChippedTextField name="attr_{name}_confidant" h="30px" chipSize={i ? 0 : 25} />

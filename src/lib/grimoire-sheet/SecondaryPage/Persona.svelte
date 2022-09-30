@@ -13,18 +13,18 @@
 <Container class="pt-0">
 	<Row dense>
 		<Col class="pb-0">
-			<Label element="h5">Persona</Label>
+			<Label i18n="persona" element="h5">Persona</Label>
 		</Col>
 	</Row>
 	<Row dense>
 		<Col class="col-4">
-			<Label>Arcana</Label>
+			<Label i18n="arcana">Arcana</Label>
 		</Col>
 		<Col class="col-6">
-			<Label>Name</Label>
+			<Label i18n="arcana">Name</Label>
 		</Col>
 		<Col>
-			<Label>Lv</Label>
+			<Label i18n="level-brief">Lv</Label>
 		</Col>
 	</Row>
 	<fieldset class="repeating_personae">
@@ -43,7 +43,7 @@
 			<svelte:fragment slot="edit">
 				<Row dense>
 					<Col>
-						<Label>Notes</Label>
+						<Label i18n="notes">Notes</Label>
 					</Col>
 				</Row>
 				<Row dense>

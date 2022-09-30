@@ -4,7 +4,7 @@
 </script>
 
 <div class="portrait">
-	<Label element="h5">Portrait and persona</Label>
+	<Label element="h5" i18n="portrait-persona">Portrait and persona</Label>
 </div>
 
 <style lang="scss">

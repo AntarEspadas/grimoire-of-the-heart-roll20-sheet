@@ -11,24 +11,24 @@
 	<!--  -->
 	<Row dense>
 		<Col class="pb-0">
-			<Label element="h5">Persona</Label>
+			<Label i18n="persona" element="h5">Persona</Label>
 		</Col>
 	</Row>
 	<Row dense>
 		<Col class="col-3 pt-0">
-			<Label {justify}>Name</Label>
+			<Label i18n="name" {justify}>Name</Label>
 		</Col>
 		<Col class="col-4 pt-0">
 			<ChippedTextField name="attr_persona_name" chipSize={7} />
 		</Col>
 		<Col class="col-1 pt-0">
-			<Label {justify}>Lv</Label>
+			<Label i18n="level-brief" {justify}>Lv</Label>
 		</Col>
 		<Col class="pt-0">
 			<ChippedTextField type="number" name="attr_persona_level" chipSize={7} />
 		</Col>
 		<Col class="col-1 pt-0">
-			<Label {justify}>SP</Label>
+			<Label i18n="spirit-points-brief" {justify}>SP</Label>
 		</Col>
 		<Col class="pt-0">
 			<ChippedTextField type="number" name="attr_spell_points" chipSize={7} />
@@ -36,7 +36,7 @@
 	</Row>
 	<Row dense>
 		<Col class="col-3 pt-0 pb-0">
-			<Label {justify}>Conviction</Label>
+			<Label i18n="conviction-belief" {justify}>Conviction</Label>
 		</Col>
 		<Col class="pt-0 pb-0">
 			<ChippedTextField name="attr_conviction" chipSize={7} />
@@ -44,7 +44,7 @@
 	</Row>
 	<Row dense>
 		<Col class="col-3 pt-0 pb-0">
-			<Label justify="center">Natural Skill</Label>
+			<Label i18n="natural-skill" justify="center">Natural Skill</Label>
 		</Col>
 	</Row>
 	<Row dense>

@@ -4,13 +4,13 @@
 </script>
 
 <div class="personal">
-	<Label element="h5">Personal</Label>
+	<Label element="h5" i18n="personal-information">Personal</Label>
 
 	<div class="grid">
-		<LabeledInput name="Fears" />
-		<LabeledInput name="Ambition" />
-		<LabeledInput name="Dream" />
-		<LabeledInput name="Philosophy" />
+		<LabeledInput i18n="fears" name="Fears" />
+		<LabeledInput i18n="ambition" name="Ambition" />
+		<LabeledInput i18n="dream" name="Dream" />
+		<LabeledInput i18n="philosophy" name="Philosophy" />
 	</div>
 </div>
 

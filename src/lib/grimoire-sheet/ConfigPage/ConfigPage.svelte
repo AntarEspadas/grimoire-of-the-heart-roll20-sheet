@@ -16,7 +16,7 @@
 					<ChippedCheckbox name="attr_enable_persona_2" value="1" />
 				</Col>
 				<Col>
-					<Label>Second Persona Page</Label>
+					<Label i18n="second-persona-page">Second Persona Page</Label>
 				</Col>
 			</Row>
 		</Container>

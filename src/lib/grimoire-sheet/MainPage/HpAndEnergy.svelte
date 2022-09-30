@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { Container, Row, Col } from 'svelte-materialify';
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
 
@@ -13,7 +13,7 @@
 		<Col class="pt-0">
 			<Row dense>
 				<Col class="col-7">
-					<Label justify="end">Hit Points</Label>
+					<Label i18n="hit-points" justify="end">Hit Points</Label>
 				</Col>
 				<Col>
 					<ChippedTextField name="attr_hp_max" chipSize={7} />
@@ -43,7 +43,7 @@
 			</Row>
 			<Row dense>
 				<Col class="col-7">
-					<Label justify="end">Damage Red</Label>
+					<Label i18n="damage-reduction-brief" justify="end">Damage Red</Label>
 				</Col>
 				<Col>
 					<ChippedTextField name="attr_damage_reduction" chipSize={7} />
@@ -53,7 +53,7 @@
 		<Col class="pt-0">
 			<Row dense>
 				<Col>
-					<Label>Energy/Max</Label>
+					<Label i18n="energy-max">Energy/Max</Label>
 				</Col>
 			</Row>
 			<Row dense>
@@ -66,7 +66,7 @@
 			</Row>
 			<Row dense>
 				<Col>
-					<Label>Buffs/Conditions</Label>
+					<Label i18n="buffs-conditions">Buffs/Conditions</Label>
 				</Col>
 			</Row>
 			<Row dense>

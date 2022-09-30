@@ -19,7 +19,7 @@
 
 <div class="resistances">
 	<div class="grid" style="--areas: {areas}; --rows: {rows}; --cols: {cols}">
-		<Label element="h6" style="grid-area: title;">Resistances</Label>
+		<Label i18n="resistances" element="h6" style="grid-area: title;">Resistances</Label>
 		<Resistance type="physical" />
 		<Resistance type="fire" />
 		<Resistance type="ice" />

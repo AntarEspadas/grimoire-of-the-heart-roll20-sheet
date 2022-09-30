@@ -12,15 +12,15 @@
 <Container class="pt-0">
 	<Row dense>
 		<Col class="pb-0">
-			<Label element="h5">Items</Label>
+			<Label i18n="item" element="h5">Items</Label>
 		</Col>
 	</Row>
 	<Row dense>
 		<Col class="pb-0 pt-0 col-10">
-			<Label>Name</Label>
+			<Label i18n="name">Name</Label>
 		</Col>
 		<Col class="pb-0 pt-0">
-			<Label>Qty</Label>
+			<Label i18n="quantity-brief">Qty</Label>
 		</Col>
 	</Row>
 	<fieldset class="repeating_items">
@@ -38,7 +38,7 @@
 			<svelte:fragment slot="edit">
 				<Row dense>
 					<Col class="pt-0 pb-0">
-						<Label>Description</Label>
+						<Label i18n="description">Description</Label>
 					</Col>
 				</Row>
 				<Row dense>

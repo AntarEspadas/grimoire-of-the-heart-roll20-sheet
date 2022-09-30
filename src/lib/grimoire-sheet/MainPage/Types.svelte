@@ -16,7 +16,7 @@
 <Container dense class="pt-1 {className ?? ''}">
 	<Row dense>
 		<Col>
-			<Label>Types</Label>
+			<Label i18n="types">Types</Label>
 		</Col>
 	</Row>
 	<Row dense>

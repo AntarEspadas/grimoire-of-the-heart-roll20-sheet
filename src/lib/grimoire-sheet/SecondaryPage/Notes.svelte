@@ -7,7 +7,7 @@
 <Container class="pt-0">
 	<Row dense>
 		<Col>
-			<Label element="h5">Notes</Label>
+			<Label i18n="notes" element="h5">Notes</Label>
 		</Col>
 	</Row>
 	<Row dense>

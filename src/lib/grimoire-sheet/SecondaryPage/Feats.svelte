@@ -37,7 +37,7 @@
 <Container class="pt-0">
 	<Row dense>
 		<Col>
-			<Label element="h5">Feats</Label>
+			<Label i18n="feats" element="h5">Feats</Label>
 		</Col>
 	</Row>
 	<fieldset class="repeating_feats">

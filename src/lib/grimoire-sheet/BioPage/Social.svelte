@@ -4,14 +4,14 @@
 </script>
 
 <div class="social">
-	<Label element="h5">Social</Label>
+	<Label element="h5" i18n="social">Social</Label>
 
 	<div class="grid">
-		<LabeledInput name="relationship" />
-		<LabeledInput name="languages" />
-		<LabeledInput name="allies" />
-		<LabeledInput name="rivals" />
-		<LabeledInput name="fame" />
+		<LabeledInput i18n="relationship" name="relationship" />
+		<LabeledInput i18n="languages" name="languages" />
+		<LabeledInput i18n="aliases" name="allies" />
+		<LabeledInput i18n="rivals" name="rivals" />
+		<LabeledInput i18n="fame" name="fame" />
 	</div>
 </div>
 

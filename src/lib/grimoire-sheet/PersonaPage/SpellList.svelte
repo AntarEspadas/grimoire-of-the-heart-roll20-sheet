@@ -50,7 +50,7 @@
 			<Container>
 				<Row dense>
 					<Col>
-						<Label>Spell</Label>
+						<Label i18n="magic-spell">Spell</Label>
 					</Col>
 				</Row>
 				<Row dense>
@@ -60,7 +60,7 @@
 				</Row>
 				<Row dense>
 					<Col>
-						<Label>Roll</Label>
+						<Label i18n="dice-roll">Roll</Label>
 					</Col>
 				</Row>
 				<Row dense>
@@ -70,10 +70,10 @@
 				</Row>
 				<Row dense>
 					<Col class="col-8">
-						<Label>Type</Label>
+						<Label i18n="type">Type</Label>
 					</Col>
 					<Col class="col-4">
-						<Label>Tier</Label>
+						<Label i18n="tier">Tier</Label>
 					</Col>
 				</Row>
 				<Row dense>
@@ -86,7 +86,7 @@
 				</Row>
 				<Row dense>
 					<Col>
-						<Label>Categories</Label>
+						<Label i18n="categories">Categories</Label>
 					</Col>
 				</Row>
 				<Row dense>
@@ -96,7 +96,7 @@
 				</Row>
 				<Row dense>
 					<Col class="col-12">
-						<Label>Target</Label>
+						<Label i18n="target">Target</Label>
 					</Col>
 				</Row>
 				<Row dense>
@@ -108,7 +108,7 @@
 			<Container>
 				<Row dense>
 					<Col>
-						<Label>Effect</Label>
+						<Label i18n="effect">Effect</Label>
 					</Col>
 				</Row>
 				<Row dense>
@@ -118,10 +118,10 @@
 				</Row>
 				<Row dense>
 					<Col class="col-3">
-						<Label>Uses / Max</Label>
+						<Label i18n="uses-max">Uses / Max</Label>
 					</Col>
 					<Col class="col-3 offset-6">
-						<Label>Repress</Label>
+						<Label i18n="repress">Repress</Label>
 					</Col>
 				</Row>
 				<Row dense>
@@ -137,10 +137,10 @@
 				</Row>
 				<Row dense>
 					<Col class="col-6">
-						<Label>Time</Label>
+						<Label i18n="time">Time</Label>
 					</Col>
 					<Col class="col-6 ">
-						<Label>Duration</Label>
+						<Label i18n="duration">Duration</Label>
 					</Col>
 				</Row>
 				<Row dense>
@@ -158,37 +158,37 @@
 				<Row dense>
 					<Col class="col-8 sm-5">
 						<div>
-							<Label>Spell</Label>
+							<Label i18n="magic-spell">Spell</Label>
 							<ChippedTextField chipSize={7} name={attr('_spell_name')} disabled />
 						</div>
 					</Col>
 					<Col class="col-4 sm-2">
 						<div>
-							<Label>Roll</Label>
+							<Label i18n="dice-roll">Roll</Label>
 							<ChippedTextField chipSize={7} name={attr('_spell_roll', '_display')} disabled />
 						</div>
 					</Col>
 					<Col class="sm-1 ">
 						<div>
-							<Label>Tier</Label>
+							<Label i18n="tier">Tier</Label>
 							<ChippedTextField chipSize={7} name={attr('_spell_tier')} disabled />
 						</div>
 					</Col>
 					<Col class="sm-1 ">
 						<div>
-							<Label>Repress</Label>
+							<Label i18n="repress">Repress</Label>
 							<ChippedCheckbox name={attr('_spell_repress')} value="1" />
 						</div>
 					</Col>
 					<Col class="sm-1 offset-sm-1">
 						<div>
-							<Label>Uses /</Label>
+							<Label i18n="uses" i18nVars=" /">Uses{'{{0}}'}</Label>
 							<ChippedTextField chipSize={7} name={attr('_spell_uses')} />
 						</div>
 					</Col>
 					<Col class="col-sm-1">
 						<div>
-							<Label>Max</Label>
+							<Label i18n="maximum-brief">Max</Label>
 							<ChippedTextField chipSize={7} name={attr('_spell_uses', '_max')} disabled />
 						</div>
 					</Col>

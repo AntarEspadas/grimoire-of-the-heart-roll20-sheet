@@ -3,17 +3,17 @@
 </script>
 
 <div class="header">
-	<LabeledInput name="Character" attribute="character_name" />
+	<LabeledInput i18n="character" name="Character" attribute="character_name" />
 
-	<LabeledInput name="Birthday" />
+	<LabeledInput i18n="birthday" name="Birthday" />
 
-	<LabeledInput name="Age" />
+	<LabeledInput i18n="age" name="Age" />
 
-	<LabeledInput name="Aliases" />
+	<LabeledInput i18n="aliases" name="Aliases" />
 
-	<LabeledInput name="Arcana" />
+	<LabeledInput i18n="arcana" name="Arcana" />
 
-	<LabeledInput name="Sign" />
+	<LabeledInput i18n="astral-sign" name="Sign" />
 </div>
 
 <style lang="scss">

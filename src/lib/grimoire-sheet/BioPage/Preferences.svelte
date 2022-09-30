@@ -4,13 +4,13 @@
 </script>
 
 <div class="preferences">
-	<Label element="h5">Preferences</Label>
+	<Label element="h5" i18n="preferences">Preferences</Label>
 
 	<div class="grid">
-		<LabeledInput name="Food" />
-		<LabeledInput name="Music" />
-		<LabeledInput name="Television" />
-		<LabeledInput name="Literature" />
+		<LabeledInput i18n="food" name="Food" />
+		<LabeledInput i18n="music" name="Music" />
+		<LabeledInput i18n="television" name="Television" />
+		<LabeledInput i18n="literature" name="Literature" />
 	</div>
 </div>
 

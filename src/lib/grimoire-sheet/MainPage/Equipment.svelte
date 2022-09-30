@@ -3,12 +3,14 @@
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
 	import Label from '$lib/Label.svelte';
 	import EditableField from '$lib/EditableField.svelte';
-	import { types } from '$lib/values';
+	import { types, typesi18n } from '$lib/values';
 	import ChippedDiv from '$lib/ChippedDiv.svelte';
 	import ChippedSelect from '$lib/ChippedSelect.svelte';
 
 	const rollTemplate = `&{template:general} {{title=@{weapon_name}}} {{subtitle=@{weapon_damage_type} damage}} {{color=blue}} {{roll=[[@{weapon_damage}]]}}`;
 	const chatTemplate = `&{template:general} {{weapon=@{weapon_name}}} {{damage=@{weapon_damage_display}}} {{reach=@{weapon_reach}}} {{type=@{weapon_damage_type}}} {{effect=@{weapon_effect}}}`;
+
+	const t = types.map((type, i) => [type, typesi18n[i]]);
 </script>
 
 <Container>
@@ -21,16 +23,16 @@
 	>
 		<Row dense>
 			<Col class="col-4 pb-0">
-				<Label>Weapon</Label>
+				<Label i18n="weapon">Weapon</Label>
 			</Col>
 			<Col class="col-2 pb-0">
-				<Label>Damage</Label>
+				<Label i18n="damage">Damage</Label>
 			</Col>
 			<Col class="col-2 pb-0">
-				<Label>Reach</Label>
+				<Label i18n="reach-range">Reach</Label>
 			</Col>
 			<Col class="col-2 pb-0">
-				<Label>Effect</Label>
+				<Label i18n="effect">Effect</Label>
 			</Col>
 		</Row>
 		<svelte:fragment slot="edit">
@@ -50,14 +52,14 @@
 			</Row>
 			<Row dense>
 				<Col class="col-4">
-					<Label>Damage type</Label>
+					<Label i18n="damage-type">Damage type</Label>
 				</Col>
 			</Row>
 			<Row dense>
 				<Col class="col-4">
 					<ChippedSelect name="attr_weapon_damage_type">
-						{#each types as type}
-							<option value={type}>{type}</option>
+						{#each t as [type, i18n]}
+							<option data-i18n={i18n} value={type}>{type}</option>
 						{/each}
 					</ChippedSelect>
 				</Col>
@@ -80,13 +82,13 @@
 	</EditableField>
 	<Row dense>
 		<Col class="col-4 pb-0">
-			<Label>Armor</Label>
+			<Label i18n="armor">Armor</Label>
 		</Col>
 		<Col class="col-2 pb-0">
-			<Label>Dmg Red</Label>
+			<Label i18n="damage-reduction-short-short">Dmg Red</Label>
 		</Col>
 		<Col class="pb-0">
-			<Label>Effect</Label>
+			<Label i18n="effect">Effect</Label>
 		</Col>
 	</Row>
 	<Row dense>
@@ -102,10 +104,10 @@
 	</Row>
 	<Row dense>
 		<Col class="col-4 pb-0">
-			<Label>Accessory</Label>
+			<Label i18n="accessory">Accessory</Label>
 		</Col>
 		<Col class="pb-0">
-			<Label>Effect</Label>
+			<Label i18n="effect">Effect</Label>
 		</Col>
 	</Row>
 	<Row dense>

@@ -12,49 +12,49 @@
 		[
 			{
 				label: 'STR',
-				name: 'strength'
+				name: 'Strength'
 			},
 			{
 				label: 'MAG',
-				name: 'magic'
+				name: 'Magic'
 			},
 			{
-				name: 'knowledge'
+				name: 'Knowledge'
 			},
 			{
-				name: 'charm'
+				name: 'Charm'
 			}
 		],
 		[
 			{
 				label: 'TEC',
-				name: 'technique'
+				name: 'Technique'
 			},
 			{
 				label: 'AGI',
-				name: 'agility'
+				name: 'Agility'
 			},
 			{
-				name: 'discipline'
+				name: 'Discipline'
 			},
 			{
-				name: 'expression'
+				name: 'Expression'
 			}
 		],
 		[
 			{
 				label: 'VIT',
-				name: 'vitality'
+				name: 'Vitality'
 			},
 			{
 				label: 'LCK',
-				name: 'luck'
+				name: 'Luck'
 			},
 			{
-				name: 'empathy'
+				name: 'Empathy'
 			},
 			{
-				name: 'courage'
+				name: 'Courage'
 			}
 		]
 	];
@@ -63,14 +63,16 @@
 <Container class="pt-0">
 	<Row dense>
 		<Col class="pt-0 pb-0">
-			<Label element="h5">Bonuses</Label>
+			<Label i18n="bonuses" element="h5">Bonuses</Label>
 		</Col>
 	</Row>
 	{#each skills as skillRow}
 		<Row dense>
 			{#each skillRow as skill, i}
 				<Col class="{skill.label ? 'col-1' : ''} pt-0 {i == 0 ? 'offset-1' : ''}">
-					<Label>{skill.label ?? skill.name}</Label>
+					<Label i18n={skill.label ? null : skill.name.toLowerCase()}
+						>{skill.label ?? skill.name}</Label
+					>
 				</Col>
 				<Col class="col-1 pt-0">
 					<ChippedTextField chipSize={7} name={attr(skill.name + '_bonus')} type="number" />

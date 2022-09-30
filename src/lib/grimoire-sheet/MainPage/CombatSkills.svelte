@@ -10,29 +10,29 @@
 <Container>
 	<Row noGutters>
 		<Col>
-			<Label element="h5">Combat Skills</Label>
+			<Label i18n="combat-skills" element="h5">Combat Skills</Label>
 		</Col>
 	</Row>
 	<Row>
 		<Col class="col-4 pt-0 pb-1">
-			<CombatSkill name="Strength" abbreviation="str" />
+			<CombatSkill i18n="strength" name="Strength" abbreviation="str" />
 		</Col>
 		<Col class="col-4 pt-0 pb-1">
-			<CombatSkill name="Technique" abbreviation="tec" />
+			<CombatSkill i18n="technique" name="Technique" abbreviation="tec" />
 		</Col>
 		<Col class="col-4 pt-0 pb-1">
-			<CombatSkill name="Vitality" abbreviation="vit" />
+			<CombatSkill i18n="vitality" name="Vitality" abbreviation="vit" />
 		</Col>
 	</Row>
 	<Row>
 		<Col class="col-4 pt-0">
-			<CombatSkill name="Magic" abbreviation="mag" />
+			<CombatSkill i18n="magic" name="Magic" abbreviation="mag" />
 		</Col>
 		<Col class="col-4 pt-0">
-			<CombatSkill name="Agility" abbreviation="agi" />
+			<CombatSkill i18n="agility" name="Agility" abbreviation="agi" />
 		</Col>
 		<Col class="col-4 pt-0">
-			<CombatSkill name="Luck" abbreviation="lck" />
+			<CombatSkill i18n="luck" name="Luck" abbreviation="lck" />
 		</Col>
 	</Row>
 </Container>

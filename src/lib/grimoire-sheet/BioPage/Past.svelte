@@ -4,11 +4,11 @@
 </script>
 
 <div class="past">
-	<Label element="h5">Past</Label>
+	<Label element="h5" i18n="past">Past</Label>
 	<div class="grid">
-		<LabeledInput name="Hometown" />
-		<LabeledInput name="Parents/Guardians" />
-		<LabeledInput component="text-area" name="Notable events" />
+		<LabeledInput i18n="hometown" name="Hometown" />
+		<LabeledInput i18n="parents-guardians" name="Parents/Guardians" />
+		<LabeledInput i18n="notable-events" component="text-area" name="Notable events" />
 	</div>
 </div>
 

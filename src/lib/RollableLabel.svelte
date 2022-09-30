@@ -4,6 +4,8 @@
 
 	export let justify = 'start';
 
+	export let i18n: string;
+
 	$: abbr = abbreviation ? ` (${abbreviation?.toUpperCase()})` : '';
 
 	$: attr = name.toLowerCase();
@@ -16,7 +18,11 @@
 
 <div class="rollable-label">
 	<div class="risk">
-		<button type="roll" value={getTemplate(`@{${attr}}[${abbreviation ?? name}]`)}>Base</button>
+		<button
+			data-i18n="base-default"
+			type="roll"
+			value={getTemplate(`@{${attr}}[${abbreviation ?? name}]`)}>Base</button
+		>
 		<button
 			type="roll"
 			value={getTemplate(`@{${attr}}[${abbreviation ?? name}] + 1d4 - 1d4`, '(d4)')}>D4</button
@@ -27,7 +33,7 @@
 		>
 	</div>
 	<div class="label" style="justify-content: {justify};">
-		<p class="label">{name}{abbr}</p>
+		<p class="label" data-i18n={i18n} data-i18n-vars={abbr || null}>{name}{abbr ? '{{0}}' : ''}</p>
 	</div>
 </div>
 

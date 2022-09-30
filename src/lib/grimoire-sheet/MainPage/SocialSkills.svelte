@@ -19,24 +19,24 @@
 <Container class="pt-1">
 	<Row dense>
 		<Col>
-			<Label element="h5">Social Skills</Label>
+			<Label i18n="social-skills" element="h5">Social Skills</Label>
 		</Col>
 	</Row>
 	<Row dense>
 		<Col class="offset-4 pt-0">
-			<Label>Pts</Label>
+			<Label i18n="points-brief">Pts</Label>
 		</Col>
 		<Col class="col-2 pt-0">
-			<Label>Tier</Label>
+			<Label i18n="tier">Tier</Label>
 		</Col>
 		<Col class="col-4 pt-0">
-			<Label>Title</Label>
+			<Label i18n="title">Title</Label>
 		</Col>
 	</Row>
 	{#each socialSkills as skill, i}
 		<Row dense>
 			<Col class="col-4 pt-0">
-				<RollableLabel justify="end" name={skill} />
+				<RollableLabel i18n="social-skill-{skill}" justify="end" name={skill} />
 			</Col>
 			<Col class="col-2 pt-0">
 				<ChippedTextField
@@ -59,7 +59,7 @@
 				<ChippedDiv h="33.2px" style="display: flex; align-items: center;">
 					<select name="attr_{skill.toLocaleLowerCase()}_title">
 						{#each titles[i] as title, i}
-							<option value={i} selected={i == 0}>{title}</option>
+							<option data-i18n={title.toLowerCase()} value={i} selected={i == 0}>{title}</option>
 						{/each}
 					</select>
 				</ChippedDiv>

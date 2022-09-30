@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { TextField, Container, Row, Col } from 'svelte-materialify';
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
 	import Label from '$lib/Label.svelte';
@@ -15,31 +15,31 @@
 			<Label {offset} {justify} i18n="character">Character</Label>
 		</Col>
 		<Col class="col-9 sm-6">
-			<ChippedTextField name="attr_character_name" chipSize={7} {bgColor} />
+			<ChippedTextField name="attr_character_name" chipSize={7} />
 		</Col>
 		<Col class="col-3 sm-1">
-			<Label {offset} {justify}>Class</Label>
+			<Label i18n="character-class" {offset} {justify}>Class</Label>
 		</Col>
 		<Col class="col-5 sm-3">
-			<ChippedTextField name="attr_class" chipSize={7} {bgColor} />
+			<ChippedTextField name="attr_class" chipSize={7} />
 		</Col>
 		<Col class="col-1 sm-2">
-			<Label {offset} {justify}>level</Label>
+			<Label i18n="character-level" {offset} {justify}>level</Label>
 		</Col>
 		<Col class="col-3 sm-2">
-			<ChippedTextField type="number" name="attr_character_level" chipSize={7} {bgColor} />
+			<ChippedTextField type="number" name="attr_character_level" chipSize={7} />
 		</Col>
 		<Col class="col-3 sm-1">
-			<Label {offset} {justify}>Arcana</Label>
+			<Label i18n="arcana" {offset} {justify}>Arcana</Label>
 		</Col>
 		<Col class="sm-3 mr-sm-0 mr-2">
-			<ChippedTextField name="attr_arcana" chipSize={7} {bgColor} />
+			<ChippedTextField name="attr_arcana" chipSize={7} />
 		</Col>
 		<Col class="col-1 sm-1">
-			<Label {offset} {justify}>Player</Label>
+			<Label i18n="player" {offset} {justify}>Player</Label>
 		</Col>
 		<Col class="sm-3">
-			<ChippedTextField name="attr_player" chipSize={7} {bgColor} />
+			<ChippedTextField name="attr_player" chipSize={7} />
 		</Col>
 	</Row>
 </Container>

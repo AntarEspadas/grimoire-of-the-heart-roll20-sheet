@@ -4,16 +4,16 @@
 </script>
 
 <div class="physical">
-	<Label element="h5">Physical</Label>
+	<Label element="h5" i18n="physical">Physical</Label>
 	<div class="grid">
-		<LabeledInput name="Height" />
-		<LabeledInput name="Weight" />
-		<LabeledInput name="Hair" />
-		<LabeledInput name="Eyes" />
-		<LabeledInput name="Piercing/Tattoos" />
-		<LabeledInput name="Scars" />
-		<LabeledInput name="Clothing" />
-		<LabeledInput name="Build" />
+		<LabeledInput i18n="height" name="Height" />
+		<LabeledInput i18n="weight" name="Weight" />
+		<LabeledInput i18n="hair" name="Hair" />
+		<LabeledInput i18n="eyes" name="Eyes" />
+		<LabeledInput i18n="piercing-tattoos" name="Piercing/Tattoos" />
+		<LabeledInput i18n="scars" name="Scars" />
+		<LabeledInput i18n="clothing" name="Clothing" />
+		<LabeledInput i18n="physical-build" name="Build" />
 	</div>
 </div>
 

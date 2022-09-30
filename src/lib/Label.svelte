@@ -10,7 +10,8 @@
 
 	export let element = 'p';
 
-	export let i18n: string | undefined = undefined;
+	export let i18n: string | null;
+	export let i18nVars: string | undefined = undefined;
 
 	$: transform = offset ? `transform: translateX(${offset});` : '';
 </script>
@@ -21,6 +22,7 @@
 	<svelte:element
 		this={element}
 		data-i18n={i18n}
+		data-i18n-vars={i18nVars}
 		style="color: {color}; font-weight: {fontWeight}; margin: {margin}; {transform}"
 	>
 		<slot />

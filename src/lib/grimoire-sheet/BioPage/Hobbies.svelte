@@ -4,12 +4,12 @@
 </script>
 
 <div class="hobbies">
-	<Label element="h5">Occupation and hobbies</Label>
+	<Label element="h5" i18n="occupation-hobbies">Occupation and hobbies</Label>
 	<div class="grid">
-		<LabeledInput name="Formal education" />
-		<LabeledInput name="Job" />
-		<LabeledInput name="Past experiences" />
-		<LabeledInput name="Hobbies" />
+		<LabeledInput i18n="formal-education" name="Formal education" />
+		<LabeledInput i18n="job" name="Job" />
+		<LabeledInput i18n="past-experiences" name="Past experiences" />
+		<LabeledInput i18n="hobbies" name="Hobbies" />
 	</div>
 </div>
 

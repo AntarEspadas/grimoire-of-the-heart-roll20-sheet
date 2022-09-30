@@ -7,16 +7,16 @@
 <Container class="pt-0">
 	<Row dense>
 		<Col class="col-5">
-			<Label>Sidearm</Label>
+			<Label i18n="sidearm">Sidearm</Label>
 		</Col>
 		<Col class="col-2">
-			<Label>Damage</Label>
+			<Label i18n="damage">Damage</Label>
 		</Col>
 		<Col class="col-2">
-			<Label>Reach</Label>
+			<Label i18n="reach-range">Reach</Label>
 		</Col>
 		<Col class="col-3">
-			<Label>Effect</Label>
+			<Label i18n="effect">Effect</Label>
 		</Col>
 	</Row>
 	<Row dense>
@@ -35,7 +35,7 @@
 	</Row>
 	<Row dense>
 		<Col>
-			<Label>Misc Gear</Label>
+			<Label i18n="miscellaneous-gear">Misc Gear</Label>
 		</Col>
 	</Row>
 	<Row dense>

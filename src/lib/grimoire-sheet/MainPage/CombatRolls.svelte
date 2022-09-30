@@ -23,12 +23,15 @@
 <Container>
 	<Row>
 		<Col class="d-flex justify-center col-6">
-			<button class="roll-button" type="roll" value={template('hdc', 'Attack', 'tec')}
-				>Roll Attack</button
+			<button
+				data-i18n="dice-roll-attack"
+				class="roll-button"
+				type="roll"
+				value={template('hdc', 'Attack', 'tec')}>Roll Attack</button
 			>
 		</Col>
 		<Col>
-			<Label justify="right">Hit Dice Category</Label>
+			<Label i18n="hit-dice-category" justify="right">Hit Dice Category</Label>
 		</Col>
 		<Col>
 			<ChippedSelect name="attr_hdc_mod">
@@ -40,12 +43,17 @@
 	</Row>
 	<Row>
 		<Col class="d-flex justify-center col-6">
-			<button class="roll-button" type="roll" value={template('ddc', 'Dodge', 'agi')}>
+			<button
+				data-i18n="dice-roll-dodge"
+				class="roll-button"
+				type="roll"
+				value={template('ddc', 'Dodge', 'agi')}
+			>
 				Roll Dodge
 			</button>
 		</Col>
 		<Col>
-			<Label justify="right">Dodge Dice Category</Label>
+			<Label i18n="dodge-dice-category" justify="right">Dodge Dice Category</Label>
 		</Col>
 		<Col>
 			<ChippedSelect name="attr_ddc_mod">
@@ -58,7 +66,9 @@
 	{#if initiative}
 		<Row>
 			<Col class="d-flex justify-center col-6">
-				<button class="roll-button" type="roll" value={initiativeRoll}>Initiative</button>
+				<button data-i18n="initiative" class="roll-button" type="roll" value={initiativeRoll}
+					>Initiative</button
+				>
 			</Col>
 		</Row>
 	{/if}

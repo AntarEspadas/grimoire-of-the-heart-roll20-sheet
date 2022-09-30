@@ -4,11 +4,11 @@
 </script>
 
 <div class="economic">
-	<Label element="h5">Economic</Label>
+	<Label element="h5" i18n="economic">Economic</Label>
 
 	<div class="grid">
-		<LabeledInput name="Financial situation" />
-		<LabeledInput name="housing" />
+		<LabeledInput i18n="financial-situation" name="Financial situation" />
+		<LabeledInput i18n="housing" name="Housing" />
 	</div>
 </div>
 

@@ -6,11 +6,13 @@
 	export let name: string;
 	export let abbreviation: string;
 
+	export let i18n: string;
+
 	$: attr = name.toLowerCase();
 </script>
 
 <input type="hidden" disabled value={`@{${name}}`} name="attr_{abbreviation}" />
-<RollableLabel {name} {abbreviation} />
+<RollableLabel {i18n} {name} {abbreviation} />
 
 <ChippedTextField
 	name="attr_{attr}"

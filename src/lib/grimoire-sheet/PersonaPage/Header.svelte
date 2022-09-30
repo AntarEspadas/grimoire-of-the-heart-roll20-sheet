@@ -15,32 +15,32 @@
 	<Container>
 		<Row dense>
 			<Col>
-				<Label {justify}>Name</Label>
+				<Label i18n="name" {justify}>Name</Label>
 			</Col>
 			<Col class="col-3">
 				<ChippedTextField chipSize={7} name={attr('persona_name')} />
 			</Col>
 			<Col>
-				<Label {justify}>Arcana</Label>
+				<Label i18n="arcana" {justify}>Arcana</Label>
 			</Col>
 			<Col class="col-3 pr-0">
 				<ChippedTextField chipSize={7} name={attr('arcana')} />
 			</Col>
 			<Col class="pl-0">
-				<Label {justify}>Lv</Label>
+				<Label i18n="level-brief" {justify}>Lv</Label>
 			</Col>
 			<Col class="pr-0 pl-0">
 				<ChippedTextField chipSize={7} name={attr('persona_level')} />
 			</Col>
 			<Col class="pl-0">
-				<Label {justify}>SP</Label>
+				<Label i18n="spirit-points-brief" {justify}>SP</Label>
 			</Col>
 			<Col class="pr-0 pl-0">
 				<ChippedTextField chipSize={7} name={attr('spell_points')} />
 			</Col>
 		</Row>
 		<Row dense>
-			<Label>Natural Skill</Label>
+			<Label i18n="natural-skill">Natural Skill</Label>
 		</Row>
 		<Row dense>
 			<ChippedTextArea chipSize={10} w="100%" name={attr('natural_skill')} />
