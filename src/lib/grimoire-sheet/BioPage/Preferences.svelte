@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Label from '$lib/Label.svelte';
-	import LabeledInput from './LabeledInput.svelte';
+	import LabeledInput from '../../LabeledInput.svelte';
 </script>
 
 <div class="preferences">

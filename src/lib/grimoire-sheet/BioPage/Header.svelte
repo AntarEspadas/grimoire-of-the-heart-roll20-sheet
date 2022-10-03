@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LabeledInput from './LabeledInput.svelte';
+	import LabeledInput from '../../LabeledInput.svelte';
 </script>
 
 <div class="header">
