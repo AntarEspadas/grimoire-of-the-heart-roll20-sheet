@@ -1,33 +1,30 @@
 <script lang="ts">
-	import { Container, Col, Row } from 'svelte-materialify';
-	import ChippedTextArea from '$lib/ChippedTextArea.svelte';
-	import ChippedTextField from '$lib/ChippedTextField.svelte';
-	import Label from '$lib/Label.svelte';
+	import LabeledInput from '$lib/LabeledInput.svelte';
 </script>
 
 <div class="aspects">
-	<Container class="pt-1">
-		<Row dense>
-			<Col class="col-4">
-				<Label element="h5" i18n="aspects">Aspects</Label>
-			</Col>
-			<Col class="col-4">
-				<Label class="aspect-points-label" i18n="aspect points">Aspect Points</Label>
-			</Col>
-			<Col class="col-3">
-				<ChippedTextField chipSize={7} name="attr_aspect_points" type="number" />
-			</Col>
-		</Row>
-		<Row dense>
-			<Col>
-				<ChippedTextArea chipSize={30} name="attr_aspects" h="230px" />
-			</Col>
-		</Row>
-	</Container>
+	<LabeledInput
+		i18n="aspects"
+		name="Aspects"
+		component="text-area"
+		labelElement="h5"
+		chipSize={20}
+	/>
+	<LabeledInput i18n="aspect-points" name="Aspect Points" />
 </div>
 
 <style lang="scss">
 	.aspects {
+		height: 100%;
+		display: grid;
+		padding: 10px;
+		gap: 5px;
+		grid-template-rows: 40px 1fr;
+		grid-template-columns: 4fr 4fr 3fr 35px;
+		grid-template-areas:
+			'aspects-label aspect-points-label aspect-points .'
+			'aspects aspects aspects aspects';
+
 		:global(.aspect-points-label) {
 			justify-content: end;
 		}
