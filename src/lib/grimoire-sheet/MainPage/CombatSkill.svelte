@@ -12,7 +12,7 @@
 </script>
 
 <input type="hidden" disabled value={`@{${name}}`} name="attr_{abbreviation}" />
-<RollableLabel {i18n} {name} {abbreviation} />
+<RollableLabel {i18n} {name} {abbreviation} style="grid-area: {attr}-label" />
 
 <ChippedTextField
 	name="attr_{attr}"
@@ -21,4 +21,5 @@
 	h="50px"
 	chipSize={15}
 	value="0"
+	style="grid-area: {attr};"
 />
