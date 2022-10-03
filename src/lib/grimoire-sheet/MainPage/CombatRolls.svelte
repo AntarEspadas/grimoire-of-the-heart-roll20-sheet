@@ -21,78 +21,70 @@
 <input type="hidden" name="attr_ddc" value="6" />
 
 <div class="combat-rolls">
-	<Container>
-		<Row>
-			<Col class="d-flex justify-center col-6">
-				<button
-					data-i18n="dice-roll-attack"
-					class="roll-button"
-					type="roll"
-					value={template('hdc', 'Attack', 'tec')}>Roll Attack</button
-				>
-			</Col>
-			<Col>
-				<Label i18n="hit-dice-category">Hit Dice Category</Label>
-			</Col>
-			<Col>
-				<ChippedSelect name="attr_hdc_mod">
-					{#each mods as mod}
-						<option selected={mod == 0} value={mod}>{mod > 0 ? '+' + mod : mod}</option>
-					{/each}
-				</ChippedSelect>
-			</Col>
-		</Row>
-		<Row>
-			<Col class="d-flex justify-center col-6">
-				<button
-					data-i18n="dice-roll-dodge"
-					class="roll-button"
-					type="roll"
-					value={template('ddc', 'Dodge', 'agi')}
-				>
-					Roll Dodge
-				</button>
-			</Col>
-			<Col>
-				<Label i18n="dodge-dice-category">Dodge Dice Category</Label>
-			</Col>
-			<Col>
-				<ChippedSelect name="attr_ddc_mod">
-					{#each mods as mod}
-						<option selected={mod == 0} value={mod}>{mod > 0 ? '+' + mod : mod}</option>
-					{/each}
-				</ChippedSelect>
-			</Col>
-		</Row>
-		{#if initiative}
-			<Row>
-				<Col class="d-flex justify-center col-6">
-					<button data-i18n="initiative" class="roll-button" type="roll" value={initiativeRoll}
-						>Initiative</button
-					>
-				</Col>
-			</Row>
-		{/if}
-	</Container>
+	<button
+		data-i18n="dice-roll-attack"
+		class="roll-button"
+		type="roll"
+		value={template('hdc', 'Attack', 'tec')}>Roll Attack</button
+	>
+	<Label i18n="hit-dice-category">Hit Dice Category</Label>
+
+	<ChippedSelect name="attr_hdc_mod">
+		{#each mods as mod}
+			<option selected={mod == 0} value={mod}>{mod > 0 ? '+' + mod : mod}</option>
+		{/each}
+	</ChippedSelect>
+
+	<button
+		data-i18n="dice-roll-dodge"
+		class="roll-button"
+		type="roll"
+		value={template('ddc', 'Dodge', 'agi')}
+	>
+		Roll Dodge
+	</button>
+
+	<Label i18n="dodge-dice-category">Dodge Dice Category</Label>
+	<ChippedSelect name="attr_ddc_mod">
+		{#each mods as mod}
+			<option selected={mod == 0} value={mod}>{mod > 0 ? '+' + mod : mod}</option>
+		{/each}
+	</ChippedSelect>
+
+	{#if initiative}
+		<button data-i18n="initiative" class="roll-button" type="roll" value={initiativeRoll}>
+			Initiative
+		</button>
+	{/if}
 </div>
 
-<style lang="sass">
+<style lang="scss">
+	.combat-rolls {
+		padding: 10px;
+		gap: 20px;
+		display: grid;
 
-    .combat-rolls
-        :global(.label)
-            justify-content: right
+		grid-template-columns: 2fr 1fr 1fr;
+		grid-template-rows: repeat(auto-fill, 1fr);
 
-    button
-        font-weight: 900
-        color: white
-        background: none
-        border: none
-        box-shadow: none
+		:global(.label) {
+			justify-content: right;
+		}
+	}
 
-    button.roll-button.roll-button:before
-        content: none
+	button {
+		font-weight: 900;
+		color: white;
+		background: none;
+		border: none;
+		box-shadow: none;
+	}
 
-    button:hover
-        text-decoration: underline
+	button.roll-button.roll-button:before {
+		content: none;
+	}
 
+	button:hover {
+		text-decoration: underline;
+	}
 </style>
