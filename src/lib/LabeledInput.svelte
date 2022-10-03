@@ -14,6 +14,8 @@
 
 	export let labelElement = 'p';
 
+	export let chipSize = 7;
+
 	const components = {
 		'text-area': ChippedTextArea,
 		'text-field': ChippedTextField
@@ -32,7 +34,7 @@
 <svelte:component
 	this={selectedComponent}
 	style="grid-area: {internalName}"
-	chipSize={7}
+	{chipSize}
 	name="attr_{attribute}"
 	{...extraProps}
 />
