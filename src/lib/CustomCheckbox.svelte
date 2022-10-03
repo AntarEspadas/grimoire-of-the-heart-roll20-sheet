@@ -3,9 +3,13 @@
 	export let name: string;
 
 	export let style: string | undefined = undefined;
+
+	let className: string | undefined = undefined;
+
+	export { className as class };
 </script>
 
-<label>
+<label class={className}>
 	<input value="1" type="checkbox" {name} />
 	<div {style}>
 		<slot />
