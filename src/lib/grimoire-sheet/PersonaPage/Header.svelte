@@ -11,29 +11,29 @@
 	const justify = 'end';
 </script>
 
-<div>
+<div class="header">
 	<Container>
 		<Row dense>
 			<Col>
-				<Label i18n="name" {justify}>Name</Label>
+				<Label i18n="name" class="end">Name</Label>
 			</Col>
 			<Col class="col-3">
 				<ChippedTextField chipSize={7} name={attr('persona_name')} />
 			</Col>
 			<Col>
-				<Label i18n="arcana" {justify}>Arcana</Label>
+				<Label i18n="arcana" class="end">Arcana</Label>
 			</Col>
 			<Col class="col-3 pr-0">
 				<ChippedTextField chipSize={7} name={attr('arcana')} />
 			</Col>
 			<Col class="pl-0">
-				<Label i18n="level-brief" {justify}>Lv</Label>
+				<Label i18n="level-brief" class="end">Lv</Label>
 			</Col>
 			<Col class="pr-0 pl-0">
 				<ChippedTextField chipSize={7} name={attr('persona_level')} />
 			</Col>
 			<Col class="pl-0">
-				<Label i18n="spirit-points-brief" {justify}>SP</Label>
+				<Label i18n="spirit-points-brief" class="end">SP</Label>
 			</Col>
 			<Col class="pr-0 pl-0">
 				<ChippedTextField chipSize={7} name={attr('spell_points')} />
@@ -49,6 +49,9 @@
 </div>
 
 <style lang="sass">
-	div
+	.header
 		width: 115%
+
+		:global(.label.end)
+			justify-content: end
 </style>

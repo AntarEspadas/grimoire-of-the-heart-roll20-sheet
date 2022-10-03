@@ -1,5 +1,4 @@
 <script lang="ts">
-	export let justify = 'start';
 	export let color = 'white';
 	export let margin = '0';
 	export let fontWeight = '900';
@@ -13,12 +12,14 @@
 	export let i18n: string | null;
 	export let i18nVars: string | undefined = undefined;
 
+	let className = '';
+
+	export { className as class };
+
 	$: transform = offset ? `transform: translateX(${offset});` : '';
 </script>
 
-<div
-	style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: {justify}; {style}"
->
+<div {style} class="label {className}">
 	<svelte:element
 		this={element}
 		data-i18n={i18n}
@@ -28,3 +29,14 @@
 		<slot />
 	</svelte:element>
 </div>
+
+<style lang="sass">
+	div
+		width: 100%
+		height: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+		align-items: center
+		justify-content: start
+</style>

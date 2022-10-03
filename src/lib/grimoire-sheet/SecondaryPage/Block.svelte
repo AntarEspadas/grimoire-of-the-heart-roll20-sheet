@@ -11,7 +11,7 @@
 </script>
 
 <Col class="col-1 {className}">
-	<Label {i18n} justify="end">{name}</Label>
+	<Label {i18n} class="end">{name}</Label>
 </Col>
 <Col class="col-1">
 	<ChippedTextField name="attr_{name}_block" chipSize={7} type="number" />
