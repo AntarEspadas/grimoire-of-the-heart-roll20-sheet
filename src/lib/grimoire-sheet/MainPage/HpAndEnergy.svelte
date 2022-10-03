@@ -14,11 +14,15 @@
 	<Label i18n="hit-points" style="grid-area: hp-max-label">Hit Points</Label>
 	<ChippedTextField chipSize={7} name="attr_hp_max" style="grid-area: hp-max" />
 	<Label i18n="energy-max" style="grid-area: energy-max-label">Energy/Max</Label>
-	<ChippedTextArea chipSize={7} name="attr_hp" style="grid-area: hp" />
+	<ChippedTextArea chipSize={20} name="attr_hp" style="grid-area: hp" />
 	<ChippedTextField chipSize={7} name="attr_energy" style="grid-area: energy" />
 	<ChippedTextField chipSize={7} name="attr_energy_max" style="grid-area: energy-max" />
 	<Label i18n="buffs-conditions" style="grid-area: buffs-conditions-label;">Buffs/Conditions</Label>
-	<ChippedTextArea chipSize={7} name="attr_buffs_conditions" style="grid-area: buffs-conditions;" />
+	<ChippedTextArea
+		chipSize={20}
+		name="attr_buffs_conditions"
+		style="grid-area: buffs-conditions;"
+	/>
 	{#each [1, 2, 3] as i}
 		<ChippedDiv style="grid-area: deaths-door-{i};" chipSize={7}>
 			<CustomCheckbox name="attr_deaths_door_{i}" class="skull-checkbox">
@@ -39,15 +43,15 @@
 		padding: 10px;
 		gap: 5px;
 		display: grid;
-		grid-template-columns: repeat(6, 1fr);
+		grid-template-columns: repeat(3, 1fr) 10px repeat(3, 1fr);
 		grid-template-rows: repeat(5, 1fr);
 		grid-template-areas:
-			'hp-max-label hp-max-label hp-max energy-max-label energy-max-label energy-max-label'
-			'hp hp hp energy energy-max .'
-			'hp hp hp buffs-conditions-label buffs-conditions-label buffs-conditions-label'
-			'hp hp hp buffs-conditions buffs-conditions buffs-conditions'
-			'deaths-door-1 deaths-door-2 deaths-door-3 buffs-conditions buffs-conditions buffs-conditions'
-			'damage-red-label damage-red-label damage-red buffs-conditions buffs-conditions buffs-conditions';
+			'hp-max-label hp-max-label hp-max . energy-max-label energy-max-label energy-max-label'
+			'hp hp hp . energy energy-max .'
+			'hp hp hp . buffs-conditions-label buffs-conditions-label buffs-conditions-label'
+			'hp hp hp . buffs-conditions buffs-conditions buffs-conditions'
+			'deaths-door-1 deaths-door-2 deaths-door-3 . buffs-conditions buffs-conditions buffs-conditions'
+			'damage-red-label damage-red-label damage-red . buffs-conditions buffs-conditions buffs-conditions';
 
 		:global(.skull-checkbox div) {
 			height: 35px;
