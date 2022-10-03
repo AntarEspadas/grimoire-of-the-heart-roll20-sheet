@@ -6,6 +6,8 @@
 
 	export let i18n: string;
 
+	export let style: string | undefined = undefined;
+
 	$: abbr = abbreviation ? ` (${abbreviation?.toUpperCase()})` : '';
 
 	$: attr = name.toLowerCase();
@@ -16,7 +18,7 @@
 	}
 </script>
 
-<div class="rollable-label">
+<div class="rollable-label" {style}>
 	<div class="risk">
 		<button
 			data-i18n="base-default"
