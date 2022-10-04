@@ -1,63 +1,47 @@
 <script lang="ts">
-	import { Container, Col, Row } from 'svelte-materialify';
-	import ChippedTextArea from '$lib/ChippedTextArea.svelte';
-	import ChippedTextField from '$lib/ChippedTextField.svelte';
 	import Label from '$lib/Label.svelte';
+	import LabeledInput from '$lib/LabeledInput.svelte';
 </script>
 
 <div class="persona">
-	<Container class="pt-0">
-		<!--  -->
-		<Row dense>
-			<Col class="pb-0">
-				<Label i18n="persona" element="h5">Persona</Label>
-			</Col>
-		</Row>
-		<Row dense>
-			<Col class="col-3 pt-0">
-				<Label i18n="name" class="end">Name</Label>
-			</Col>
-			<Col class="col-4 pt-0">
-				<ChippedTextField name="attr_persona_name" chipSize={7} />
-			</Col>
-			<Col class="col-1 pt-0">
-				<Label i18n="level-brief" class="end">Lv</Label>
-			</Col>
-			<Col class="pt-0">
-				<ChippedTextField type="number" name="attr_persona_level" chipSize={7} />
-			</Col>
-			<Col class="col-1 pt-0">
-				<Label i18n="spirit-points-brief" class="end">SP</Label>
-			</Col>
-			<Col class="pt-0">
-				<ChippedTextField type="number" name="attr_spell_points" chipSize={7} />
-			</Col>
-		</Row>
-		<Row dense>
-			<Col class="col-3 pt-0 pb-0">
-				<Label i18n="conviction-belief" class="end">Conviction</Label>
-			</Col>
-			<Col class="pt-0 pb-0">
-				<ChippedTextField name="attr_conviction" chipSize={7} />
-			</Col>
-		</Row>
-		<Row dense>
-			<Col class="col-3 pt-0 pb-0">
-				<Label i18n="natural-skill" class="center">Natural Skill</Label>
-			</Col>
-		</Row>
-		<Row dense>
-			<Col class="pt-0">
-				<ChippedTextArea rows={10} chipSize={10} name="attr_natural_skill" h="80px" />
-			</Col>
-		</Row>
-	</Container>
+	<Label class="title" i18n="persona" element="h5">Persona</Label>
+	<div class="grid">
+		<LabeledInput i18n="name" name="Name" attribute="persona_name" />
+		<LabeledInput i18n="level-brief" name="Lv" attribute="persona_level" />
+		<LabeledInput i18n="spirit-points-brief" name="SP" attribute="spell_points" />
+		<LabeledInput i18n="conviction-belief" name="Conviction" />
+		<LabeledInput i18n="natural-skill" name="Natural Skill" component="text-area" />
+	</div>
 </div>
 
-<style lang="sass">
-	.persona
-		:global(.label.end)
-			justify-content: end
-		:global(.label.center)
-			justify-content: center
+<style lang="scss">
+	.persona {
+		padding: 10px;
+		height: 100%;
+
+		.grid {
+			height: 1fr;
+			padding-bottom: 5px;
+			display: grid;
+			gap: 5px;
+			grid-template-columns: 120px 3fr 30px 1fr 30px 1fr;
+			grid-template-rows: repeat(3, auto) 1fr;
+			grid-template-areas:
+				'name-label name lv-label lv sp-label sp'
+				'conviction-label conviction conviction conviction conviction conviction'
+				'natural-skill-label natural-skill-label natural-skill-label natural-skill-label natural-skill-label natural-skill-label'
+				'natural-skill natural-skill natural-skill natural-skill natural-skill natural-skill';
+		}
+
+		:global(.label.title) {
+			height: auto;
+		}
+
+		:global(.label.end) {
+			justify-content: end;
+		}
+		:global(.label.center) {
+			justify-content: center;
+		}
+	}
 </style>
