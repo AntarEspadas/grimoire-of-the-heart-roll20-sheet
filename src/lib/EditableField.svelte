@@ -12,6 +12,8 @@
 
 	export let hideBubble = false;
 
+	export let display = 'block';
+
 	let className = '';
 
 	export { className as class };
@@ -21,7 +23,7 @@
 	const positionRelative = production && !fieldName.length ? undefined : 'position: relative;';
 </script>
 
-<div class="editable-field {className}" style={positionRelative}>
+<div class="editable-field {className}" style={positionRelative} style:--display={display}>
 	<input class="edit-mode" type="hidden" name="attr_{fieldName}editmode" {value} />
 	<button
 		class="editbutton"
@@ -99,16 +101,16 @@
         content: "p"
 
     .normal
-        display: block
+        display: var(--display)
 
     .edit
         display: none
 
     button.attackbutton
-        display: block
+        display: var(--display)
 
     input.edit-mode[value="true"] ~ .edit
-        display: block
+        display: var(--display)
 
     input.edit-mode[value="true"] ~ .normal
         display: none
