@@ -4,7 +4,7 @@
 	export let name: string;
 </script>
 
-<ChippedDiv h="33.2px" class="d-flex justify-center">
+<ChippedDiv h="33.2px" class="d-flex justify-center chipped-select">
 	<select {name}>
 		<slot />
 	</select>
