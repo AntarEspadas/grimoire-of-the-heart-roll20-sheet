@@ -2,9 +2,11 @@
 	import ChippedDiv from './ChippedDiv.svelte';
 
 	export let name: string;
+
+	export let style: string | undefined = undefined;
 </script>
 
-<ChippedDiv h="33.2px" class="d-flex justify-center chipped-select">
+<ChippedDiv {style} h="33.2px" class="d-flex justify-center chipped-select">
 	<select {name}>
 		<slot />
 	</select>
