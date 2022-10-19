@@ -60,7 +60,7 @@
 					<Header />
 				</div>
 				<div class="types">
-					<Types class="pl-16" h="25px" />
+					<Types h="25px" />
 				</div>
 				<div class="bonuses">
 					<Bonuses />
@@ -111,6 +111,7 @@
 		height: 100%
 		grid-row: 1
 		grid-column: 2
+		padding-left: 70px
 
 	.bonuses
 		width: 100%
