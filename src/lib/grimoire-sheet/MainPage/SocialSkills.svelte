@@ -5,6 +5,7 @@
 	import RollableLabel from '$lib/RollableLabel.svelte';
 	import ChippedDiv from '$lib/ChippedDiv.svelte';
 	import { socialSkills } from '$lib/values';
+	import ChippedSelect from '$lib/ChippedSelect.svelte';
 
 	const titles = [
 		['Slacker', 'Aware', 'Learned', 'Scholarly', 'Encyclopedic', 'Erudite'],
@@ -14,68 +15,72 @@
 		['Monotone', 'Rough', 'Eloquent', 'Inspiring', 'Touching', 'Enthralling'],
 		['Timid', 'Ordinary', 'Determined', 'Staunch', 'Dauntless', 'Badass']
 	];
+
+	const areas =
+		"'. pts tier title'\n" +
+		socialSkills
+			.map((skill) => skill.toLowerCase())
+			.map((skill) => `'${skill}-label ${skill}-pts ${skill}-tier ${skill}-title'`)
+			.join('\n');
 </script>
 
-<Container class="pt-1">
-	<Row dense>
-		<Col>
-			<Label i18n="social-skills" element="h5">Social Skills</Label>
-		</Col>
-	</Row>
-	<Row dense>
-		<Col class="offset-4 pt-0">
-			<Label i18n="points-brief">Pts</Label>
-		</Col>
-		<Col class="col-2 pt-0">
-			<Label i18n="tier">Tier</Label>
-		</Col>
-		<Col class="col-4 pt-0">
-			<Label i18n="title">Title</Label>
-		</Col>
-	</Row>
-	{#each socialSkills as skill, i}
-		<Row dense>
-			<Col class="col-4 pt-0">
-				<RollableLabel i18n="social-skill-{skill}" justify="end" name={skill} />
-			</Col>
-			<Col class="col-2 pt-0">
-				<ChippedTextField
-					name="attr_{skill.toLowerCase()}_points"
-					type="number"
-					chipSize={7}
-					value="0"
-				/>
-			</Col>
-			<Col class="col-2 pt-0">
-				<ChippedTextField
-					name="attr_{skill.toLowerCase()}"
-					type="number"
-					chipSize={7}
-					disabled
-					value="0"
-				/>
-			</Col>
-			<Col class="col-4 pt-0">
-				<ChippedDiv h="33.2px" style="display: flex; align-items: center;">
-					<select name="attr_{skill.toLocaleLowerCase()}_title">
-						{#each titles[i] as title, i}
-							<option data-i18n={title.toLowerCase()} value={i} selected={i == 0}>{title}</option>
-						{/each}
-					</select>
-				</ChippedDiv>
-			</Col>
-		</Row>
-	{/each}
-</Container>
+<div class="social-skills">
+	<Label class="title" i18n="social-skills" element="h5">Social Skills</Label>
+	<div class="grid" style:grid-template-areas={areas}>
+		<Label style="grid-area: pts;" i18n="points-brief">Pts</Label>
+		<Label style="grid-area: tier" i18n="tier">Tier</Label>
+		<Label style="grid-area: title" i18n="title">Title</Label>
 
-<style lang="sass">
-    select
-        margin: 0
-        padding: 0
-        width: 100%
-        padding-left: 5px
-        cursor: default
-        color: black
-        font-weight: 600
-        pointer-events: none
+		{#each socialSkills.map((skill) => [skill, skill.toLowerCase()]) as [skill, lSkill], i}
+			<RollableLabel
+				style="grid-area: {lSkill}-label;"
+				i18n="social-skill-{lSkill}"
+				justify="end"
+				name={skill}
+			/>
+			<ChippedTextField
+				style="grid-area: {lSkill}-pts;"
+				name="attr_{lSkill}_points"
+				type="number"
+				chipSize={7}
+				value="0"
+			/>
+			<ChippedTextField
+				style="grid-area: {lSkill}-tier;"
+				name="attr_{lSkill}"
+				type="number"
+				chipSize={7}
+				disabled
+				value="0"
+			/>
+			<ChippedSelect style="grid-area: {lSkill}-title" name="attr_{lSkill}_title">
+				{#each titles[i] as title, i}
+					<option data-i18n={title.toLowerCase()} value={i} selected={i == 0}>{title}</option>
+				{/each}
+			</ChippedSelect>
+		{/each}
+	</div>
+</div>
+
+<style lang="scss">
+	.social-skills {
+		padding: 10px;
+
+		.grid {
+			display: grid;
+			gap: 5px;
+			grid-template-columns: 2fr 1fr 1fr 2fr;
+		}
+	}
+
+	.social-skills :global(.chipped-select select) {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		padding-left: 5px;
+		cursor: default;
+		color: black;
+		font-weight: 600;
+		pointer-events: none;
+	}
 </style>
