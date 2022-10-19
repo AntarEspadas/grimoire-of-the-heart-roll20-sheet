@@ -16,6 +16,8 @@
 
 	export let chipSize = 7;
 
+	export let labelClass: string | undefined = undefined;
+
 	const components = {
 		'text-area': ChippedTextArea,
 		'text-field': ChippedTextField
@@ -30,7 +32,9 @@
 	$: extraProps = component == 'text-area' ? { h: '100%' } : {};
 </script>
 
-<Label {i18n} style="grid-area: {internalName}-label;" element={labelElement}>{name}</Label>
+<Label {i18n} style="grid-area: {internalName}-label;" element={labelElement} class={labelClass}
+	>{name}</Label
+>
 <svelte:component
 	this={selectedComponent}
 	style="grid-area: {internalName}"
