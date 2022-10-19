@@ -1,57 +1,46 @@
 <script lang="ts">
-	import ChippedTextArea from '$lib/ChippedTextArea.svelte';
-
-	import ChippedTextField from '$lib/ChippedTextField.svelte';
-	import Label from '$lib/Label.svelte';
-	import { Container, Col, Row } from 'svelte-materialify';
+	import LabeledInput from '$lib/LabeledInput.svelte';
 	import { getContext } from './PersonaPage.svelte';
 
 	const { attr } = getContext();
-
-	const justify = 'end';
 </script>
 
 <div class="header">
-	<Container>
-		<Row dense>
-			<Col>
-				<Label i18n="name" class="end">Name</Label>
-			</Col>
-			<Col class="col-3">
-				<ChippedTextField chipSize={7} name={attr('persona_name')} />
-			</Col>
-			<Col>
-				<Label i18n="arcana" class="end">Arcana</Label>
-			</Col>
-			<Col class="col-3 pr-0">
-				<ChippedTextField chipSize={7} name={attr('arcana')} />
-			</Col>
-			<Col class="pl-0">
-				<Label i18n="level-brief" class="end">Lv</Label>
-			</Col>
-			<Col class="pr-0 pl-0">
-				<ChippedTextField chipSize={7} name={attr('persona_level')} />
-			</Col>
-			<Col class="pl-0">
-				<Label i18n="spirit-points-brief" class="end">SP</Label>
-			</Col>
-			<Col class="pr-0 pl-0">
-				<ChippedTextField chipSize={7} name={attr('spell_points')} />
-			</Col>
-		</Row>
-		<Row dense>
-			<Label i18n="natural-skill">Natural Skill</Label>
-		</Row>
-		<Row dense>
-			<ChippedTextArea chipSize={10} w="100%" name={attr('natural_skill')} />
-		</Row>
-	</Container>
+	<LabeledInput i18n="name" name="Name" attribute={attr('persona_name')} labelClass="end" />
+	<LabeledInput i18n="arcana" name="Arcana" attribute={attr('arcana')} labelClass="end" />
+	<LabeledInput i18n="level-short" name="Lv" attribute={attr('persona_level')} labelClass="end" />
+	<LabeledInput
+		i18n="spirit-points-short"
+		name="SP"
+		attribute={attr('spell_points')}
+		labelClass="end"
+	/>
+
+	<LabeledInput
+		i18n="natural-skill"
+		name="Natural Skill"
+		attribute={attr('natural_skill')}
+		component="text-area"
+	/>
 </div>
 
-<style lang="sass">
-	.header
-		width: 115%
+<style lang="scss">
+	.header {
+		width: 115%;
+		height: 100%;
+		padding: 10px;
+		padding-bottom: 20px;
+		display: grid;
+		gap: 5px;
+		grid-template-columns: 50px 4fr 60px 4fr 30px 1fr 30px 1fr;
+		grid-template-rows: auto auto 1fr;
+		grid-template-areas:
+			'name-label name arcana-label arcana lv-label lv sp-label sp'
+			'natural-skill-label natural-skill-label natural-skill-label natural-skill-label natural-skill-label natural-skill-label natural-skill-label natural-skill-label'
+			'natural-skill natural-skill natural-skill natural-skill natural-skill natural-skill natural-skill natural-skill';
 
-		:global(.label.end)
-			justify-content: end
+		:global(.label.end) {
+			justify-content: end;
+		}
+	}
 </style>
