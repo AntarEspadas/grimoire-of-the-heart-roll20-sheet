@@ -1,83 +1,51 @@
 <script lang="ts">
-	import ChippedTextField from '$lib/ChippedTextField.svelte';
-
 	import Label from '$lib/Label.svelte';
+	import LabeledInput from '$lib/LabeledInput.svelte';
 
-	import { Container, Row, Col } from 'svelte-materialify';
 	import { getContext } from './PersonaPage.svelte';
 
 	const { attr } = getContext();
-
-	const skills = [
-		[
-			{
-				label: 'STR',
-				name: 'Strength'
-			},
-			{
-				label: 'MAG',
-				name: 'Magic'
-			},
-			{
-				name: 'Knowledge'
-			},
-			{
-				name: 'Charm'
-			}
-		],
-		[
-			{
-				label: 'TEC',
-				name: 'Technique'
-			},
-			{
-				label: 'AGI',
-				name: 'Agility'
-			},
-			{
-				name: 'Discipline'
-			},
-			{
-				name: 'Expression'
-			}
-		],
-		[
-			{
-				label: 'VIT',
-				name: 'Vitality'
-			},
-			{
-				label: 'LCK',
-				name: 'Luck'
-			},
-			{
-				name: 'Empathy'
-			},
-			{
-				name: 'Courage'
-			}
-		]
-	];
 </script>
 
-<Container class="pt-0">
-	<Row dense>
-		<Col class="pt-0 pb-0">
-			<Label i18n="bonuses" element="h5">Bonuses</Label>
-		</Col>
-	</Row>
-	{#each skills as skillRow}
-		<Row dense>
-			{#each skillRow as skill, i}
-				<Col class="{skill.label ? 'col-1' : ''} pt-0 {i == 0 ? 'offset-1' : ''}">
-					<Label i18n={skill.label ? null : skill.name.toLowerCase()}
-						>{skill.label ?? skill.name}</Label
-					>
-				</Col>
-				<Col class="col-1 pt-0">
-					<ChippedTextField chipSize={7} name={attr(skill.name + '_bonus')} type="number" />
-				</Col>
-			{/each}
-		</Row>
-	{/each}
-</Container>
+<div class="bonuses">
+	<Label style="grid-area: bonuses;" i18n="bonuses" element="h5">Bonuses</Label>
+	<div class="grid">
+		<LabeledInput i18n="strength-short" name="STR" attribute={attr('strength_bonus')} />
+		<LabeledInput i18n="magic-short" name="MAG" attribute={attr('magic_bonus')} />
+		<LabeledInput i18n="knowledge" name="Knowledge" attribute={attr('knowledge_bonus')} />
+		<LabeledInput i18n="charm" name="Charm" attribute={attr('charm_bonus')} />
+
+		<LabeledInput i18n="technique-short" name="TEC" attribute={attr('technique_bonus')} />
+		<LabeledInput i18n="agility-short" name="AGI" attribute={attr('agility_bonus')} />
+		<LabeledInput i18n="discipline" name="Discipline" attribute={attr('discipline_bonus')} />
+		<LabeledInput i18n="expression" name="Expression" attribute={attr('expression_bonus')} />
+
+		<LabeledInput i18n="vitality-short" name="VIT" attribute={attr('vitality_bonus')} />
+		<LabeledInput i18n="luck-short" name="LCK" attribute={attr('luck_bonus')} />
+		<LabeledInput i18n="empathy" name="Empathy" attribute={attr('empathy_bonus')} />
+		<LabeledInput i18n="courage" name="Courage" attribute={attr('courage_bonus')} />
+	</div>
+</div>
+
+<style lang="scss">
+	.bonuses {
+		padding: 0 10px 0 10px;
+		.grid {
+			display: grid;
+			gap: 5px;
+			grid-template-columns: 1fr 50px 1fr 50px 2.2fr 50px 2.2fr 50px;
+			grid-template-areas:
+				'str-label str mag-label mag knowledge-label knowledge charm-label charm'
+				'tec-label tec agi-label agi discipline-label discipline expression-label expression'
+				'vit-label vit lck-label lck empathy-label empathy courage-label courage';
+
+			:global(.label) {
+				justify-content: right;
+			}
+
+			:global(.chipped-input) {
+				height: 30px;
+			}
+		}
+	}
+</style>
