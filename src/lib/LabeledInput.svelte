@@ -18,6 +18,8 @@
 
 	export let labelClass: string | undefined = undefined;
 
+	export let disabled = false;
+
 	const components = {
 		'text-area': ChippedTextArea,
 		'text-field': ChippedTextField
@@ -41,4 +43,5 @@
 	{chipSize}
 	name="attr_{attribute}"
 	{...extraProps}
+	{disabled}
 />
