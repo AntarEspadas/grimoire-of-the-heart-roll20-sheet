@@ -52,40 +52,34 @@
 	`;
 </script>
 
-<Container fluid>
-	<Row>
-		<Col>
-			<div class="header-container" style="background-color: {bgColor};">
-				<div class="header">
-					<Header />
-				</div>
-				<div class="types">
-					<Types h="25px" />
-				</div>
-				<div class="bonuses">
-					<Bonuses />
-				</div>
-				<div class="resistances">
-					<Resistances rows="auto repeat(6, 25px)" {areas} cols={4} />
-				</div>
-			</div>
-		</Col>
-	</Row>
-	<Row>
-		<Col>
-			<ChippedDiv {bgColor} chipSize={20}>
-				<CombatRolls />
-			</ChippedDiv>
-		</Col>
-	</Row>
-	<Row dense>
-		<Col class="col-12">
-			<SpellsList />
-		</Col>
-	</Row>
-</Container>
+<div class="persona-page">
+	<div class="header-container" style="background-color: {bgColor};">
+		<Header />
+		<div class="types">
+			<Types h="25px" />
+		</div>
+		<div class="bonuses">
+			<Bonuses />
+		</div>
+		<div class="resistances">
+			<Resistances rows="auto repeat(6, 25px)" {areas} cols={4} />
+		</div>
+	</div>
+
+	<ChippedDiv {bgColor} chipSize={20}>
+		<CombatRolls />
+	</ChippedDiv>
+
+	<SpellsList />
+</div>
 
 <style lang="sass">
+
+	.persona-page
+		padding: 10px
+		display: grid
+		gap: 10px
+		grid-template-columns: 1fr
 
 	.header-container
 		--down: 55%
@@ -99,7 +93,7 @@
 		column-gap: 1.5%
 		row-gap: 2%
 
-	.header
+	:global(.header)
 		width: 100%
 		height: 100%
 		overflow-x: visible
