@@ -2,14 +2,13 @@
 	import ChippedCheckbox from '$lib/ChippedCheckbox.svelte';
 
 	import ChippedDiv from '$lib/ChippedDiv.svelte';
-	import ChippedTextArea from '$lib/ChippedTextArea.svelte';
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
 	import Label from '$lib/Label.svelte';
 
 	import EditableField from '$lib/EditableField.svelte';
 
-	import { Row, Col, Container } from 'svelte-materialify';
 	import { getContext } from './PersonaPage.svelte';
+	import LabeledInput from '$lib/LabeledInput.svelte';
 
 	const { attr, getName } = getContext();
 
@@ -47,153 +46,81 @@
 			class="d-flex flex-column flex-sm-row"
 			slot="edit"
 		>
-			<Container>
-				<Row dense>
-					<Col>
-						<Label i18n="magic-spell">Spell</Label>
-					</Col>
-				</Row>
-				<Row dense>
-					<Col>
-						<ChippedTextField name={attr('_spell_name')} chipSize={7} />
-					</Col>
-				</Row>
-				<Row dense>
-					<Col>
-						<Label i18n="dice-roll">Roll</Label>
-					</Col>
-				</Row>
-				<Row dense>
-					<Col>
-						<ChippedTextField name={attr('_spell_roll')} chipSize={7} />
-					</Col>
-				</Row>
-				<Row dense>
-					<Col class="col-8">
-						<Label i18n="type">Type</Label>
-					</Col>
-					<Col class="col-4">
-						<Label i18n="tier">Tier</Label>
-					</Col>
-				</Row>
-				<Row dense>
-					<Col class="col-8">
-						<ChippedTextField name={attr('_spell_type')} chipSize={7} />
-					</Col>
-					<Col class="col-4">
-						<ChippedTextField name={attr('_spell_tier')} chipSize={7} />
-					</Col>
-				</Row>
-				<Row dense>
-					<Col>
-						<Label i18n="categories">Categories</Label>
-					</Col>
-				</Row>
-				<Row dense>
-					<Col>
-						<ChippedTextField name={attr('_spell_categories')} chipSize={7} />
-					</Col>
-				</Row>
-				<Row dense>
-					<Col class="col-12">
-						<Label i18n="target">Target</Label>
-					</Col>
-				</Row>
-				<Row dense>
-					<Col class="col-12">
-						<ChippedTextField name={attr('_spell_target')} chipSize={7} />
-					</Col>
-				</Row>
-			</Container>
-			<Container>
-				<Row dense>
-					<Col>
-						<Label i18n="effect">Effect</Label>
-					</Col>
-				</Row>
-				<Row dense>
-					<Col>
-						<ChippedTextArea h="180px" name={attr('_spell_effect')} chipSize={15} />
-					</Col>
-				</Row>
-				<Row dense>
-					<Col class="col-3">
-						<Label i18n="uses-max">Uses / Max</Label>
-					</Col>
-					<Col class="col-3 offset-6">
-						<Label i18n="repress">Repress</Label>
-					</Col>
-				</Row>
-				<Row dense>
-					<Col class="col-3">
-						<ChippedTextField name={attr('_spell_uses')} chipSize={7} />
-					</Col>
-					<Col class="col-3">
-						<ChippedTextField name={attr('_spell_uses', '_max')} chipSize={7} />
-					</Col>
-					<Col class="col-3 offset-3">
-						<ChippedCheckbox name={attr('_spell_repress')} value="1" />
-					</Col>
-				</Row>
-				<Row dense>
-					<Col class="col-6">
-						<Label i18n="time">Time</Label>
-					</Col>
-					<Col class="col-6 ">
-						<Label i18n="duration">Duration</Label>
-					</Col>
-				</Row>
-				<Row dense>
-					<Col class="col-6">
-						<ChippedTextField name={attr('_spell_time')} chipSize={7} />
-					</Col>
-					<Col class="col-6">
-						<ChippedTextField name={attr('_spell_duration')} chipSize={7} />
-					</Col>
-				</Row>
-			</Container>
+			<div class="edit">
+				<LabeledInput i18n="magic-spell" name="Spell" attribute={attr('_spell_name')} />
+				<LabeledInput i18n="dice-roll" name="Roll" attribute={attr('_spell_roll')} />
+				<LabeledInput i18n="type" name="Type" attribute={attr('_spell_type')} />
+				<LabeledInput i18n="tier" name="Tier" attribute={attr('_spell_tier')} />
+				<LabeledInput i18n="categories" name="Categories" attribute={attr('_spell_categories')} />
+				<Label i18n="uses-max" style="grid-area: uses-max-label;">Uses / Max</Label>
+				<ChippedTextField style="grid-area: uses" chipSize={7} name={attr('_spell_uses')} />
+				<ChippedTextField
+					style="grid-area: uses-max"
+					chipSize={7}
+					name={attr('_spell_uses', '_max')}
+				/>
+				<LabeledInput i18n="repress" name="Repress" attribute={attr('_spell_repress')} />
+				<LabeledInput i18n="target" name="Target" attribute={attr('_spell_target')} />
+				<LabeledInput i18n="time" name="Time" attribute={attr('_spell_time')} />
+				<LabeledInput i18n="duration" name="Duration" attribute={attr('_spell_duration')} />
+				<LabeledInput
+					i18n="effect"
+					name="Effect"
+					attribute={attr('_spell_effect')}
+					component="text-area"
+					chipSize={20}
+				/>
+			</div>
 		</ChippedDiv>
-		<ChippedDiv chipSize={30} h="fit-content" w="100%" {bgColor} class="d-flex" slot="normal">
-			<Container class="pt-0">
-				<Row dense>
-					<Col class="col-8 sm-5">
-						<div>
-							<Label i18n="magic-spell">Spell</Label>
-							<ChippedTextField chipSize={7} name={attr('_spell_name')} disabled />
-						</div>
-					</Col>
-					<Col class="col-4 sm-2">
-						<div>
-							<Label i18n="dice-roll">Roll</Label>
-							<ChippedTextField chipSize={7} name={attr('_spell_roll', '_display')} disabled />
-						</div>
-					</Col>
-					<Col class="sm-1 ">
-						<div>
-							<Label i18n="tier">Tier</Label>
-							<ChippedTextField chipSize={7} name={attr('_spell_tier')} disabled />
-						</div>
-					</Col>
-					<Col class="sm-1 ">
-						<div>
-							<Label i18n="repress">Repress</Label>
-							<ChippedCheckbox name={attr('_spell_repress')} value="1" />
-						</div>
-					</Col>
-					<Col class="sm-1 offset-sm-1">
-						<div>
-							<Label i18n="uses" i18nVars=" /">Uses{'{{0}}'}</Label>
-							<ChippedTextField chipSize={7} name={attr('_spell_uses')} />
-						</div>
-					</Col>
-					<Col class="col-sm-1">
-						<div>
-							<Label i18n="maximum-brief">Max</Label>
-							<ChippedTextField chipSize={7} name={attr('_spell_uses', '_max')} disabled />
-						</div>
-					</Col>
-				</Row>
-			</Container>
+		<ChippedDiv chipSize={30} h="fit-content" w="100%" {bgColor} slot="normal">
+			<div class="normal">
+				<LabeledInput i18n="magic-spell" name="Spell" attribute={attr('_spell_name')} disabled />
+				<LabeledInput i18n="dice-roll" name="Roll" attribute={attr('_spell_roll')} disabled />
+				<LabeledInput i18n="tier" name="Tier" attribute={attr('_spell_tier')} disabled />
+				<Label style="grid-area: repress-label;" i18n="repress">Repress</Label>
+				<ChippedCheckbox style="grid-area: repress;" name={attr('_spell_repress')} value="1" />
+
+				<Label i18n="uses-max" style="grid-area: uses-max-label;">Uses / Max</Label>
+				<ChippedTextField style="grid-area: uses" chipSize={7} name={attr('_spell_uses')} />
+				<ChippedTextField
+					style="grid-area: uses-max"
+					chipSize={7}
+					name={attr('_spell_uses', '_max')}
+					disabled
+				/>
+			</div>
 		</ChippedDiv>
 	</EditableField>
 </fieldset>
+
+<style lang="scss">
+	.edit {
+		width: 100%;
+		padding: 10px;
+		display: grid;
+		gap: 5px;
+		grid-template-columns: 3fr 1fr 20px repeat(4, 1fr);
+		grid-template-areas:
+			' spell-label spell-label . effect-label effect-label effect-label effect-label'
+			'spell spell . effect effect effect effect'
+			'roll-label roll-label . effect effect effect effect'
+			'roll roll . effect effect effect effect'
+			'type-label tier-label . effect effect effect effect'
+			'type tier . effect effect effect effect'
+			'categories-label categories-label . uses-max-label . . repress-label'
+			'categories categories . uses uses-max . repress'
+			'target-label target-label . time-label time-label duration-label duration-label'
+			'target target . time time duration duration';
+	}
+
+	.normal {
+		width: 100%;
+		padding: 10px;
+		display: grid;
+		gap: 5px;
+		grid-template-columns: 7fr 4fr repeat(5, 1fr);
+		grid-template-areas:
+			'spell-label roll-label tier-label repress-label repress-label uses-max-label uses-max-label'
+			'spell roll tier repress . uses uses-max';
+	}
+</style>
