@@ -3,10 +3,12 @@
 
 	export let name: string;
 	export let value: string | undefined = undefined;
+
+	export let style: string | undefined = undefined;
 </script>
 
 <!-- svelte-ignore a11y-label-has-associated-control -->
-<label>
+<label {style}>
 	<ChippedDiv h="33.2px" class="d-flex justify-center">
 		<input type="checkbox" {name} {value} />
 	</ChippedDiv>
