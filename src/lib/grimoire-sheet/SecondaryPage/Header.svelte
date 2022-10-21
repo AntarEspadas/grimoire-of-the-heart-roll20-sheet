@@ -1,72 +1,55 @@
 <script lang="ts">
-	import Block from './Block.svelte';
-
-	import ChippedTextField from '$lib/ChippedTextField.svelte';
-	import { Container, Row, Col } from 'svelte-materialify';
 	import Label from '$lib/Label.svelte';
-
-	const justify = 'end';
+	import LabeledInput from '$lib/LabeledInput.svelte';
 </script>
 
-<div class="header">
-	<Container>
-		<Row dense>
-			<Col class="col-2">
-				<Label i18n="character" class="end">Character</Label>
-			</Col>
-			<Col class="col-6">
-				<ChippedTextField name="attr_character_name" chipSize={7} />
-			</Col>
-			<Col class="col-1">
-				<Label i18n="experience-brief" class="end">EXP</Label>
-			</Col>
-			<Col>
-				<ChippedTextField name="attr_experience" chipSize={7} />
-			</Col>
-		</Row>
-		<Row dense>
-			<Col class="col-2">
-				<Label i18n="occupation" class="end">Occupation</Label>
-			</Col>
-			<Col class="col-3">
-				<ChippedTextField name="attr_occupation" chipSize={7} />
-			</Col>
-			<Col class="col-1">
-				<Label i18n="skill" class="end">Skill</Label>
-			</Col>
-			<Col class="col-2">
-				<ChippedTextField name="attr_skill" chipSize={7} />
-			</Col>
-			<Col class="col-1">
-				<Label i18n="resource-points-brief" class="end">RP</Label>
-			</Col>
-			<Col class="col-2">
-				<ChippedTextField name="attr_resource_points" chipSize={7} />
-			</Col>
-		</Row>
-		<Row dense>
-			<Col class="col-3">
-				<Label i18n="worked-blocks" class="end">Worked Blocks</Label>
-			</Col>
-			<Block name="Sun" i18n="sunday-short" />
-			<Block name="Mon" i18n="monday-short" />
-			<Block name="Tue" i18n="tuesday-short" />
-			<Block name="Wed" i18n="wednesday-short" />
-			<Block name="Thu" i18n="thursday-short" class="offset-1" />
-			<Block name="Fri" i18n="friday-short" />
-			<Block name="Sat" i18n="saturday-short" />
-			<Col class="col-2 offset-1">
-				<Label i18n="resource-points-block-brief" class="end">RP/Block</Label>
-			</Col>
-			<Col>
-				<ChippedTextField name="attr_rp_per_block" chipSize={7} type="number" />
-			</Col>
-		</Row>
-	</Container>
+<div class="header-top">
+	<LabeledInput i18n="character" name="Character" attribute="attr_character_name" />
+	<LabeledInput i18n="experience-short" name="Exp" attribute="attr_experience" />
+	<LabeledInput i18n="occupation" name="Occupation" />
+	<LabeledInput i18n="skill" name="Skill" />
+	<LabeledInput i18n="resource-points-short" name="RP" attribute="attr_resource_points" />
 </div>
 
-<style lang="sass">
-    .header
-        :global(.end)
-            justify-content: end
+<div class="header-bottom">
+	<Label i18n="worked-blocks" style="grid-area: worked-blocks;">Worked Blocks</Label>
+
+	<LabeledInput i18n="sunday-short" name="Sun" attribute="attr_sunday_block" />
+	<LabeledInput i18n="monday-short" name="Mon" attribute="attr_monday_block" />
+	<LabeledInput i18n="tuesday-short" name="Tue" attribute="attr_tuesday_block" />
+	<LabeledInput i18n="resource-points-block-short" name="RP/Block" attribute="attr_rp_per_block" />
+	<LabeledInput i18n="wednesday-short" name="Wed" attribute="attr_wednesday_block" />
+	<LabeledInput i18n="thursday-short" name="Thu" attribute="attr_thursday_block" />
+	<LabeledInput i18n="friday-short" name="Fri" attribute="attr_friday_block" />
+	<LabeledInput i18n="saturday-short" name="Sat" attribute="attr_saturday_block" />
+</div>
+
+<style lang="scss">
+	.header-top {
+		padding: 10px;
+		display: grid;
+		gap: 20px;
+		grid-template-columns: 90px 25% 40px 15% 50px 7% 1fr 10px;
+		grid-template-areas:
+			'character-label character character character exp-label exp exp .'
+			'occupation-label occupation skill-label skill rp-label rp . .';
+
+		:global(.label) {
+			justify-content: end;
+		}
+	}
+	.header-bottom {
+		padding: 10px;
+		display: grid;
+		gap: 5px;
+		column-gap: 5px;
+		grid-template-columns: 60px 10% repeat(3, 40px 10%) 80px 1fr;
+		grid-template-areas:
+			'worked-blocks worked-blocks sun-label sun mon-label mon tue-label tue rp-block-label rp-block'
+			'wed-label wed thu-label thu fri-label fri sat-label sat . .';
+
+		:global(.label) {
+			justify-content: end;
+		}
+	}
 </style>
