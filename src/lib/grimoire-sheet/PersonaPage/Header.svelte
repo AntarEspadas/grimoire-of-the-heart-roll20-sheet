@@ -26,7 +26,7 @@
 
 <style lang="scss">
 	.header {
-		width: 115%;
+		width: 100%;
 		height: 100%;
 		padding: 10px;
 		padding-bottom: 20px;

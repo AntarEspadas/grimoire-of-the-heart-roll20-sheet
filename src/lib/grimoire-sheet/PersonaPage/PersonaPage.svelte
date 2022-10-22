@@ -41,19 +41,21 @@
 	let bgColor = '#FB6674';
 
 	const areas = `
-		". title title title"
-		". physical-img fire-img ice-img"
-		". physical fire ice"
-		"thunder-img wind-img psychokinetic-img nuclear-img"
-		"thunder wind psychokinetic nuclear"
-		"dark-img light-img status-img intel-img"
-		"dark light status intel"
-	`;
+        ". title title title"
+        ". physical-img fire-img ice-img"
+        ". physical fire ice"
+        "thunder-img wind-img psychokinetic-img nuclear-img"
+        "thunder wind psychokinetic nuclear"
+        "dark-img light-img status-img intel-img"
+        "dark light status intel"
+    `;
 </script>
 
 <div class="persona-page">
 	<div class="header-container" style="background-color: {bgColor};">
-		<Header />
+		<div class="header">
+			<Header />
+		</div>
 		<div class="types">
 			<Types h="25px" />
 		</div>
@@ -74,47 +76,56 @@
 
 <style lang="sass">
 
-	.persona-page
-		padding: 10px
-		display: grid
-		gap: 10px
-		grid-template-columns: 1fr
+    .header-container > div
+        width: 100%
 
-	.header-container
-		--down: 55%
-		--chip-size: 40px
-		width: 100%
-		height: 350px
-		clip-path: polygon(100% var(--chip-size), calc(100% - var(--chip-size)) 0, 0 0, 0 var(--down), 62.5% var(--down), 62.5% 100%, 61% 100%, 61% calc(var(--down) + 4%), 0 calc( var(--down) + 4% ), 0 calc(100% - var(--chip-size)), var(--chip-size) 100%, 100% 100%)
-		display: grid
-		grid-template-columns: 61% 1fr
-		grid-template-rows: 25% calc(var(--down) - 25%) 1fr
-		column-gap: 1.5%
-		row-gap: 2%
+    .persona-page
+        padding: 10px
+        display: grid
+        gap: 10px
+        grid-template-columns: 1fr
 
-	:global(.header)
-		width: 100%
-		height: 100%
-		overflow-x: visible
-		grid-row: 1 / 3
-		grid-column: 1
-	
-	.types
-		width: 100%
-		height: 100%
-		grid-row: 1
-		grid-column: 2
-		padding-left: 70px
+    .header-container
+        --down: 55%
+        --chip-size: 40px
+        width: 100%
+        display: grid
+        grid-template-areas: "header" "types" "resistances" "bonuses"
 
-	.bonuses
-		width: 100%
-		height: 100%
-		grid-row: 3
-		grid-column: 1
+    @media (min-width: 600px) 
+        .header-container 
+            height: 350px
+            clip-path: polygon(100% var(--chip-size), calc(100% - var(--chip-size)) 0, 0 0, 0 var(--down), 62.5% var(--down), 62.5% 100%, 61% 100%, 61% calc(var(--down) + 4%), 0 calc( var(--down) + 4% ), 0 calc(100% - var(--chip-size)), var(--chip-size) 100%, 100% 100%)
+            column-gap: 1.5%
+            row-gap: 2%
+            grid-template-columns: 61% 1fr
+            grid-template-rows: 25% calc(var(--down) - 25%) 1fr
+            grid-template-areas: "header types" "header resistances" "bonuses resistances"
 
-	.resistances
-		width: 100%
-		height: 100%
-		grid-row: 2 / 4
-		grid-column: 2
+            .header
+                width: 115%
+
+            .types
+                padding-left: 70px
+
+    .header
+        width: 100%
+        height: 100%
+        overflow-x: visible
+        grid-area: header
+    
+    .types
+        width: 100%
+        height: 100%
+        grid-area: types
+
+    .bonuses
+        width: 100%
+        height: 100%
+        grid-area: bonuses
+
+    .resistances
+        width: 100%
+        height: 100%
+        grid-area: resistances
 </style>
