@@ -4,50 +4,53 @@
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
 	import EditableField from '$lib/EditableField.svelte';
 	import Label from '$lib/Label.svelte';
-	import { Container, Row, Col, Divider } from 'svelte-materialify';
-
-	const items = new Array(9).fill(0).map((_, i) => i + 1);
 </script>
 
-<Container class="pt-0">
-	<Row dense>
-		<Col class="pb-0">
-			<Label i18n="item" element="h5">Items</Label>
-		</Col>
-	</Row>
-	<Row dense>
-		<Col class="pb-0 pt-0 col-10">
-			<Label i18n="name">Name</Label>
-		</Col>
-		<Col class="pb-0 pt-0">
-			<Label i18n="quantity-brief">Qty</Label>
-		</Col>
-	</Row>
+<div class="items">
+	<Label style="grid-area: items;" i18n="item" element="h5">Items</Label>
+	<Label i18n="name">Name</Label>
+	<Label i18n="quantity-brief">Qty</Label>
+
 	<fieldset class="repeating_items">
 		<EditableField
 			chatTemplate={'&{template:general} {{title=Item}} {{name=@{_item_name}}} {{desc=@{_item_description}}} {{color=purple}}'}
 		>
-			<Row dense>
-				<Col class="col-9 pb-0">
-					<ChippedTextField name="attr__item_name" chipSize={7} />
-				</Col>
-				<Col class="pb-0">
-					<ChippedTextField name="attr__item_amount" chipSize={7} type="number" />
-				</Col>
-			</Row>
+			<div class="always">
+				<ChippedTextField name="attr__item_name" chipSize={7} />
+				<ChippedTextField name="attr__item_amount" chipSize={7} type="number" />
+			</div>
 			<svelte:fragment slot="edit">
-				<Row dense>
-					<Col class="pt-0 pb-0">
-						<Label i18n="description">Description</Label>
-					</Col>
-				</Row>
-				<Row dense>
-					<Col>
-						<ChippedTextArea resizable chipSize={10} name="attr__item_description" />
-					</Col>
-				</Row>
-				<Divider />
+				<Label i18n="description">Description</Label>
+				<ChippedTextArea resizable chipSize={10} name="attr__item_description" />
 			</svelte:fragment>
 		</EditableField>
 	</fieldset>
-</Container>
+</div>
+
+<style lang="scss">
+	.items {
+		padding: 10px;
+		display: grid;
+		gap: 5px;
+		grid-template-columns: 3fr 1fr;
+		grid-template-areas:
+			'items items'
+			'name qty'
+			'content content';
+
+		fieldset {
+			grid-area: content;
+		}
+
+		.always {
+			display: grid;
+			gap: 5px;
+			grid-template-columns: 3fr 1fr;
+		}
+
+		:global(.editable-field .normal) {
+			display: grid;
+			gap: 5px;
+		}
+	}
+</style>
