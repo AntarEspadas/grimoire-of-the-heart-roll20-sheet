@@ -23,4 +23,6 @@
 			gap: 5px
 			grid-template-columns: 50px auto
 			background-color: #8395AE
+		:global(.chipped-checkbox)
+			grid-column: 1
 </style>
