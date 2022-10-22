@@ -55,6 +55,7 @@
 				<ChippedTextField disabled name="attr__feat_name" chipSize={7} />
 			</svelte:fragment>
 		</EditableField>
+		<div class="divider" />
 	</fieldset>
 </div>
 
@@ -68,6 +69,10 @@
 			display: grid;
 			gap: 5px;
 			grid-template-columns: 1fr 3fr;
+		}
+
+		.divider {
+			height: 5px;
 		}
 	}
 </style>

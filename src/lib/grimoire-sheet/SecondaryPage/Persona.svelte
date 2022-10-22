@@ -15,19 +15,22 @@
 	<Label i18n="arcana">Name</Label>
 	<Label i18n="level-brief">Lv</Label>
 
-	<fieldset class="repeating_personae">
-		<EditableField {chatTemplate} display="grid">
-			<div class="always">
-				<ChippedTextField name="attr__arcana" chipSize={7} />
-				<ChippedTextField name="attr__name" chipSize={7} />
-				<ChippedTextField name="attr__level" chipSize={7} type="number" />
-			</div>
-			<svelte:fragment slot="edit">
-				<Label i18n="notes">Notes</Label>
-				<ChippedTextArea chipSize={7} name="attr__persona_notes" />
-			</svelte:fragment>
-		</EditableField>
-	</fieldset>
+	<div class="repeating">
+		<fieldset class="repeating_personae">
+			<EditableField {chatTemplate} display="grid">
+				<div class="always">
+					<ChippedTextField name="attr__arcana" chipSize={7} />
+					<ChippedTextField name="attr__name" chipSize={7} />
+					<ChippedTextField name="attr__level" chipSize={7} type="number" />
+				</div>
+				<svelte:fragment slot="edit">
+					<Label i18n="notes">Notes</Label>
+					<ChippedTextArea chipSize={7} name="attr__persona_notes" />
+				</svelte:fragment>
+			</EditableField>
+			<div class="divider" />
+		</fieldset>
+	</div>
 </div>
 
 <style lang="scss">
@@ -41,8 +44,12 @@
 			'arcana name level'
 			'content content content';
 
-		fieldset {
+		.repeating {
 			grid-area: content;
+		}
+
+		.divider {
+			height: 5px;
 		}
 
 		.always {
