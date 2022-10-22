@@ -8,7 +8,7 @@
 </script>
 
 <!-- svelte-ignore a11y-label-has-associated-control -->
-<label {style}>
+<label {style} class="chipped-checkbox">
 	<ChippedDiv h="33.2px" class="d-flex justify-center">
 		<input type="checkbox" {name} {value} />
 	</ChippedDiv>
