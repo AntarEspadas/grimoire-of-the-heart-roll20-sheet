@@ -3,22 +3,24 @@
 
 	import ChippedDiv from '$lib/ChippedDiv.svelte';
 	import Label from '$lib/Label.svelte';
-	import { Row, Col, Container } from 'svelte-materialify';
 
 	let bgColor = '#8395AE';
 </script>
 
-<Container>
-	<ChippedDiv {bgColor} chipSize={20}>
-		<Container>
-			<Row>
-				<Col class="col-1">
-					<ChippedCheckbox name="attr_enable_persona_2" value="1" />
-				</Col>
-				<Col>
-					<Label i18n="second-persona-page">Second Persona Page</Label>
-				</Col>
-			</Row>
-		</Container>
+<div class="config-page">
+	<ChippedDiv class="container" {bgColor} chipSize={20}>
+		<ChippedCheckbox name="attr_enable_persona_2" value="1" />
+		<Label i18n="second-persona-page">Second Persona Page</Label>
 	</ChippedDiv>
-</Container>
+</div>
+
+<style lang="sass">
+	.config-page
+		padding: 10px
+		:global(.container)
+			padding: 24px
+			display: grid
+			gap: 5px
+			grid-template-columns: 50px auto
+			background-color: #8395AE
+</style>
