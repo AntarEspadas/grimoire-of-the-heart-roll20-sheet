@@ -5,7 +5,7 @@
 <div class="additional-equipment">
 	<LabeledInput i18n="sidearm" name="Sidearm" />
 	<LabeledInput i18n="damage" name="Damage" />
-	<LabeledInput i18n="reach" name="Reach" />
+	<LabeledInput i18n="reach-range" name="Reach" />
 	<LabeledInput i18n="effect" name="Effect" />
 
 	<LabeledInput i18n="miscellaneous-gear" name="Misc Gear" />

@@ -9,7 +9,7 @@
 <div class="items">
 	<Label style="grid-area: items;" i18n="item" element="h5">Items</Label>
 	<Label i18n="name">Name</Label>
-	<Label i18n="quantity-brief">Qty</Label>
+	<Label i18n="quantity-short">Qty</Label>
 
 	<div class="repeating">
 		<fieldset class="repeating_items">

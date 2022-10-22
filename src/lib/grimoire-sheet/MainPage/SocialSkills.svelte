@@ -25,7 +25,7 @@
 <div class="social-skills">
 	<Label class="title" i18n="social-skills" element="h5">Social Skills</Label>
 	<div class="grid" style:grid-template-areas={areas}>
-		<Label style="grid-area: pts;" i18n="points-brief">Pts</Label>
+		<Label style="grid-area: pts;" i18n="points-short">Pts</Label>
 		<Label style="grid-area: tier" i18n="tier">Tier</Label>
 		<Label style="grid-area: title" i18n="title">Title</Label>
 

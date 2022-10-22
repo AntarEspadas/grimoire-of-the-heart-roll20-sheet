@@ -7,8 +7,8 @@
 	<Label class="title" i18n="persona" element="h5">Persona</Label>
 	<div class="grid">
 		<LabeledInput i18n="name" name="Name" attribute="persona_name" />
-		<LabeledInput i18n="level-brief" name="Lv" attribute="persona_level" />
-		<LabeledInput i18n="spirit-points-brief" name="SP" attribute="spell_points" />
+		<LabeledInput i18n="level-short" name="Lv" attribute="persona_level" />
+		<LabeledInput i18n="spirit-points-short" name="SP" attribute="spell_points" />
 		<LabeledInput i18n="conviction-belief" name="Conviction" />
 		<LabeledInput i18n="natural-skill" name="Natural Skill" component="text-area" />
 	</div>

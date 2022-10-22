@@ -30,7 +30,7 @@
 			</CustomCheckbox>
 		</ChippedDiv>
 	{/each}
-	<Label i18n="damage-reduction-brief" style="grid-area: damage-red-label">Damage Red</Label>
+	<Label i18n="damage-reduction-short" style="grid-area: damage-red-label">Damage Red</Label>
 	<ChippedTextField chipSize={7} name="attr_damage_reduction" style="grid-area: damage-red;" />
 </div>
 
