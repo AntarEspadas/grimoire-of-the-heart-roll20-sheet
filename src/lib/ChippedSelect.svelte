@@ -14,7 +14,16 @@
 
 <style lang="sass">
     select
+        // all: unset
+        outline: none
+        border: none
         text-align-last: center
+        text-align: center
         width: 100%
         height: 100%
+
+        -webkit-appearance: none
+        -moz-appearance: none
+        text-indent: 1px
+        text-overflow: ''
 </style>
