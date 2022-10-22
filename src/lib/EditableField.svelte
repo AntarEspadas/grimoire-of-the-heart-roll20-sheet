@@ -50,6 +50,9 @@
 </div>
 
 <style lang="sass">
+    .editbutton.editbutton.editbutton
+        top: 0px
+        right: -5px
 
     .editable-field:hover
         button
