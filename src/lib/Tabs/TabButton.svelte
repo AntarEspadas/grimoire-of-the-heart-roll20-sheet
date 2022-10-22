@@ -2,7 +2,7 @@
 	import { key } from './TabView.svelte';
 	import type { Context } from './TabView.svelte';
 	import { getContext } from 'svelte';
-	import { Button } from 'svelte-materialify';
+	// import { Button } from 'svelte-materialify';
 
 	export let style = '';
 
@@ -20,17 +20,15 @@
 {/if}
 
 <span>
-	<Button
+	<button
 		on:click={() => currentIndex.set(String(index))}
 		{type}
-		filled
-		rounded
 		name="act_tabs_switch_button"
 		value={index}
 		{style}
 	>
 		<slot />
-	</Button>
+	</button>
 </span>
 
 <style lang="sass">

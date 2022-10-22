@@ -4,7 +4,7 @@
 </script>
 
 <div class="past">
-	<Label element="h5" i18n="past">Past</Label>
+	<Label element="h1" i18n="past">Past</Label>
 	<div class="grid">
 		<LabeledInput i18n="hometown" name="Hometown" />
 		<LabeledInput i18n="parents-guardians" name="Parents/Guardians" />

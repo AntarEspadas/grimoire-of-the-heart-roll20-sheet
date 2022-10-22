@@ -4,7 +4,7 @@
 </script>
 
 <div class="economic">
-	<Label element="h5" i18n="economic">Economic</Label>
+	<Label element="h1" i18n="economic">Economic</Label>
 
 	<div class="grid">
 		<LabeledInput i18n="financial-situation" name="Financial situation" />

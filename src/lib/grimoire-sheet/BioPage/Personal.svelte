@@ -4,7 +4,7 @@
 </script>
 
 <div class="personal">
-	<Label element="h5" i18n="personal-information">Personal</Label>
+	<Label element="h1" i18n="personal-information">Personal</Label>
 
 	<div class="grid">
 		<LabeledInput i18n="fears" name="Fears" />

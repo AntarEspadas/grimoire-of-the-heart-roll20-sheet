@@ -4,7 +4,7 @@
 </script>
 
 <div class="notes">
-	<Label i18n="notes" element="h5">Notes</Label>
+	<Label i18n="notes" element="h1">Notes</Label>
 	<ChippedTextArea chipSize={15} name="atr_notes" />
 </div>
 

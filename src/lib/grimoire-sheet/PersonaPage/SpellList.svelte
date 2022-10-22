@@ -31,7 +31,13 @@
 </script>
 
 <fieldset class="repeating_{getName('skills')}">
-	<EditableField hasRoll rollAttribute={attr('_spell_roll')} {rollTemplate} {chatTemplate}>
+	<EditableField
+		hasRoll
+		rollAttribute={attr('_spell_roll')}
+		{rollTemplate}
+		{chatTemplate}
+		class="mb"
+	>
 		<ChippedDiv chipSize={30} {bgColor} slot="edit">
 			<div class="edit">
 				<LabeledInput i18n="magic-spell" name="Spell" attribute={attr('_spell_name')} />
@@ -81,8 +87,8 @@
 </fieldset>
 
 <style lang="scss">
-	fieldset :global(.editable-field) {
-		margin-bottom: 6px;
+	:global(.editable-field.mb) {
+		margin-bottom: 8px;
 	}
 
 	.edit {
@@ -105,7 +111,7 @@
 	}
 
 	.normal {
-		width: 100%;
+		width: 1fr;
 		padding: 10px;
 		display: grid;
 		gap: 5px;

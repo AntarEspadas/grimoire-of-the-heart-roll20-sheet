@@ -69,7 +69,7 @@
         opacity: 0
         transition-property: transform opacity
         transition-duration: 0.5s
-        positoin: absolute
+        position: absolute
         top: 0
         display: flex
         flex-direction: row

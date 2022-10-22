@@ -6,7 +6,7 @@
 </script>
 
 <div class="combat-skills">
-	<Label i18n="combat-skills" element="h5">Combat Skills</Label>
+	<Label i18n="combat-skills" element="h1">Combat Skills</Label>
 	<div class="grid">
 		<CombatSkill i18n="strength" name="Strength" abbreviation="str" />
 		<CombatSkill i18n="technique" name="Technique" abbreviation="tec" />

@@ -4,7 +4,7 @@
 </script>
 
 <div class="preferences">
-	<Label element="h5" i18n="preferences">Preferences</Label>
+	<Label element="h1" i18n="preferences">Preferences</Label>
 
 	<div class="grid">
 		<LabeledInput i18n="food" name="Food" />

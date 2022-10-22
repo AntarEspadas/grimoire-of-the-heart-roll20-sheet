@@ -30,7 +30,7 @@
 
 <div class="confidants-header">
 	<!--  -->
-	<Label style="grid-area: confidants;" i18n="confidants" element="h5">Confidants</Label>
+	<Label style="grid-area: confidants;" i18n="confidants" element="h1">Confidants</Label>
 
 	<Label i18n="arcana">Arcana</Label>
 	<Label i18n="name">Name</Label>

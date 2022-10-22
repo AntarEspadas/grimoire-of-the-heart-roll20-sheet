@@ -7,7 +7,7 @@
 		i18n="aspects"
 		name="Aspects"
 		component="text-area"
-		labelElement="h5"
+		labelElement="h1"
 		chipSize={20}
 	/>
 	<LabeledInput i18n="aspect-points" name="Aspect Points" />

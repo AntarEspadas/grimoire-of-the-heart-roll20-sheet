@@ -27,7 +27,7 @@
 <style lang="scss">
 	.header {
 		width: 100%;
-		height: 100%;
+		height: 85%;
 		padding: 10px;
 		padding-bottom: 20px;
 		display: grid;

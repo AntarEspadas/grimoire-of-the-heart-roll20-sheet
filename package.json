@@ -34,7 +34,6 @@
 		"sass": "^1.54.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
-		"svelte-materialify": "^0.3.11",
 		"svelte-preprocess": "^4.10.6",
 		"svelte-sequential-preprocessor": "^0.0.7",
 		"ts-loader": "^9.3.1",

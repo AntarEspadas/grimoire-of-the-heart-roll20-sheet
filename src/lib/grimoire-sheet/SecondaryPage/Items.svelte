@@ -7,7 +7,7 @@
 </script>
 
 <div class="items">
-	<Label style="grid-area: items;" i18n="item" element="h5">Items</Label>
+	<Label style="grid-area: items;" i18n="item" element="h1">Items</Label>
 	<Label i18n="name">Name</Label>
 	<Label i18n="quantity-short">Qty</Label>
 

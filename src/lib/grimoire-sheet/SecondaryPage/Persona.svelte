@@ -10,7 +10,7 @@
 </script>
 
 <div class="persona">
-	<Label style="grid-area: persona;" i18n="persona" element="h5">Persona</Label>
+	<Label style="grid-area: persona;" i18n="persona" element="h1">Persona</Label>
 	<Label i18n="arcana">Arcana</Label>
 	<Label i18n="arcana">Name</Label>
 	<Label i18n="level-short">Lv</Label>

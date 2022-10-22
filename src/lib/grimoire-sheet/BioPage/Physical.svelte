@@ -4,7 +4,7 @@
 </script>
 
 <div class="physical">
-	<Label element="h5" i18n="physical">Physical</Label>
+	<Label element="h1" i18n="physical">Physical</Label>
 	<div class="grid">
 		<LabeledInput i18n="height" name="Height" />
 		<LabeledInput i18n="weight" name="Weight" />

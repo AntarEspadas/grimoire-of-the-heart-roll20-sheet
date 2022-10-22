@@ -4,7 +4,7 @@
 </script>
 
 <div class="social">
-	<Label element="h5" i18n="social">Social</Label>
+	<Label element="h1" i18n="social">Social</Label>
 
 	<div class="grid">
 		<LabeledInput i18n="relationship" name="relationship" />

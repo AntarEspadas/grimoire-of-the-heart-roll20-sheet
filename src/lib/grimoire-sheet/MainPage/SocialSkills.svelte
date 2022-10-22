@@ -23,7 +23,7 @@
 </script>
 
 <div class="social-skills">
-	<Label class="title" i18n="social-skills" element="h5">Social Skills</Label>
+	<Label class="title" i18n="social-skills" element="h1">Social Skills</Label>
 	<div class="grid" style:grid-template-areas={areas}>
 		<Label style="grid-area: pts;" i18n="points-short">Pts</Label>
 		<Label style="grid-area: tier" i18n="tier">Tier</Label>

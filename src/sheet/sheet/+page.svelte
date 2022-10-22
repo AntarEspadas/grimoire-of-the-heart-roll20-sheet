@@ -53,7 +53,6 @@
 </script>
 
 <script>
-	import { MaterialApp } from 'svelte-materialify';
 	import { Tab, TabButton, TabView } from '$lib/Tabs';
 	import MainPage from '$lib/grimoire-sheet/MainPage/MainPage.svelte';
 	import SecondaryPage from '$lib/grimoire-sheet/SecondaryPage/SecondaryPage.svelte';
@@ -67,37 +66,35 @@
 </script>
 
 <div class="sheet">
-	<MaterialApp>
-		<TabView>
-			<div class="tab-buttons">
-				<TabButton>Main</TabButton>
-				<TabButton>Secondary</TabButton>
-				<TabButton>Persona</TabButton>
-				<TabButton toggleAttribute="attr_enable_persona_2">Persona 2</TabButton>
-				<TabButton>Bio</TabButton>
-				<TabButton>Config</TabButton>
-			</div>
-			<div class="spacer" />
-			<Tab>
-				<MainPage />
-			</Tab>
-			<Tab>
-				<SecondaryPage />
-			</Tab>
-			<Tab>
-				<PersonaPage suffix="" />
-			</Tab>
-			<Tab>
-				<PersonaPage suffix="2" />
-			</Tab>
-			<Tab>
-				<BioPage />
-			</Tab>
-			<Tab>
-				<ConfigPage />
-			</Tab>
-		</TabView>
-	</MaterialApp>
+	<TabView>
+		<div class="tab-buttons">
+			<TabButton>Main</TabButton>
+			<TabButton>Secondary</TabButton>
+			<TabButton>Persona</TabButton>
+			<TabButton toggleAttribute="attr_enable_persona_2">Persona 2</TabButton>
+			<TabButton>Bio</TabButton>
+			<TabButton>Config</TabButton>
+		</div>
+		<div class="spacer" />
+		<Tab>
+			<MainPage />
+		</Tab>
+		<Tab>
+			<SecondaryPage />
+		</Tab>
+		<Tab>
+			<PersonaPage suffix="" />
+		</Tab>
+		<Tab>
+			<PersonaPage suffix="2" />
+		</Tab>
+		<Tab>
+			<BioPage />
+		</Tab>
+		<Tab>
+			<ConfigPage />
+		</Tab>
+	</TabView>
 </div>
 
 {#if production}
@@ -116,6 +113,12 @@
 	div.sheet
 		min-width: 340px
 		position: relative
+
+		:global
+			fieldset
+				padding: 0
+			div
+				box-sizing: border-box
 
 	@media (min-width: 600px)
 		div.sheet

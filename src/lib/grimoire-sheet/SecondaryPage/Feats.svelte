@@ -34,7 +34,7 @@
 </script>
 
 <div class="feats">
-	<Label i18n="feats" element="h5">Feats</Label>
+	<Label i18n="feats" element="h1">Feats</Label>
 	<fieldset class="repeating_feats">
 		<EditableField
 			chatTemplate={'&{template:general} {{title=Feat}} {{name=@{_feat_name}}} {{desc=@{_feat_description}}} {{color=purple}} '}
