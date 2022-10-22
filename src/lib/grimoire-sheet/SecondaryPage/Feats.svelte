@@ -4,7 +4,6 @@
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
 	import EditableField from '$lib/EditableField.svelte';
 	import Label from '$lib/Label.svelte';
-	import { Container, Row, Col } from 'svelte-materialify';
 
 	const feats = [
 		[
@@ -34,45 +33,41 @@
 	].flat();
 </script>
 
-<Container class="pt-0">
-	<Row dense>
-		<Col>
-			<Label i18n="feats" element="h5">Feats</Label>
-		</Col>
-	</Row>
+<div class="feats">
+	<Label i18n="feats" element="h5">Feats</Label>
 	<fieldset class="repeating_feats">
-		<Row dense>
-			<Col class="col-12 pt-0">
-				<EditableField
-					chatTemplate={'&{template:general} {{title=Feat}} {{name=@{_feat_name}}} {{desc=@{_feat_description}}} {{color=purple}} '}
-				>
-					<svelte:fragment slot="edit">
-						<ChippedTextField
-							name="attr_featsource"
-							h="30px"
-							chipSize={7}
-							placeholder="Source"
-							class="mb-1"
-						/>
-						<ChippedTextField name="attr__feat_name" class="mb-1" placeholder="Name" chipSize={7} />
-						<ChippedTextArea
-							chipSize={10}
-							placeholder="Description"
-							name="attr__feat_description"
-						/>
-					</svelte:fragment>
-					<Container slot="normal" class="ma-0 pa-0">
-						<Row dense>
-							<Col class="col-3 pb-0 pt-0 d-flex align-center justify-end">
-								<span name="attr_featsource" />
-							</Col>
-							<Col class="pb-0 pt-0">
-								<ChippedTextField disabled name="attr__feat_name" chipSize={7} />
-							</Col>
-						</Row>
-					</Container>
-				</EditableField>
-			</Col>
-		</Row>
+		<EditableField
+			chatTemplate={'&{template:general} {{title=Feat}} {{name=@{_feat_name}}} {{desc=@{_feat_description}}} {{color=purple}} '}
+		>
+			<svelte:fragment slot="edit">
+				<ChippedTextField
+					name="attr_featsource"
+					h="30px"
+					chipSize={7}
+					placeholder="Source"
+					class="mb-1"
+				/>
+				<ChippedTextField name="attr__feat_name" class="mb-1" placeholder="Name" chipSize={7} />
+				<ChippedTextArea chipSize={10} placeholder="Description" name="attr__feat_description" />
+			</svelte:fragment>
+			<svelte:fragment slot="normal">
+				<span name="attr_featsource" />
+				<ChippedTextField disabled name="attr__feat_name" chipSize={7} />
+			</svelte:fragment>
+		</EditableField>
 	</fieldset>
-</Container>
+</div>
+
+<style lang="scss">
+	.feats {
+		padding: 10px;
+		display: grid;
+		gap: 5px;
+
+		:global(.editable-field .normal) {
+			display: grid;
+			gap: 5px;
+			grid-template-columns: 1fr 3fr;
+		}
+	}
+</style>
