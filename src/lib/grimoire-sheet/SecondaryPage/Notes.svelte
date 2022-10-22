@@ -1,18 +1,18 @@
 <script lang="ts">
 	import ChippedTextArea from '$lib/ChippedTextArea.svelte';
 	import Label from '$lib/Label.svelte';
-	import { Container, Row, Col } from 'svelte-materialify';
 </script>
 
-<Container class="pt-0">
-	<Row dense>
-		<Col>
-			<Label i18n="notes" element="h5">Notes</Label>
-		</Col>
-	</Row>
-	<Row dense>
-		<Col>
-			<ChippedTextArea chipSize={15} h="250px" w="100%" name="atr_notes" />
-		</Col>
-	</Row>
-</Container>
+<div class="notes">
+	<Label i18n="notes" element="h5">Notes</Label>
+	<ChippedTextArea chipSize={15} name="atr_notes" />
+</div>
+
+<style lang="sass">
+	.notes
+		height: 100%
+		padding: 10px
+		display: grid
+		gap: 5px
+		grid-template-rows: auto 1fr
+</style>
