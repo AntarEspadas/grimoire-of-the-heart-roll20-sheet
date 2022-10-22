@@ -45,7 +45,7 @@
 					h="30px"
 					chipSize={7}
 					placeholder="Source"
-					class="mb-1"
+					class="feat-source"
 				/>
 				<ChippedTextField name="attr__feat_name" class="mb-1" placeholder="Name" chipSize={7} />
 				<ChippedTextArea chipSize={10} placeholder="Description" name="attr__feat_description" />
@@ -73,6 +73,10 @@
 
 		.divider {
 			height: 5px;
+		}
+
+		:global(.feat-source) {
+			margin-bottom: 4px;
 		}
 	}
 </style>

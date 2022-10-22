@@ -6,7 +6,7 @@
 	export let style: string | undefined = undefined;
 </script>
 
-<ChippedDiv {style} h="33.2px" class="d-flex justify-center chipped-select">
+<ChippedDiv {style} h="33.2px" class="chipped-select">
 	<select {name}>
 		<slot />
 	</select>
