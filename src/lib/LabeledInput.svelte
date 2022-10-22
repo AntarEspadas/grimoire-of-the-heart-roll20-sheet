@@ -31,7 +31,11 @@
 
 	$: attribute = attribute ?? internalName.replaceAll('-', '_');
 
+	let extraProps: { [key: string]: any };
+
 	$: extraProps = component == 'text-area' ? { h: '100%' } : {};
+
+	$: if (component == 'text-field') extraProps.disabled = disabled;
 </script>
 
 <Label {i18n} style="grid-area: {internalName}-label;" element={labelElement} class={labelClass}
@@ -43,5 +47,4 @@
 	{chipSize}
 	name="attr_{attribute}"
 	{...extraProps}
-	{disabled}
 />
