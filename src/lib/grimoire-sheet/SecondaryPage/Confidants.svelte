@@ -1,7 +1,6 @@
 <script lang="ts">
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
 	import Label from '$lib/Label.svelte';
-	import { Container, Row, Col } from 'svelte-materialify';
 
 	const confidants = [
 		{ label: '0 The Fool', name: 'fool' },
@@ -29,39 +28,50 @@
 	];
 </script>
 
-<Container class="pt-0">
-	<Row dense>
-		<Col class="pb-0">
-			<Label i18n="confidants" element="h5">Confidants</Label>
-		</Col>
-	</Row>
-	<Row dense>
-		<Col class="col-5 pt-0">
-			<Label i18n="arcana">Arcana</Label>
-		</Col>
-		<Col class="col-5 pt-0">
-			<Label i18n="name">Name</Label>
-		</Col>
-		<Col class="col-2 pt-0">
-			<Label i18n="rank">Rank</Label>
-		</Col>
-	</Row>
+<div class="confidants-header">
+	<!--  -->
+	<Label style="grid-area: confidants;" i18n="confidants" element="h5">Confidants</Label>
+
+	<Label i18n="arcana">Arcana</Label>
+	<Label i18n="name">Name</Label>
+	<Label i18n="rank">Rank</Label>
+</div>
+
+<div class="confidants">
 	{#each confidants as { label, name }, i}
-		<Row dense>
-			<Col class="col-5 pb-0 pt-0">
-				<Label i18n="tarot-{name}" justify="end">{label}</Label>
-			</Col>
-			<Col class="col-5 pb-0 pt-0">
-				<ChippedTextField name="attr_{name}_confidant" h="30px" chipSize={i ? 0 : 25} />
-			</Col>
-			<Col class="pb-0 pt-0">
-				<ChippedTextField
-					name="attr_{name}_confidant_rank"
-					h="30px"
-					chipSize={i ? 0 : 7}
-					type="number"
-				/>
-			</Col>
-		</Row>
+		<Label i18n="tarot-{name}">{label}</Label>
+		<ChippedTextField name="attr_{name}_confidant" h="30px" chipSize={i ? 0 : 25} />
+		<ChippedTextField
+			name="attr_{name}_confidant_rank"
+			h="30px"
+			chipSize={i ? 0 : 7}
+			type="number"
+		/>
 	{/each}
-</Container>
+</div>
+
+<style lang="scss">
+	.confidants-header {
+		padding: 10px;
+		padding-bottom: 0;
+		padding-top: 8px;
+		display: grid;
+		column-gap: 5px;
+		grid-template-columns: 125px 5fr 2fr;
+		grid-template-areas:
+			'confidants confidants confidants'
+			'arcana name rank';
+	}
+
+	.confidants {
+		padding: 10px;
+		padding-top: 0;
+		display: grid;
+		column-gap: 5px;
+		grid-template-columns: 125px 5fr 2fr;
+
+		:global(.label) {
+			justify-content: end;
+		}
+	}
+</style>
