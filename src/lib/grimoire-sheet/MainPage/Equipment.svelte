@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { Container, Row, Col } from 'svelte-materialify';
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
 	import Label from '$lib/Label.svelte';
 	import EditableField from '$lib/EditableField.svelte';
 	import { types, typesi18n } from '$lib/values';
-	import ChippedDiv from '$lib/ChippedDiv.svelte';
 	import ChippedSelect from '$lib/ChippedSelect.svelte';
 	import LabeledInput from '$lib/LabeledInput.svelte';
 

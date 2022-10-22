@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { Container, Row, Col } from 'svelte-materialify';
 	import ChippedTextField from '$lib/ChippedTextField.svelte';
 	import Label from '$lib/Label.svelte';
 	import RollableLabel from '$lib/RollableLabel.svelte';
-	import ChippedDiv from '$lib/ChippedDiv.svelte';
 	import { socialSkills } from '$lib/values';
 	import ChippedSelect from '$lib/ChippedSelect.svelte';
 

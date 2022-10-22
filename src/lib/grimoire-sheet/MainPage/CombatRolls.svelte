@@ -1,10 +1,7 @@
 <script lang="ts">
 	import ChippedSelect from '$lib/ChippedSelect.svelte';
 
-	import ChippedTextField from '$lib/ChippedTextField.svelte';
 	import Label from '$lib/Label.svelte';
-
-	import { Container, Row, Col } from 'svelte-materialify';
 
 	export let initiative = false;
 

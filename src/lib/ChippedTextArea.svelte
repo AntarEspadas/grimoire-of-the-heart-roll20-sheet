@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Textarea } from 'svelte-materialify';
 	import ChippedDiv from './ChippedDiv.svelte';
 
 	export let chipSize: number;

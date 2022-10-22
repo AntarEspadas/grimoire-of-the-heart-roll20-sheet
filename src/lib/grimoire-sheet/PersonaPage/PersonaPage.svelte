@@ -19,7 +19,6 @@
 </script>
 
 <script lang="ts">
-	import { Row, Col, Container } from 'svelte-materialify';
 	import Header from './Header.svelte';
 	import Types from '../MainPage/Types.svelte';
 	import Resistances from '../MainPage/Resistances.svelte';
