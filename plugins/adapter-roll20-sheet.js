@@ -33,11 +33,21 @@ export default (options) => ({
 		const files = glob.sync(path.join(tempDir, '*'));
 
 		for (const file of files) {
-			if (fs.lstatSync(file).isDirectory()) continue;
 			const baseName = path.basename(file);
-			if (['manifest.json', 'sheet.overrides.json', 'instructions.md'].indexOf(baseName) != -1)
+			if (fs.lstatSync(file).isDirectory()) continue;
+			if (['manifest.json', 'sheet.overrides.json', 'instructions.md', "vite-manifest.json"].indexOf(baseName) != -1)
 				continue;
 			fs.copyFileSync(file, path.join(outDir, baseName));
+		}
+
+		const assets = glob.sync(path.join(tempDir, "assets", "*"))
+
+		fs.mkdirSync(path.join(outDir, "assets"))
+
+		for (const file of assets) {
+			const baseName = path.basename(file);
+			if (fs.lstatSync(file).isDirectory()) continue;
+			fs.copyFileSync(file, path.join(outDir, "assets", baseName));
 		}
 
 		let instructions = '';
