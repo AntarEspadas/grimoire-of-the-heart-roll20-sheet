@@ -52,5 +52,12 @@
 			visibility: visible;
 			transition: visibility 0s, opacity 0.2s linear;
 		}
+
+		:global(.charactersheet
+				input.tab-selector[name='attr_tabs_selected_index'][value='#{$i}']
+				~ *
+				.tabs_switch_button_#{$i}) {
+			background-color: #8395ae;
+		}
 	}
 </style>
