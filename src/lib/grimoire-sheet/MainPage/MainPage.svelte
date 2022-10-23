@@ -17,22 +17,22 @@
 		src="https://raw.githubusercontent.com/Naratna/grimoire-of-the-heart-roll20-sheet/master/static/assets/grimoire-logo.png"
 		alt="logo"
 	/>
-	<ChippedDiv chipSize={20} style="grid-area: header;">
+	<ChippedDiv style="grid-area: header;" class="header">
 		<Header />
 	</ChippedDiv>
-	<ChippedDiv chipSize={20} style="grid-area: rolls;">
+	<ChippedDiv style="grid-area: rolls;" class="combat-rolls">
 		<CombatRolls initiative />
 	</ChippedDiv>
-	<ChippedDiv corner={Corner.bottomLeft} chipSize={40} style="grid-area: combat-skills;">
+	<ChippedDiv corner={Corner.bottomLeft} style="grid-area: combat-skills;">
 		<CombatSkills />
 	</ChippedDiv>
-	<ChippedDiv chipSize={40} style="grid-area: hp;">
+	<ChippedDiv style="grid-area: hp;">
 		<HpAndEnergy />
 	</ChippedDiv>
-	<ChippedDiv corner={Corner.bottomLeft} chipSize={40} style="grid-area: social-skills;">
+	<ChippedDiv corner={Corner.bottomLeft} style="grid-area: social-skills;">
 		<SocialSkills />
 	</ChippedDiv>
-	<ChippedDiv chipSize={40} style="grid-area: aspects;">
+	<ChippedDiv style="grid-area: aspects;">
 		<Aspects />
 	</ChippedDiv>
 	<div class="persona-and-equipment">
@@ -52,6 +52,15 @@
 </div>
 
 <style lang="scss">
+	.main-page > :global(.chipped-div) {
+		--chip-size: 40px;
+	}
+
+	.main-page > :global(.chipped-div.header),
+	.main-page > :global(.chipped-div.combat-rolls) {
+		--chip-size: 20px;
+	}
+
 	.main-page {
 		padding: 10px;
 		display: grid;

@@ -1,20 +1,12 @@
 <script lang="ts">
 	import ChippedDiv from './ChippedDiv.svelte';
 
-	export let chipSize: number;
-	export let h: string | undefined = undefined;
-	export let w: string | undefined = undefined;
-
-	export let bgColor = 'white';
-
 	export let rows: number | undefined = undefined;
 
 	export let name: string;
 	export let placeholder: string | undefined = undefined;
 
-	export let resizable = false;
-
-	export let style = '';
+	export let style: string | undefined = undefined;
 
 	let className: string | undefined = undefined;
 	export { className as class };
@@ -22,15 +14,8 @@
 	let cssClass = 'chipped-textarea';
 </script>
 
-<ChippedDiv class="{cssClass} {className}" {chipSize} {w} {h} {bgColor} {style}>
-	<!-- <Textarea {placeholder} {name} noResize={!resizable} {rows} style="--height: calc({h} - 1px);" /> -->
-	<textarea
-		{placeholder}
-		{name}
-		{rows}
-		style="resize: {resizable ? 'both' : 'none'};"
-		class="chipped-textarea"
-	/>
+<ChippedDiv class="{cssClass} {className ?? ''}" {style}>
+	<textarea {placeholder} {name} {rows} class="chipped-textarea" />
 </ChippedDiv>
 
 <style lang="sass">

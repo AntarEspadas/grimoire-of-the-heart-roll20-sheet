@@ -19,13 +19,13 @@
 		<fieldset class="repeating_personae">
 			<EditableField {chatTemplate} display="grid">
 				<div class="always">
-					<ChippedTextField name="attr__arcana" chipSize={7} />
-					<ChippedTextField name="attr__name" chipSize={7} />
-					<ChippedTextField name="attr__level" chipSize={7} type="number" />
+					<ChippedTextField name="attr__arcana" />
+					<ChippedTextField name="attr__name" />
+					<ChippedTextField name="attr__level" type="number" />
 				</div>
 				<svelte:fragment slot="edit">
 					<Label i18n="notes">Notes</Label>
-					<ChippedTextArea chipSize={7} name="attr__persona_notes" />
+					<ChippedTextArea name="attr__persona_notes" />
 				</svelte:fragment>
 			</EditableField>
 			<div class="divider" />

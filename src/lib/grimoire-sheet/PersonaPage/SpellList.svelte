@@ -38,20 +38,16 @@
 		{chatTemplate}
 		class="mb"
 	>
-		<ChippedDiv chipSize={30} {bgColor} slot="edit">
-			<div class="edit">
+		<div class="edit" slot="edit">
+			<ChippedDiv>
 				<LabeledInput i18n="magic-spell" name="Spell" attribute={attr('_spell_name')} />
 				<LabeledInput i18n="dice-roll" name="Roll" attribute={attr('_spell_roll')} />
 				<LabeledInput i18n="type" name="Type" attribute={attr('_spell_type')} />
 				<LabeledInput i18n="tier" name="Tier" attribute={attr('_spell_tier')} />
 				<LabeledInput i18n="categories" name="Categories" attribute={attr('_spell_categories')} />
 				<Label i18n="uses-max" style="grid-area: uses-max-label;">Uses / Max</Label>
-				<ChippedTextField style="grid-area: uses" chipSize={7} name={attr('_spell_uses')} />
-				<ChippedTextField
-					style="grid-area: uses-max"
-					chipSize={7}
-					name={attr('_spell_uses', '_max')}
-				/>
+				<ChippedTextField style="grid-area: uses" name={attr('_spell_uses')} />
+				<ChippedTextField style="grid-area: uses-max" name={attr('_spell_uses', '_max')} />
 				<LabeledInput i18n="repress" name="Repress" attribute={attr('_spell_repress')} />
 				<LabeledInput i18n="target" name="Target" attribute={attr('_spell_target')} />
 				<LabeledInput i18n="time" name="Time" attribute={attr('_spell_time')} />
@@ -61,12 +57,11 @@
 					name="Effect"
 					attribute={attr('_spell_effect')}
 					component="text-area"
-					chipSize={20}
 				/>
-			</div>
-		</ChippedDiv>
-		<ChippedDiv chipSize={30} {bgColor} slot="normal">
-			<div class="normal">
+			</ChippedDiv>
+		</div>
+		<div class="normal" slot="normal">
+			<ChippedDiv>
 				<LabeledInput i18n="magic-spell" name="Spell" attribute={attr('_spell_name')} disabled />
 				<LabeledInput i18n="dice-roll" name="Roll" attribute={attr('_spell_roll')} disabled />
 				<LabeledInput i18n="tier" name="Tier" attribute={attr('_spell_tier')} disabled />
@@ -74,15 +69,10 @@
 				<ChippedCheckbox style="grid-area: repress;" name={attr('_spell_repress')} value="1" />
 
 				<Label i18n="uses-max" style="grid-area: uses-max-label;">Uses / Max</Label>
-				<ChippedTextField style="grid-area: uses" chipSize={7} name={attr('_spell_uses')} />
-				<ChippedTextField
-					style="grid-area: uses-max"
-					chipSize={7}
-					name={attr('_spell_uses', '_max')}
-					disabled
-				/>
-			</div>
-		</ChippedDiv>
+				<ChippedTextField style="grid-area: uses" name={attr('_spell_uses')} />
+				<ChippedTextField style="grid-area: uses-max" name={attr('_spell_uses', '_max')} disabled />
+			</ChippedDiv>
+		</div>
 	</EditableField>
 </fieldset>
 
@@ -91,7 +81,9 @@
 		margin-bottom: 8px;
 	}
 
-	.edit {
+	.edit > :global(.chipped-div) {
+		--chip-size: 40px;
+		background-color: #fb6674;
 		width: 100%;
 		padding: 10px;
 		display: grid;
@@ -108,9 +100,15 @@
 			'categories categories . uses uses-max . repress'
 			'target-label target-label . time-label time-label duration-label duration-label'
 			'target target . time time duration duration';
+
+		:global(.chipped-textarea) {
+			--chip-size: 20px;
+		}
 	}
 
-	.normal {
+	.normal > :global(.chipped-div) {
+		--chip-size: 40px;
+		background-color: #fb6674;
 		width: 1fr;
 		padding: 10px;
 		display: grid;

@@ -23,7 +23,7 @@
 	const positionRelative = production && !fieldName.length ? undefined : 'position: relative;';
 </script>
 
-<div class="editable-field {className}" style={positionRelative} style:--display={display}>
+<div class="editable-field {className}" style={positionRelative ?? ''} style:--display={display}>
 	<input class="edit-mode" type="hidden" name="attr_{fieldName}editmode" {value} />
 	<button
 		class="editbutton"

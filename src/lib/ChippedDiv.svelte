@@ -9,30 +9,14 @@
 </script>
 
 <script lang="ts">
-	export let chipSize: number | undefined = undefined;
 	export let corner: Corner = Corner.topRight;
-	export let style = '';
-
-	export let w: string | undefined = undefined;
-	export let h: string | undefined = undefined;
-	export let smH: string | undefined = undefined;
-	export let bgColor: string | undefined = undefined;
+	export let style: string | undefined = undefined;
 
 	let className: string = '';
 	export { className as class };
-
-	$: smH ??= h;
-
-	$: widthStyle = w ? `width: ${w};` : '';
-	$: bgColorStyle = bgColor ? `background-color: ${bgColor};` : '';
-	$: chipSizeStyle = chipSize !== undefined && chipSize != 7 ? `--chip-size: ${chipSize}px;` : '';
 </script>
 
-<div
-	style="{widthStyle} --height: {h}; --smHeight: {smH}; {chipSizeStyle} {bgColorStyle} {style}"
-	class="chipped-div {corner} {className}"
-	{...$$restProps}
->
+<div {style} class="chipped-div {corner} {className}">
 	<slot />
 </div>
 

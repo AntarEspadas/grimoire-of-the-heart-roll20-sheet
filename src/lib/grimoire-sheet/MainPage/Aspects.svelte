@@ -3,13 +3,7 @@
 </script>
 
 <div class="aspects">
-	<LabeledInput
-		i18n="aspects"
-		name="Aspects"
-		component="text-area"
-		labelElement="h1"
-		chipSize={20}
-	/>
+	<LabeledInput i18n="aspects" name="Aspects" component="text-area" labelElement="h1" />
 	<LabeledInput i18n="aspect-points" name="Aspect Points" />
 </div>
 
@@ -27,6 +21,10 @@
 
 		:global(.aspect-points-label) {
 			justify-content: end;
+		}
+
+		:global(.chipped-textarea) {
+			--chip-size: 20px;
 		}
 	}
 </style>

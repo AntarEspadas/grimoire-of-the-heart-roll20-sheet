@@ -4,17 +4,15 @@
 	import Label from '$lib/Label.svelte';
 	import { getContext } from '../PersonaPage/PersonaPage.svelte';
 
-	export let h: string | undefined = undefined;
-
 	const { attr } = getContext();
 </script>
 
 <div class="types">
 	<Label i18n="types">Types</Label>
-	<ChippedTextField {h} name={attr('type_1')} chipSize={5} corner={Corner.bottomRight} />
-	<ChippedTextField {h} name={attr('type_2')} chipSize={5} corner={Corner.bottomLeft} />
-	<ChippedTextField {h} name={attr('type_3')} chipSize={5} />
-	<ChippedTextField {h} name={attr('type_4')} chipSize={5} corner={Corner.topLeft} />
+	<ChippedTextField name={attr('type_1')} corner={Corner.bottomRight} />
+	<ChippedTextField name={attr('type_2')} corner={Corner.bottomLeft} />
+	<ChippedTextField name={attr('type_3')} />
+	<ChippedTextField name={attr('type_4')} corner={Corner.topLeft} />
 </div>
 
 <style lang="scss">
@@ -26,6 +24,10 @@
 
 		:global(.label) {
 			grid-column: 1 / 3;
+		}
+
+		:global(.chipped-select) {
+			--chip-size: 5px;
 		}
 	}
 </style>

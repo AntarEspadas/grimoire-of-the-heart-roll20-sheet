@@ -40,19 +40,17 @@
 			chatTemplate={'&{template:general} {{title=Feat}} {{name=@{_feat_name}}} {{desc=@{_feat_description}}} {{color=purple}} '}
 		>
 			<svelte:fragment slot="edit">
-				<ChippedTextField
-					name="attr_featsource"
-					h="30px"
-					chipSize={7}
-					placeholder="Source"
-					class="feat-source"
+				<ChippedTextField name="attr_featsource" placeholder="Source" class="feat-source" />
+				<ChippedTextField name="attr__feat_name" class="mb-1" placeholder="Name" />
+				<ChippedTextArea
+					style="--chip-size: 10px;"
+					placeholder="Description"
+					name="attr__feat_description"
 				/>
-				<ChippedTextField name="attr__feat_name" class="mb-1" placeholder="Name" chipSize={7} />
-				<ChippedTextArea chipSize={10} placeholder="Description" name="attr__feat_description" />
 			</svelte:fragment>
 			<svelte:fragment slot="normal">
 				<span name="attr_featsource" />
-				<ChippedTextField disabled name="attr__feat_name" chipSize={7} />
+				<ChippedTextField disabled name="attr__feat_name" />
 			</svelte:fragment>
 		</EditableField>
 		<div class="divider" />
@@ -77,6 +75,7 @@
 
 		:global(.feat-source) {
 			margin-bottom: 4px;
+			height: 30px;
 		}
 	}
 </style>

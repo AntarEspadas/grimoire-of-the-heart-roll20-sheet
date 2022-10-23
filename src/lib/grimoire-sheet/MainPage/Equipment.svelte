@@ -29,10 +29,10 @@
 		</div>
 
 		<svelte:fragment slot="edit">
-			<ChippedTextField chipSize={7} name="attr_weapon_name" />
-			<ChippedTextField chipSize={7} name="attr_weapon_damage" />
-			<ChippedTextField chipSize={7} name="attr_weapon_reach" />
-			<ChippedTextField chipSize={7} name="attr_weapon_effect" />
+			<ChippedTextField name="attr_weapon_name" />
+			<ChippedTextField name="attr_weapon_damage" />
+			<ChippedTextField name="attr_weapon_reach" />
+			<ChippedTextField name="attr_weapon_effect" />
 
 			<Label i18n="damage-type" style="grid-row: 2;">Damage type</Label>
 
@@ -44,10 +44,10 @@
 		</svelte:fragment>
 
 		<svelte:fragment slot="normal">
-			<ChippedTextField name="attr_weapon_name" chipSize={7} disabled i18n="weapon-name" />
-			<ChippedTextField name="attr_weapon_damage_display" chipSize={7} disabled />
-			<ChippedTextField name="attr_weapon_reach" chipSize={7} disabled />
-			<ChippedTextField name="attr_weapon_effect" chipSize={7} disabled />
+			<ChippedTextField name="attr_weapon_name" disabled i18n="weapon-name" />
+			<ChippedTextField name="attr_weapon_damage_display" disabled />
+			<ChippedTextField name="attr_weapon_reach" disabled />
+			<ChippedTextField name="attr_weapon_effect" disabled />
 		</svelte:fragment>
 	</EditableField>
 

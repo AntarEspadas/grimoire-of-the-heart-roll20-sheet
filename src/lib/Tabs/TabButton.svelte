@@ -4,7 +4,7 @@
 	import { getContext } from 'svelte';
 	// import { Button } from 'svelte-materialify';
 
-	export let style = '';
+	export let style: string | undefined = undefined;
 
 	export let toggleAttribute: string | undefined = undefined;
 

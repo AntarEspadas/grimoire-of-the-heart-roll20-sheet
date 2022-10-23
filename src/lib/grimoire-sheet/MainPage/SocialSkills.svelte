@@ -30,24 +30,17 @@
 		<Label style="grid-area: title" i18n="title">Title</Label>
 
 		{#each socialSkills.map((skill) => [skill, skill.toLowerCase()]) as [skill, lSkill], i}
-			<RollableLabel
-				style="grid-area: {lSkill}-label;"
-				i18n="social-skill-{lSkill}"
-				justify="end"
-				name={skill}
-			/>
+			<RollableLabel style="grid-area: {lSkill}-label;" i18n="social-skill-{lSkill}" name={skill} />
 			<ChippedTextField
 				style="grid-area: {lSkill}-pts;"
 				name="attr_{lSkill}_points"
 				type="number"
-				chipSize={7}
 				value="0"
 			/>
 			<ChippedTextField
 				style="grid-area: {lSkill}-tier;"
 				name="attr_{lSkill}"
 				type="number"
-				chipSize={7}
 				disabled
 				value="0"
 			/>
@@ -69,13 +62,16 @@
 			gap: 5px;
 			grid-template-columns: 2fr 1fr 1fr 2fr;
 		}
+
+		:global(.rollable-label > .label) {
+			justify-content: end;
+		}
 	}
 
 	.social-skills :global(.chipped-select select) {
 		margin: 0;
 		padding: 0;
 		width: 100%;
-		padding-left: 5px;
 		cursor: default;
 		color: black;
 		font-weight: 600;

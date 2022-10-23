@@ -5,7 +5,7 @@
 
 <div class="portrait">
 	<Label i18n="portrait">Portrait</Label>
-	<ChippedDiv chipSize={30} bgColor="white">
+	<ChippedDiv>
 		<img alt="avatar" name="attr_character_avatar" />
 	</ChippedDiv>
 </div>
@@ -21,4 +21,7 @@
         padding: 8px
         display: grid
         grid-template-rows: auto 1fr
+
+    .portrait > :global(.chipped-div)
+        --chip-size: 30px
 </style>

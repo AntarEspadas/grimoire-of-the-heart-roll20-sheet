@@ -13,12 +13,7 @@
 
 <img src="{url}{type}.PNG" alt={type} style="grid-area: {type}-img" />
 
-<ChippedTextField
-	name={attr(`${type}_resistance`)}
-	chipSize={7}
-	style="grid-area: {type};"
-	h="100%"
-/>
+<ChippedTextField name={attr(`${type}_resistance`)} style="grid-area: {type};" />
 
 <style lang="sass">
     img

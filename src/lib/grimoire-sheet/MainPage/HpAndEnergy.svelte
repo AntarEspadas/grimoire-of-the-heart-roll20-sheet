@@ -12,26 +12,22 @@
 
 <div class="hp-energy">
 	<Label i18n="hit-points" style="grid-area: hp-max-label">Hit Points</Label>
-	<ChippedTextField chipSize={7} name="attr_hp_max" style="grid-area: hp-max" />
+	<ChippedTextField name="attr_hp_max" style="grid-area: hp-max" />
 	<Label i18n="energy-max" style="grid-area: energy-max-label">Energy/Max</Label>
-	<ChippedTextArea chipSize={20} name="attr_hp" style="grid-area: hp" />
-	<ChippedTextField chipSize={7} name="attr_energy" style="grid-area: energy" />
-	<ChippedTextField chipSize={7} name="attr_energy_max" style="grid-area: energy-max" />
+	<ChippedTextArea name="attr_hp" style="grid-area: hp" />
+	<ChippedTextField name="attr_energy" style="grid-area: energy" />
+	<ChippedTextField name="attr_energy_max" style="grid-area: energy-max" />
 	<Label i18n="buffs-conditions" style="grid-area: buffs-conditions-label;">Buffs/Conditions</Label>
-	<ChippedTextArea
-		chipSize={20}
-		name="attr_buffs_conditions"
-		style="grid-area: buffs-conditions;"
-	/>
+	<ChippedTextArea name="attr_buffs_conditions" style="grid-area: buffs-conditions;" />
 	{#each [1, 2, 3] as i}
-		<ChippedDiv style="grid-area: deaths-door-{i};" chipSize={7}>
+		<ChippedDiv style="grid-area: deaths-door-{i};">
 			<CustomCheckbox name="attr_deaths_door_{i}" class="skull-checkbox">
 				<img {src} alt="skull" />
 			</CustomCheckbox>
 		</ChippedDiv>
 	{/each}
 	<Label i18n="damage-reduction-short" style="grid-area: damage-red-label">Damage Red</Label>
-	<ChippedTextField chipSize={7} name="attr_damage_reduction" style="grid-area: damage-red;" />
+	<ChippedTextField name="attr_damage_reduction" style="grid-area: damage-red;" />
 </div>
 
 <style lang="scss">
@@ -58,6 +54,10 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
+
+		:global(.chipped-textarea) {
+			--chip-size: 20px;
 		}
 	}
 </style>

@@ -2,53 +2,39 @@
 	import ChippedDiv from './ChippedDiv.svelte';
 	import { Corner } from './ChippedDiv.svelte';
 
-	export let chipSize: number;
-
-	export let w: string | undefined = undefined;
-	export let h: string | undefined = undefined;
-
 	export let disabled = false;
 	export let name: string;
 	export let type = 'text';
-	export let fontSize: string | undefined = undefined;
 	export let placeholder: string | undefined = undefined;
 	export let value: string = '';
 	export let i18n: string | undefined = undefined;
 
 	export let corner: Corner = Corner.topRight;
 
-	export let style = '';
+	export let style: string | undefined = undefined;
 
 	let className: string | undefined = undefined;
 	export { className as class };
 
-	$: fontSizeStyle = fontSize ? `font-size: ${fontSize}` : undefined;
-
 	$: cssClass = disabled ? '' : 'chipped-input ';
 </script>
 
-<ChippedDiv {w} h={h ?? '33.2px'} {chipSize} {corner} class="{cssClass}{className}" {style}>
+<ChippedDiv {corner} class="{cssClass}{className ?? ''} chipped-textfield" {style}>
 	{#if disabled}
-		<div style={fontSizeStyle}>
+		<div>
 			<span {name} data-i18n={i18n}>
 				{value ?? ''}
 			</span>
 		</div>
 	{:else}
-		<input
-			data-i18n={i18n}
-			{type}
-			{name}
-			{value}
-			{disabled}
-			{placeholder}
-			style={fontSizeStyle}
-			class="chipped-input"
-		/>
+		<input data-i18n={i18n} {type} {name} {value} {disabled} {placeholder} class="chipped-input" />
 	{/if}
 </ChippedDiv>
 
 <style lang="sass">
+    :global(.chipped-div.chipped-textfield)
+        height: 33.2px
+
     div
         width: 100%
         height: 100%
@@ -68,6 +54,7 @@
     :global
         div.chipped-input
             position: relative
+            display: flex
         div.chipped-input::after, div.chipped-input::before
             content: ""
             position: absolute

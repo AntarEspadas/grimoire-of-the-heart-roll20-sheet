@@ -6,13 +6,17 @@
 	export let style: string | undefined = undefined;
 </script>
 
-<ChippedDiv {style} h="33.2px" class="chipped-select">
+<ChippedDiv {style} class="chipped-select">
 	<select {name}>
 		<slot />
 	</select>
 </ChippedDiv>
 
 <style lang="sass">
+
+    :global(.chipped-div.chipped-select)
+        height: 33.2px
+
     select
         // all: unset
         outline: none

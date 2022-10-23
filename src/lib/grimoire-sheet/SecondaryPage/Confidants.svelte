@@ -40,11 +40,10 @@
 <div class="confidants">
 	{#each confidants as { label, name }, i}
 		<Label i18n="tarot-{name}">{label}</Label>
-		<ChippedTextField name="attr_{name}_confidant" h="30px" chipSize={i ? 0 : 25} />
+		<ChippedTextField name="attr_{name}_confidant" style="--chip-size: {i ? 0 : 25}px;" />
 		<ChippedTextField
 			name="attr_{name}_confidant_rank"
-			h="30px"
-			chipSize={i ? 0 : 7}
+			style="--chip-size: {i ? 0 : 7}px;"
 			type="number"
 		/>
 	{/each}
@@ -72,6 +71,10 @@
 
 		:global(.label) {
 			justify-content: end;
+		}
+
+		:global(.chipped-textfield) {
+			height: 30px;
 		}
 	}
 </style>

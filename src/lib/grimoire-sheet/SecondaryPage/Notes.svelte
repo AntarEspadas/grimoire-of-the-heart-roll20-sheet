@@ -5,7 +5,7 @@
 
 <div class="notes">
 	<Label i18n="notes" element="h1">Notes</Label>
-	<ChippedTextArea chipSize={15} name="atr_notes" />
+	<ChippedTextArea name="atr_notes" />
 </div>
 
 <style lang="sass">
@@ -15,4 +15,7 @@
 		display: grid
 		gap: 5px
 		grid-template-rows: auto 1fr
+
+		:global(.chipped-textarea)
+			--chip-size: 15px
 </style>

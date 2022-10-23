@@ -9,7 +9,7 @@
 
 <!-- svelte-ignore a11y-label-has-associated-control -->
 <label {style} class="chipped-checkbox">
-	<ChippedDiv h="33.2px">
+	<ChippedDiv>
 		<input type="checkbox" {name} {value} />
 	</ChippedDiv>
 </label>
@@ -18,6 +18,9 @@
     .chipped-checkbox :global(.chipped-div)
         display: flex
         justify-content: center
+
+    .chipped-checkbox :global(.chipped-div)
+        height: 33.2px
     
     label
         width: 100%

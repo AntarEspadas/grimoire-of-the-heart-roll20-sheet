@@ -23,36 +23,42 @@
 </script>
 
 <div class="bio-page">
-	<ChippedDiv {bgColor} chipSize={40} style="grid-area: header;">
+	<ChippedDiv style="grid-area: header;">
 		<Header />
 	</ChippedDiv>
-	<ChippedDiv {bgColor} chipSize={40} h="100%" style="grid-area: past;">
+	<ChippedDiv style="grid-area: past;">
 		<Past />
 	</ChippedDiv>
 	<!-- <ChippedDiv {bgColor} chipSize={40} h="100%" style="grid-area: portrait;">
 			<Portrait />
 		</ChippedDiv> -->
-	<ChippedDiv {bgColor} chipSize={40} h="100%" style="grid-area: hobbies;">
+	<ChippedDiv style="grid-area: hobbies;">
 		<Hobbies />
 	</ChippedDiv>
-	<ChippedDiv {bgColor} chipSize={40} h="100%" style="grid-area: physical;">
+	<ChippedDiv style="grid-area: physical;">
 		<Physical />
 	</ChippedDiv>
-	<ChippedDiv {bgColor} chipSize={40} h="100%" style="grid-area: personal;">
+	<ChippedDiv style="grid-area: personal;">
 		<Personal />
 	</ChippedDiv>
-	<ChippedDiv {bgColor} chipSize={40} h="100%" style="grid-area: preferences;">
+	<ChippedDiv style="grid-area: preferences;">
 		<Preferences />
 	</ChippedDiv>
-	<ChippedDiv {bgColor} chipSize={40} h="100%" style="grid-area: social;">
+	<ChippedDiv style="grid-area: social;">
 		<Social />
 	</ChippedDiv>
-	<ChippedDiv {bgColor} chipSize={40} h="100%" style="grid-area: economic;">
+	<ChippedDiv style="grid-area: economic;">
 		<Economic />
 	</ChippedDiv>
 </div>
 
 <style lang="scss">
+	.bio-page > :global(.chipped-div) {
+		background-color: #8182ab;
+		--chip-size: 40px;
+		height: 100%;
+	}
+
 	.bio-page {
 		padding: 10px;
 		display: grid;

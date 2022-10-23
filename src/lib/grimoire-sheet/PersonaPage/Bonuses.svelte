@@ -23,7 +23,7 @@
 
 		<!-- Roll20 complains about the word 'expression' in the css -->
 		<Label style="grid-area: exp-label;" i18n="expression">Expression</Label>
-		<ChippedTextField style="grid-area: exp;" chipSize={7} name={attr('expression_bonus')} />
+		<ChippedTextField style="grid-area: exp;" name={attr('expression_bonus')} />
 
 		<LabeledInput i18n="vitality-short" name="VIT" attribute={attr('vitality_bonus')} />
 		<LabeledInput i18n="luck-short" name="LCK" attribute={attr('luck_bonus')} />

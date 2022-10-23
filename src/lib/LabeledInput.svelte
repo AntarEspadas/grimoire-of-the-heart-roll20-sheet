@@ -14,8 +14,6 @@
 
 	export let labelElement = 'p';
 
-	export let chipSize = 7;
-
 	export let labelClass: string | undefined = undefined;
 
 	export let disabled = false;
@@ -31,9 +29,7 @@
 
 	$: attribute = attribute ?? internalName.replaceAll('-', '_');
 
-	let extraProps: { [key: string]: any };
-
-	$: extraProps = component == 'text-area' ? { h: '100%' } : {};
+	let extraProps: { [key: string]: any } = {};
 
 	$: if (component == 'text-field') extraProps.disabled = disabled;
 </script>
@@ -44,7 +40,6 @@
 <svelte:component
 	this={selectedComponent}
 	style="grid-area: {internalName}"
-	{chipSize}
 	name="attr_{attribute}"
 	{...extraProps}
 />

@@ -57,17 +57,17 @@
 			<Header />
 		</div>
 		<div class="types">
-			<Types h="25px" />
+			<Types />
 		</div>
 		<div class="bonuses">
 			<Bonuses />
 		</div>
 		<div class="resistances">
-			<Resistances rows="auto repeat(6, 25px)" {areas} cols={4} />
+			<Resistances cols={4} />
 		</div>
 	</div>
 
-	<ChippedDiv {bgColor} chipSize={20}>
+	<ChippedDiv class="combat-rolls">
 		<CombatRolls />
 	</ChippedDiv>
 
@@ -75,6 +75,10 @@
 </div>
 
 <style lang="sass">
+
+    .persona-page > :global(.chipped-div.combat-rolls)
+        background-color: #FB6674
+        --chip-size: 20px
 
     .header-container > div
         width: 100%
@@ -119,6 +123,9 @@
         height: 100%
         grid-area: types
 
+        :global(.types .chipped-textfield)
+            height: 25px
+
     .bonuses
         width: 100%
         height: 100%
@@ -128,4 +135,8 @@
         width: 100%
         height: 100%
         grid-area: resistances
+
+        :global(.resistances .grid)
+            row-template-rows: auto repeat(6, 25px)
+            grid-template-areas:   ". title title title" ". physical-img fire-img ice-img" ". physical fire ice" "thunder-img wind-img psychokinetic-img nuclear-img" "thunder wind psychokinetic nuclear" "dark-img light-img status-img intel-img" "dark light status intel"
 </style>

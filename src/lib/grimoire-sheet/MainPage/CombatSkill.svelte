@@ -17,9 +17,14 @@
 <ChippedTextField
 	name="attr_{attr}"
 	type="number"
-	fontSize="50px"
-	h="50px"
-	chipSize={15}
 	value="0"
 	style="grid-area: {attr};"
+	class="combat-skill"
 />
+
+<style lang="sass">
+	:global(.chipped-input.combat-skill)	
+		font-size: 50px
+		--chip-size: 15px
+		height: 50px
+</style>

@@ -8,7 +8,7 @@
 </script>
 
 <div class="config-page">
-	<ChippedDiv class="container" {bgColor} chipSize={20}>
+	<ChippedDiv class="container">
 		<ChippedCheckbox name="attr_enable_persona_2" value="1" />
 		<Label i18n="second-persona-page">Second Persona Page</Label>
 	</ChippedDiv>
@@ -23,6 +23,7 @@
 			gap: 5px
 			grid-template-columns: 50px auto
 			background-color: #8395AE
+			--chip-size: 20px
 		:global(.chipped-checkbox)
 			grid-column: 1
 </style>

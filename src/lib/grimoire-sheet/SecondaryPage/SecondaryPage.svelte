@@ -11,33 +11,41 @@
 </script>
 
 <div class="secondary-page">
-	<ChippedDiv chipSize={40} style="grid-area: portrait;">
+	<ChippedDiv style="grid-area: portrait;">
 		<Portrait />
 	</ChippedDiv>
-	<ChippedDiv chipSize={30} style="grid-area: header;">
+	<ChippedDiv style="grid-area: header;" class="header">
 		<Header />
 	</ChippedDiv>
-	<ChippedDiv chipSize={25} style="grid-area: additional-equipment;">
+	<ChippedDiv style="grid-area: additional-equipment;" class="additional-equipment">
 		<AdditionalEquipment />
 	</ChippedDiv>
-	<ChippedDiv chipSize={40} style="grid-area: persona;">
+	<ChippedDiv style="grid-area: persona;">
 		<Persona />
 	</ChippedDiv>
-	<ChippedDiv chipSize={40} style="grid-area: feats;">
+	<ChippedDiv style="grid-area: feats;">
 		<Feats />
 	</ChippedDiv>
-	<ChippedDiv chipSize={40} style="grid-area: items;">
+	<ChippedDiv style="grid-area: items;">
 		<Items />
 	</ChippedDiv>
-	<ChippedDiv chipSize={40} style="grid-area: notes;">
+	<ChippedDiv style="grid-area: notes;">
 		<Notes />
 	</ChippedDiv>
-	<ChippedDiv chipSize={40} style="grid-area: confidants;">
+	<ChippedDiv style="grid-area: confidants;">
 		<Confidants />
 	</ChippedDiv>
 </div>
 
 <style lang="scss">
+	.secondary-page > :global(.chipped-div.header) {
+		--chip-size: 30px;
+	}
+
+	.secondary-page > :global(.chipped-div.additional-equipment) {
+		--chip-size: 30px;
+	}
+
 	.secondary-page {
 		padding: 10px;
 		display: grid;
@@ -60,6 +68,7 @@
 	}
 
 	.secondary-page > :global(.chipped-div) {
+		--chip-size: 40px;
 		width: 100%;
 		background-color: #8182ab;
 	}

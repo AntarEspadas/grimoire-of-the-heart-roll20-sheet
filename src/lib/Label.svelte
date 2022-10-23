@@ -1,11 +1,5 @@
 <script lang="ts">
-	export let color = 'white';
-	export let margin = '0';
-	export let fontWeight = '900';
-
-	export let offset = '';
-
-	export let style = '';
+	export let style: string | undefined = undefined;
 
 	export let element = 'p';
 
@@ -15,17 +9,10 @@
 	let className = '';
 
 	export { className as class };
-
-	$: transform = offset ? `transform: translateX(${offset});` : '';
 </script>
 
 <div {style} class="label {className}">
-	<svelte:element
-		this={element}
-		data-i18n={i18n}
-		data-i18n-vars={i18nVars}
-		style="color: {color}; font-weight: {fontWeight}; margin: {margin}; {transform}"
-	>
+	<svelte:element this={element} data-i18n={i18n} data-i18n-vars={i18nVars}>
 		<slot />
 	</svelte:element>
 </div>
@@ -39,4 +26,9 @@
 		align-items: center
 		align-items: center
 		justify-content: start
+
+	div > *
+		color: white
+		font-weight: 900
+		margin: 0
 </style>

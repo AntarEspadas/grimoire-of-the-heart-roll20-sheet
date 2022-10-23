@@ -2,8 +2,6 @@
 	export let name: string;
 	export let abbreviation: string | undefined = undefined;
 
-	export let justify = 'start';
-
 	export let i18n: string;
 
 	export let style: string | undefined = undefined;
@@ -34,7 +32,7 @@
 			value={getTemplate(`@{${attr}}[${abbreviation ?? name}] + 1d6 - 1d6`, '(d6)')}>D6</button
 		>
 	</div>
-	<div class="label" style="justify-content: {justify};">
+	<div class="label">
 		<p class="label" data-i18n={i18n} data-i18n-vars={abbr || null}>{name}{abbr ? '{{0}}' : ''}</p>
 	</div>
 </div>
