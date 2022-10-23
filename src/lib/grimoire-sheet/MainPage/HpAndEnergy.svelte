@@ -14,7 +14,7 @@
 	<Label i18n="hit-points" style="grid-area: hp-max-label">Hit Points</Label>
 	<ChippedTextField name="attr_hp_max" style="grid-area: hp-max" />
 	<Label i18n="energy-max" style="grid-area: energy-max-label">Energy/Max</Label>
-	<ChippedTextArea name="attr_hp" style="grid-area: hp" />
+	<ChippedTextField name="attr_hp" class="hp-field" />
 	<ChippedTextField name="attr_energy" style="grid-area: energy" />
 	<ChippedTextField name="attr_energy_max" style="grid-area: energy-max" />
 	<Label i18n="buffs-conditions" style="grid-area: buffs-conditions-label;">Buffs/Conditions</Label>
@@ -58,6 +58,13 @@
 
 		:global(.chipped-textarea) {
 			--chip-size: 20px;
+		}
+
+		:global(.hp-field) {
+			grid-area: hp;
+			--chip-size: 20px;
+			height: 100%;
+			font-size: 70px;
 		}
 	}
 </style>

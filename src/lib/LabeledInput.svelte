@@ -27,7 +27,7 @@
 
 	$: internalName = name.toLocaleLowerCase().replaceAll(' ', '-').replaceAll('/', '-');
 
-	$: attribute = attribute ?? internalName.replaceAll('-', '_');
+	$: attribute = attribute ?? 'attr_' + internalName.replaceAll('-', '_');
 
 	let extraProps: { [key: string]: any } = {};
 
@@ -40,6 +40,6 @@
 <svelte:component
 	this={selectedComponent}
 	style="grid-area: {internalName}"
-	name="attr_{attribute}"
+	name={attribute}
 	{...extraProps}
 />

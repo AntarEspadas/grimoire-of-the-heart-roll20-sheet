@@ -8,7 +8,7 @@
 </script>
 
 <div class="header">
-	<LabeledInput i18n="character" name="Character" />
+	<LabeledInput i18n="character" name="Character" attribute="attr_character_name" />
 	<LabeledInput i18n="character-class" name="Class" />
 	<LabeledInput i18n="character-level" name="Level" />
 	<LabeledInput i18n="arcana" name="Arcana" />

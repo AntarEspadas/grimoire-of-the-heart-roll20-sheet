@@ -7,11 +7,11 @@
 	attachRepeatingListeners('personae', 'items', 'feats', 'skills', 'skills2');
 	attachListeners('main_weapon');
 
-	on('change:character_level change:vitality', () => {
-		getAttrs(['vitality', 'character_level'], (attrs) => {
-			const { vitality, character_level } = num(attrs);
-			const energy_max = Math.floor(vitality + character_level / 2);
-			const hp_max = Math.floor(25 + (vitality + 5) * character_level);
+	on('change:level change:vitality', () => {
+		getAttrs(['vitality', 'level'], (attrs) => {
+			const { vitality, level } = num(attrs);
+			const energy_max = Math.floor(vitality + level / 2);
+			const hp_max = Math.floor(25 + (vitality + 5) * level);
 			setAttrs({ energy_max, hp_max });
 		});
 	});

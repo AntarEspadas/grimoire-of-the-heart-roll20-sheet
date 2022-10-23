@@ -3,7 +3,7 @@
 </script>
 
 <div class="header">
-	<LabeledInput i18n="character" name="Character" attribute="character_name" />
+	<LabeledInput i18n="character" name="Character" attribute="attr_character_name" />
 
 	<LabeledInput i18n="birthday" name="Birthday" />
 
