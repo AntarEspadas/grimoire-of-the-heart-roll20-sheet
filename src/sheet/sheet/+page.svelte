@@ -9,7 +9,6 @@
 
 	on('change:character_level change:vitality', () => {
 		getAttrs(['vitality', 'character_level'], (attrs) => {
-			console.log(num(attrs));
 			const { vitality, character_level } = num(attrs);
 			const energy_max = Math.floor(vitality + character_level / 2);
 			const hp_max = Math.floor(25 + (vitality + 5) * character_level);
@@ -20,14 +19,12 @@
 	const tierUpperBounds = [4, 14, 29, 54, 79];
 
 	on(socialSkills.map((skill) => `change:${skill}_points`).join(' '), (e) => {
-		console.log(e);
 		const tierAttr = e.sourceAttribute?.replace('_points', '') as string;
 		const titleAttr = tierAttr + '_title';
 		const points = Math.max(+e.newValue! || 0, 0);
 		let tier;
 		for (tier = 0; tier < tierUpperBounds.length; tier++)
 			if (points <= tierUpperBounds[tier]) break;
-		console.log(tier);
 		setAttrs({ [tierAttr]: tier, [titleAttr]: tier });
 	});
 
@@ -47,7 +44,6 @@
 		const attr = e.sourceAttribute?.substring(0, 3) as string;
 		const value = e.newValue as string;
 		const die = Math.max(1, Math.min(12, 6 + +value * 2));
-		console.log(die);
 		setAttrs({ [attr]: die });
 	});
 </script>
