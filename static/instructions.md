@@ -1,5 +1,5 @@
-# Edit sheet instructions in static/instructions.md
+# Grimoire of the Heart
 
-# Example character sheet made with [Svelte](https://svelte.dev)
+### An independent Persona + SMT tabletop RPG
 
-Developed by Naratna. For more information visit [the project's repositoy](https://github.com/Naratna/Svelte20)
+[Official website and rules](https://grimoireofheart.github.io/)
